@@ -1,0 +1,286 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --black: rgba(50, 50, 50, 1);
+  --blue: rgba(56, 121, 240, 1);
+  --charcoal-slate: rgba(73, 73, 73, 1);
+  --cloud-whisper: rgba(237, 237, 237, 1);
+  --cloudy-white: rgba(245, 245, 245, 1);
+  --crimson-rush: rgba(239, 35, 60, 1);
+  --drop-shadow-100: 0px 1px 4px 0px rgba(12, 12, 13, 0.05);
+  --drop-shadow-meduim: 0px 2px 4px -2px rgba(16, 24, 40, 0.1), 0px 4px 6px -1px
+    rgba(16, 24, 40, 0.1);
+  --grey: rgba(131, 131, 131, 1);
+  --light-blue: rgba(222, 234, 255, 1);
+  --light-orange: rgba(255, 228, 206, 1);
+  --light-purple: rgba(246, 234, 254, 1);
+  --light-red: rgba(253, 229, 227, 1);
+  --light-yellow: rgba(253, 244, 222, 1);
+  --mysticgrove-enchantedcharm-font-family: "Krona One", Helvetica;
+  --mysticgrove-enchantedcharm-font-size: 24px;
+  --mysticgrove-enchantedcharm-font-style: normal;
+  --mysticgrove-enchantedcharm-font-weight: 400;
+  --mysticgrove-enchantedcharm-letter-spacing: -1.5360000228881838px;
+  --mysticgrove-enchantedcharm-line-height: 110%;
+  --mysticgrove-whisperingwillow-font-family: "Krona One", Helvetica;
+  --mysticgrove-whisperingwillow-font-size: 24px;
+  --mysticgrove-whisperingwillow-font-style: normal;
+  --mysticgrove-whisperingwillow-font-weight: 400;
+  --mysticgrove-whisperingwillow-letter-spacing: -1.5360000228881838px;
+  --mysticgrove-whisperingwillow-line-height: 110%;
+  --mysticgrove-whisperingxs-font-family: "Krona One", Helvetica;
+  --mysticgrove-whisperingxs-font-size: 20px;
+  --mysticgrove-whisperingxs-font-style: normal;
+  --mysticgrove-whisperingxs-font-weight: 400;
+  --mysticgrove-whisperingxs-letter-spacing: -1.2800000190734864px;
+  --mysticgrove-whisperingxs-line-height: 110%;
+  --neutral-neutral-5: rgba(133, 140, 148, 1);
+  --onyx-black: rgba(42, 42, 42, 1);
+  --orange: rgba(255, 159, 81, 1);
+  --paragraph-small-meduim-font-family: "Poppins", Helvetica;
+  --paragraph-small-meduim-font-size: 14px;
+  --paragraph-small-meduim-font-style: normal;
+  --paragraph-small-meduim-font-weight: 500;
+  --paragraph-small-meduim-letter-spacing: 0px;
+  --paragraph-small-meduim-line-height: normal;
+  --paragraph-xsmall-heavy-font-family: "Source Sans Pro", Helvetica;
+  --paragraph-xsmall-heavy-font-size: 11px;
+  --paragraph-xsmall-heavy-font-style: normal;
+  --paragraph-xsmall-heavy-font-weight: 600;
+  --paragraph-xsmall-heavy-letter-spacing: 0px;
+  --paragraph-xsmall-heavy-line-height: 16px;
+  --paragraph-xsmall-meduim-font-family: "Poppins", Helvetica;
+  --paragraph-xsmall-meduim-font-size: 12px;
+  --paragraph-xsmall-meduim-font-style: normal;
+  --paragraph-xsmall-meduim-font-weight: 500;
+  --paragraph-xsmall-meduim-letter-spacing: 0px;
+  --paragraph-xsmall-meduim-line-height: normal;
+  --paragraph-xsmall-regular-font-family: "Poppins", Helvetica;
+  --paragraph-xsmall-regular-font-size: 12px;
+  --paragraph-xsmall-regular-font-style: normal;
+  --paragraph-xsmall-regular-font-weight: 400;
+  --paragraph-xsmall-regular-letter-spacing: 0px;
+  --paragraph-xsmall-regular-line-height: normal;
+  --pearl-white: rgba(250, 249, 246, 1);
+  --pure-snow: rgba(255, 255, 254, 1);
+  --purple: rgba(160, 104, 174, 1);
+  --quicksand-delicatescript-font-family: "Quicksand", Helvetica;
+  --quicksand-delicatescript-font-size: 14px;
+  --quicksand-delicatescript-font-style: normal;
+  --quicksand-delicatescript-font-weight: 500;
+  --quicksand-delicatescript-letter-spacing: 0px;
+  --quicksand-delicatescript-line-height: 150%;
+  --quicksand-easyread-font-family: "Quicksand", Helvetica;
+  --quicksand-easyread-font-size: 16px;
+  --quicksand-easyread-font-style: normal;
+  --quicksand-easyread-font-weight: 500;
+  --quicksand-easyread-letter-spacing: 0px;
+  --quicksand-easyread-line-height: 150%;
+  --quicksand-easyread-semibold-font-family: "Quicksand", Helvetica;
+  --quicksand-easyread-semibold-font-size: 16px;
+  --quicksand-easyread-semibold-font-style: normal;
+  --quicksand-easyread-semibold-font-weight: 600;
+  --quicksand-easyread-semibold-letter-spacing: 0px;
+  --quicksand-easyread-semibold-line-height: 150%;
+  --red: rgba(243, 127, 115, 1);
+  --twilight-indigo: rgba(95, 108, 123, 1);
+  --white: rgba(255, 255, 255, 1);
+  --yellow: rgba(247, 199, 88, 1);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
