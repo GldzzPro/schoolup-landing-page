@@ -1,31 +1,34 @@
-import React from "react";
-import { Button } from "../../../../components/ui/button";
+import { useMediaQuery } from 'react-responsive';
 import { Card, CardContent } from "../../../../components/ui/card";
 
+const statistics = [
+  {
+    number: "20",
+    symbol: "+",
+    description: "Écoles nous font confiance",
+  },
+  {
+    number: "5000",
+    symbol: "+",
+    description: "Utilisateurs connectés chaque jour",
+  },
+  {
+    number: "3 ans",
+    symbol: "+",
+    description: "D'innovation au service de l'éducation",
+  },
+];
+
 export const FrameSubsection = (): JSX.Element => {
-  const statistics = [
-    {
-      number: "20",
-      symbol: "+",
-      description: "Écoles nous font confiance",
-    },
-    {
-      number: "5000",
-      symbol: "+",
-      description: "Utilisateurs connectés chaque jour",
-    },
-    {
-      number: "3 ans",
-      symbol: "+",
-      description: "D'innovation au service de l'éducation",
-    },
-  ];
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const mobileBackground = 'url("./images/hero_first.png")';
+  const desktopBackground = 'url("./path/hero_second.jpg")';
 
   return (
-    <section className="flex flex-col w-full items-start relative shadow-drop-shadow-100">
-      <Card className="relative w-full h-auto md:h-[989px] bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px] overflow-hidden border-0">
-        <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 relative md:absolute md:top-[50px] md:left-1/2 md:transform md:-translate-x-1/2 px-4 md:px-0 py-8 md:py-0">
-          <h1 className="relative w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
+    <section className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
+      <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  min-h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
+        <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 px-4 md:px-0 py-8 md:py-0">
+          <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
               Une seule{" "}
             </span>
@@ -38,7 +41,7 @@ export const FrameSubsection = (): JSX.Element => {
             </span>
           </h1>
 
-          <h2 className="relative w-full font-mysticgrove-enchantedcharm font-[number:var(--mysticgrove-enchantedcharm-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-enchantedcharm-font-size)] text-center tracking-[-1px] md:tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-enchantedcharm-line-height)] [font-style:var(--mysticgrove-enchantedcharm-font-style)]">
+          <h2 className=" w-full font-mysticgrove-enchantedcharm font-[number:var(--mysticgrove-enchantedcharm-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-enchantedcharm-font-size)] text-center tracking-[-1px] md:tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-enchantedcharm-line-height)] [font-style:var(--mysticgrove-enchantedcharm-font-style)]">
             <span className="text-[#323232] tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] font-mysticgrove-enchantedcharm [font-style:var(--mysticgrove-enchantedcharm-font-style)] font-[number:var(--mysticgrove-enchantedcharm-font-weight)] leading-[var(--mysticgrove-enchantedcharm-line-height)] text-[length:var(--mysticgrove-enchantedcharm-font-size)]">
               Un espace unique pour chaque{" "}
             </span>
@@ -50,7 +53,7 @@ export const FrameSubsection = (): JSX.Element => {
             </span>
           </h2>
 
-          <p className="relative w-full [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base text-center tracking-[0] leading-5 md:leading-6 px-4 md:px-0">
+          <p className=" w-full [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base text-center tracking-[0] leading-5 md:leading-6 px-4 md:px-0">
             &quot;School-UP est une application tout-en-un qui réunit
             administrateurs, enseignants, parents et élèves dans un même espace
             numérique. Grâce à ses fonctionnalités modernes — gestion des cours,
@@ -81,37 +84,31 @@ export const FrameSubsection = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
-            <Button className="inline-flex h-[34px] items-center justify-center gap-2.5 px-2.5 py-[5px] relative flex-[0_0_auto] bg-blue rounded-[20px] hover:bg-blue/90 h-auto">
-              <span className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-light-blue text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
+            <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
+              <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
                 Démo Gratuit
-              </span>
+              </div>
               <img
-                className="relative w-[31.89px] h-[31.89px] mt-[-3.95px] mb-[-3.95px]"
+                className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
                 alt="Vuesax linear arrow"
                 src="/vuesax-linear-arrow-right.svg"
               />
-            </Button>
-
-            <Button
-              variant="ghost"
-              className="inline-flex items-center justify-center gap-[5px] px-2.5 py-[5px] relative flex-[0_0_auto] rounded-[20px] hover:bg-white/10 h-auto"
-            >
+            </button>
+            <button className="px-2.5 py-[5px] hover:bg-indigo-100 rounded-[20px] inline-flex justify-center items-center gap-[5px]">
               <img className="relative w-6 h-6" alt="Grid" src="/grid-6.svg" />
-              <span className="relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-6 text-center md:whitespace-nowrap">
+              <div className="justify-start text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
                 Découvrir les fonctionnalités
-              </span>
-            </Button>
+              </div>
+            </button>
           </div>
         </CardContent>
-
-        <div className="hidden md:block absolute w-[1143px] h-[816px] top-[410px] left-[100px] rounded-[50px] border-[5px] border-solid border-[#494949] bg-cover bg-[50%_50%]" />
+        <div className="hidden md:block  md:h-[63,9%] sm:h-[28,8%] rounded-[50px] border-[5px] rounded-b-none  border-b-0 border-solid border-[#494949] bg-cover bg-[50%_50%]" style={{ backgroundImage: isMobile ? mobileBackground : desktopBackground }} />
       </Card>
-
-      <img
-        className="relative w-full flex-[0_0_auto]"
-        alt="Coles qui utilisent"
-        src="/-coles-qui-utilisent-school-up.svg"
-      />
+      <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden sm:h-[94px]">
+        <div className="self-stretch text-center justify-start text-indigo-100 text-[30px] font-normal font-['Krona_One'] leading-9 sm:leading-snug sm:text-xl">
+          Là où l’éducation rencontre l’innovation.
+        </div>
+      </div>
     </section>
   );
 };

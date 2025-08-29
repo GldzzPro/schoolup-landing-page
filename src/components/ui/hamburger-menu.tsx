@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "./button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "./navigation-menu";
+import { useNavigate } from "react-router-dom";
 
 interface HamburgerMenuProps {
   navigationItems: Array<{
@@ -18,7 +13,32 @@ interface HamburgerMenuProps {
 export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   navigationItems,
 }) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  const handleNavClick = (id: string) => {
+    const sectionId = `#${id}`;
+    setIsOpen(false);
+    navigate(sectionId);
+
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <div className="lg:hidden">
@@ -36,24 +56,70 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg border-t z-50">
-          <NavigationMenu className="w-full">
-            <NavigationMenuList className="flex flex-col gap-0 p-4 w-full">
-              {navigationItems.map((item, index) => (
-                <NavigationMenuItem key={index} className="w-full">
-                  <NavigationMenuLink
-                    className={`w-full p-3 flex items-center justify-center rounded-lg ${
-                      item.active ? "bg-blue text-white" : "text-black hover:bg-gray-100"
-                    }`}
-                  >
-                    <div className="font-medium text-sm">
-                      {item.label}
-                    </div>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className=" fixed inset-0 z-50  p-12 bg-blue-100/40   outline outline-1 outline-offset-[-1px] outline-white/90 backdrop-blur-xl inline-flex flex-col justify-between items-center">
+          <div className="w-44 inline-flex justify-start items-center gap-2.5">
+            <div className="w-8 h-10 relative">
+              <img src="/Logo.svg" alt="logo" />
+            </div>
+            <div className="text-center justify-start text-nowrap">
+              <span className="text-zinc-800 text-xl font-normal font-['Krona_One'] leading-snug">
+                School-
+              </span>
+              <span className="text-blue-500 text-xl font-normal font-['Krona_One'] leading-snug">
+                UP
+              </span>
+            </div>
+          </div>
+          <div className="self-stretch flex flex-col justify-start items-start gap-6">
+            {navigationItems.map((navItem, index) => (
+              <div
+                onClick={() => handleNavClick(navItem.label)}
+                key={navItem.label}
+                className={`self-stretch p-2.5 bg-[${ !navItem.active ? "bg-transparent":"#3879f0"}] rounded-[20px] inline-flex justify-center items-center gap-2.5 `}
+              >
+                <div className={`text-center justify-start text-${ !navItem.active ? "[#323232]":"indigo-100"}  text-sm font-medium font-['Quicksand'] leading-tight`}>
+                  {navItem.label}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="self-stretch flex flex-col justify-center items-center gap-4">
+            <div
+              data-property-1="Default"
+              className="self-stretch inline-flex justify-center items-center gap-[5px]"
+            >
+              <div data-property-1="linear" className="w-6 h-6 relative">
+                <div className="w-2.5 h-0 left-[7.01px] top-[8.96px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-0 h-[1.68px] left-[12px] top-[7.28px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-2 h-2 left-[7px] top-[8.94px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-1 h-[2.47px] left-[12.45px] top-[14.25px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-5 h-5 left-[2px] top-[2px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-6 h-6 left-[24px] top-[24px] absolute origin-top-left -rotate-180 opacity-0" />
+              </div>
+              <div className="text-center justify-start text-zinc-500 text-sm font-medium font-['Quicksand'] leading-tight">
+                FR
+              </div>
+              <div className="w-5 h-5 relative">
+                <div className="w-3.5 h-1.5 left-[3.57px] top-[7.83px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
+                <div className="w-5 h-5 left-[21px] top-[21px] absolute origin-top-left -rotate-180 opacity-0 border border-zinc-500" />
+              </div>
+            </div>
+            <div
+              data-property-1="Selected"
+              className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5"
+            >
+              <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+                Démo Gratuit
+              </div>
+              <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
+                <img
+                  className="relative w-[31.89px] h-[31.89px] mt-[3px] mb-[-3.95px]"
+                  alt="Vuesax linear arrow"
+                  src="/vuesax-linear-arrow-right.svg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
