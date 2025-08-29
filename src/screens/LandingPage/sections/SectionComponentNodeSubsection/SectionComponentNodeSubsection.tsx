@@ -12,24 +12,44 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
       label: "Espace Admin",
       icon: "/user-square.svg",
       active: true,
+      primaryBgClass: "bg-[#3879F0]",
+      lightBgClass: "bg-[#DEEAFF]",
+      primaryTextClass: "text-[#3879F0]",
+      lightTextClass: "text-[#DEEAFF]",
+      whiteTextClass: "text-[#FFF]",
     },
     {
       id: "teacher",
       label: "Espace Enseignant",
       icon: "/briefcase.svg",
       active: false,
+      primaryBgClass: "bg-[#A068AE]",
+      lightBgClass: "bg-[#F6EAFE]",
+      primaryTextClass: "text-[#A068AE]",
+      lightTextClass: "text-[#F6EAFE]",
+      whiteTextClass: "text-[#FFF]",
     },
     {
       id: "parent",
       label: "Espace Parent",
       icon: "/people-1.svg",
       active: false,
+      primaryBgClass: "bg-[#FF9F51]",
+      lightBgClass: "bg-[#FFE4CE]",
+      primaryTextClass: "text-[#FF9F51]",
+      lightTextClass: "text-[#FFE4CE]",
+      whiteTextClass: "text-[#FFF]",
     },
     {
       id: "student",
       label: "Espace Élève",
       icon: "/teacher-1.svg",
       active: false,
+      primaryBgClass: "bg-[#F37F73]",
+      lightBgClass: "bg-[#FDE5E3]",
+      primaryTextClass: "text-[#F37F73]",
+      lightTextClass: "text-[#FDE5E3]",
+      whiteTextClass: "text-[#FFF]",
     },
   ];
 
@@ -86,14 +106,13 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
     <section className="flex flex-col w-full items-start gap-[15px] relative px-4 md:px-0">
       <div className="relative w-full mt-[-1.00px] font-mysticgrove-whisperingwillow font-[number:var(--mysticgrove-whisperingwillow-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-whisperingwillow-font-size)] tracking-[-1px] md:tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-whisperingwillow-line-height)] [font-style:var(--mysticgrove-whisperingwillow-font-style)]">
         <span className="text-[#323232] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
-          Fonctionnalités principales de{" "}
+          Fonctionnalités principales de
         </span>
 
         <span className="text-[#3879f0] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
           School-UP
         </span>
       </div>
-
       <div className="relative w-full [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-5 md:leading-6">
         School-UP réunit dans une seule application l&apos;ensemble des outils
         nécessaires à la gestion et au suivi de la vie scolaire.
@@ -104,16 +123,16 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
         intuitive pour simplifier le quotidien de toute la communauté éducative.
       </div>
 
-      <div className="inline-flex flex-col items-start relative flex-[0_0_auto]">
-        <div className="flex flex-col w-full items-start relative flex-[0_0_auto]">
-          <div className="grid grid-cols-2 md:flex md:items-end gap-2 md:gap-[15px] px-4 md:px-[50px] py-4 md:py-[25px] relative self-stretch w-full flex-[0_0_auto] bg-blue rounded-[25px_25px_0px_0px] md:rounded-[50px_50px_0px_0px]">
+      <div className="w-full">
+        <div className="flex flex-col ">
+          <div className={`grid grid-cols-2 md:flex md:items-end gap-2 md:gap-[15px] px-4 md:px-[50px] py-4 md:py-[25px] relative self-stretch w-full flex-[0_0_auto] ${mainTabs.find(tab => tab.id === activeMainTab)?.primaryBgClass || 'bg-[#3879F0]'} rounded-[25px_25px_0px_0px] md:rounded-[50px_50px_0px_0px]`}>
             {mainTabs.map((tab) => (
               <Button
                 key={tab.id}
                 onClick={() => setActiveMainTab(tab.id)}
                 className={`flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2.5 px-2 md:px-5 py-2 md:py-2.5 relative flex-1 grow rounded-[20px] md:rounded-[50px] h-auto text-xs md:text-sm ${
                   activeMainTab === tab.id
-                    ? "bg-light-blue text-blue"
+                    ? `${tab.lightBgClass} ${tab.primaryTextClass}`
                     : "bg-transparent text-white hover:bg-white/10"
                 }`}
                 variant="ghost"
@@ -131,17 +150,17 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
             ))}
           </div>
 
-          <Card className="flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full bg-light-blue rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0">
+          <Card className={`flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full ${mainTabs.find(tab => tab.id === activeMainTab)?.lightBgClass || 'bg-[#DEEAFF]'} rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0`}>
             <CardContent className="p-0 w-full">
-              <div className="flex items-start gap-2 md:gap-5 relative self-stretch w-full flex-[0_0_auto] overflow-hidden overflow-x-scroll pb-2">
+              <div className="flex items-start gap-2 md:gap-5 relative self-stretch w-full flex-[0_0_auto] overflow-hidden overflow-x-scroll scrollbar-hide  pb-2">
                 {subTabs.map((tab) => (
                   <Button
                     key={tab.id}
                     onClick={() => setActiveSubTab(tab.id)}
                     className={`inline-flex items-center justify-center gap-1 md:gap-2.5 px-3 md:px-5 py-2 md:py-2.5 relative flex-[0_0_auto] rounded-[25px] md:rounded-[50px] h-auto whitespace-nowrap ${
                       activeSubTab === tab.id
-                        ? "bg-blue text-light-blue"
-                        : "bg-transparent text-black hover:bg-white/20"
+                        ? `${mainTabs.find(mainTab => mainTab.id === activeMainTab)?.primaryBgClass || 'bg-[#3879F0]'} ${mainTabs.find(mainTab => mainTab.id === activeMainTab)?.lightTextClass || 'text-[#DEEAFF]'}`
+                        : "bg-transparent text-[#323232] hover:bg-white/20"
                     }`}
                     variant="ghost"
                   >
@@ -180,7 +199,6 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                     </div>
                   ))}
                 </div>
-
                 <div className="relative w-full md:w-[734px] h-[200px] md:h-[524px] rounded-[20px] bg-cover bg-[50%_50%] bg-gray-200" />
               </div>
             </CardContent>

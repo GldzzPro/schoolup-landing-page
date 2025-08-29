@@ -172,7 +172,7 @@ export const Frame2Subsection = (): JSX.Element => {
           },
         }}
       />
-      <section className="flex flex-col w-full items-start relative">
+      <section id="Contact" className="flex flex-col w-full items-start relative">
       <div className="flex flex-col items-start gap-8 md:gap-[50px] p-6 md:p-[50px] relative self-stretch w-full flex-[0_0_auto] bg-black">
         <div className="flex flex-col items-start gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
           <h2 className="relative self-stretch mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-white text-xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[24px] md:leading-[37.4px]">
@@ -373,8 +373,7 @@ export const Frame2Subsection = (): JSX.Element => {
           </Button>
         </form>
       </div>
-
-      <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue">
+      {/* <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue">
         <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto] w-full md:w-auto">
           <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]">
             <div className="flex w-[170.85px] items-center gap-2.5 relative flex-[0_0_auto]">
@@ -471,12 +470,11 @@ export const Frame2Subsection = (): JSX.Element => {
           </div>
         </div>
       </footer>
-
       <div className="flex h-auto md:h-[50px] items-center justify-center gap-2.5 px-4 md:px-2.5 py-4 md:py-[13px] relative self-stretch w-full bg-light-blue">
         <p className="relative w-fit mt-[-1.00px] font-quicksand-easyread font-[number:var(--quicksand-easyread-font-weight)] text-blue text-xs md:text-[length:var(--quicksand-easyread-font-size)] text-center tracking-[var(--quicksand-easyread-letter-spacing)] leading-[18px] md:leading-[var(--quicksand-easyread-line-height)] [font-style:var(--quicksand-easyread-font-style)]">
           Copyright Notice: © 2025 Omegup. All rights reserved.
         </p>
-      </div>
+      </div> */}
     </section>
     </>
   );
