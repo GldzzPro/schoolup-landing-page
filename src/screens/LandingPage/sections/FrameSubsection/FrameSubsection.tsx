@@ -1,33 +1,28 @@
-import { useEffect, useState } from "react";
+import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { useMediaQuery } from 'react-responsive';
-
-const statistics = [
-  {
-    number: "20",
-    symbol: "+",
-    description: "Écoles nous font confiance",
-  },
-  {
-    number: "5000",
-    symbol: "+",
-    description: "Utilisateurs connectés chaque jour",
-  },
-  {
-    number: "3 ans",
-    symbol: "+",
-    description: "D'innovation au service de l'éducation",
-  },
-];
 
 export const FrameSubsection = (): JSX.Element => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const mobileBackground = 'url("/images/hero_first.png")';
-  const desktopBackground = 'url("/path/hero_second.jpg")';
+  const statistics = [
+    {
+      number: "20",
+      symbol: "+",
+      description: "Écoles nous font confiance",
+    },
+    {
+      number: "5000",
+      symbol: "+",
+      description: "Utilisateurs connectés chaque jour",
+    },
+    {
+      number: "3 ans",
+      symbol: "+",
+      description: "D'innovation au service de l'éducation",
+    },
+  ];
 
   return (
-    <section className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
-      <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  min-h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
+    <section className="flex flex-col w-full items-start relative shadow-drop-shadow-100">
+      <Card className="w-full h-auto  bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
         <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 px-4 md:px-0 py-8 md:py-0">
           <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
@@ -85,28 +80,33 @@ export const FrameSubsection = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
-            <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
-              <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+            <Button className="inline-flex h-[34px] items-center justify-center gap-2.5 px-2.5 py-[5px] relative flex-[0_0_auto] bg-blue rounded-[20px] hover:bg-blue/90 h-auto">
+              <span className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-light-blue text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
                 Démo Gratuit
-              </div>
+              </span>
               <img
-                className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
+                className="relative w-[31.89px] h-[31.89px] mt-[-3.95px] mb-[-3.95px]"
                 alt="Vuesax linear arrow"
                 src="/vuesax-linear-arrow-right.svg"
               />
-            </button>
-            <button className="px-2.5 py-[5px] hover:bg-indigo-100 rounded-[20px] inline-flex justify-center items-center gap-[5px]">
+            </Button>
+
+            <Button
+              variant="ghost"
+              className="inline-flex items-center justify-center gap-[5px] px-2.5 py-[5px] relative flex-[0_0_auto] rounded-[20px] hover:bg-white/10 h-auto"
+            >
               <img className="relative w-6 h-6" alt="Grid" src="/grid-6.svg" />
-              <div className="justify-start text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
+              <span className="relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-6 text-center md:whitespace-nowrap">
                 Découvrir les fonctionnalités
-              </div>
-            </button>
+              </span>
+            </Button>
           </div>
         </CardContent>
-        <div className="hidden md:block  md:h-[63,9%] sm:h-[28,8%] rounded-[50px] border-[5px] rounded-b-none  border-b-0 border-solid border-[#494949] bg-cover bg-[50%_50%]" style={{ backgroundImage: isMobile ? mobileBackground : desktopBackground }} />
+        <div className="hidden md:block absolute w-[1143px] h-[816px] top-[410px] left-[100px] rounded-[50px] border-[5px] border-solid border-[#494949] bg-cover bg-[50%_50%]" />
       </Card>
-      <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden sm:h-[94px]">
-        <div className="self-stretch text-center justify-start text-indigo-100 text-[30px] font-normal font-['Krona_One'] leading-9 sm:leading-snug sm:text-xl">
+
+      <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden">
+        <div className="self-stretch text-center justify-start text-indigo-100 text-[30px] font-normal font-['Krona_One'] leading-9">
           Là où l’éducation rencontre l’innovation.
         </div>
       </div>
