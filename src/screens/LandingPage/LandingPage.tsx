@@ -11,7 +11,7 @@ export const LandingPage = (): JSX.Element => {
   return (
     <div className="bg-[#fffffe] w-full min-h-screen">
       <div className="bg-pure-snow w-full  mx-auto relative space-y-8 md:space-y-12">
-        <div className="px-4 md:px-8 lg:px-12 pt-4 md:pt-8">
+        <div className="px-4 md:px-8 lg:px-12 py-4 md:pt-8 sticky top-0 z-10 bg-[#fffffe]  ">
           <GroupSubsection />
         </div>
         

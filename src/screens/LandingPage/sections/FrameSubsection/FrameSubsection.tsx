@@ -1,23 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import { Card, CardContent } from "../../../../components/ui/card";
 
-const statistics = [
-  {
-    number: "20",
-    symbol: "+",
-    description: "Écoles nous font confiance",
-  },
-  {
-    number: "5000",
-    symbol: "+",
-    description: "Utilisateurs connectés chaque jour",
-  },
-  {
-    number: "3 ans",
-    symbol: "+",
-    description: "D'innovation au service de l'éducation",
-  },
-];
 
 export const FrameSubsection = (): JSX.Element => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -25,8 +8,8 @@ export const FrameSubsection = (): JSX.Element => {
   const desktopBackground = 'url("./path/hero_second.jpg")';
 
   return (
-    <section className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
-      <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  min-h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
+    <section id='À Propos' className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
+      <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
         <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 px-4 md:px-0 py-8 md:py-0">
           <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
@@ -62,26 +45,7 @@ export const FrameSubsection = (): JSX.Element => {
             collaboration entre tous les acteurs de l&apos;éducation.&quot;
           </p>
 
-          <div className="flex flex-col md:flex-row w-full items-center justify-center gap-4 md:gap-5 px-5 py-2.5 relative flex-[0_0_auto]">
-            {statistics.map((stat, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center relative flex-1 grow"
-              >
-                <div className="w-fit font-mysticgrove-whisperingxs font-[number:var(--mysticgrove-whisperingxs-font-weight)] text-black text-[length:var(--mysticgrove-whisperingxs-font-size)] tracking-[var(--mysticgrove-whisperingxs-letter-spacing)] leading-[var(--mysticgrove-whisperingxs-line-height)] whitespace-nowrap relative mt-[-1.00px] [font-style:var(--mysticgrove-whisperingxs-font-style)]">
-                  <span className="text-[#323232] tracking-[var(--mysticgrove-whisperingxs-letter-spacing)] font-mysticgrove-whisperingxs [font-style:var(--mysticgrove-whisperingxs-font-style)] font-[number:var(--mysticgrove-whisperingxs-font-weight)] leading-[var(--mysticgrove-whisperingxs-line-height)] text-[length:var(--mysticgrove-whisperingxs-font-size)]">
-                    {stat.number}{" "}
-                  </span>
-                  <span className="text-[#3879f0] tracking-[var(--mysticgrove-whisperingxs-letter-spacing)] font-mysticgrove-whisperingxs [font-style:var(--mysticgrove-whisperingxs-font-style)] font-[number:var(--mysticgrove-whisperingxs-font-weight)] leading-[var(--mysticgrove-whisperingxs-line-height)] text-[length:var(--mysticgrove-whisperingxs-font-size)]">
-                    {stat.symbol}
-                  </span>
-                </div>
-                <div className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-5 md:leading-6 text-center">
-                  {stat.description}
-                </div>
-              </div>
-            ))}
-          </div>
+         
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
             <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">

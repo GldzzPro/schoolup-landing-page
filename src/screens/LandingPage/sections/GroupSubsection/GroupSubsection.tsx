@@ -7,19 +7,38 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export const GroupSubsection = (): JSX.Element => {
+  const navigate = useNavigate();
+  const [active, setActive] = useState("Accueil");
+
+  const handleNavClick = (label: string) => {
+    const sectionId = `#${label}`;
+    navigate(sectionId);
+    setTimeout(() => {
+      const el = document.getElementById(label);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
   const navigationItems = [
-    { label: "Accueil", active: true },
-    { label: "À Propos", active: false },
-    { label: "Pourquoi nous ?", active: false },
-    { label: "Fonctionnalités", active: false },
-    { label: "Tarification", active: false },
-    { label: "Contact", active: false },
+    { label: "Accueil" },
+    { label: "À Propos" },
+    { label: "Pourquoi nous ?" },
+    { label: "Fonctionnalités" },
+    { label: "Tarification" },
+    { label: "Contact" },
   ];
 
   return (
-    <div className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5">
+    <section
+      id="Accueil"
+      className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5"
+    >
       <div className="flex items-center gap-2.5">
         <div className=" w-full h-auto">
           <div className=" w-full h-auto bg-[url(/vector-1.svg)] bg-[100%_100%]">
@@ -54,8 +73,9 @@ export const GroupSubsection = (): JSX.Element => {
           {navigationItems.map((item, index) => (
             <NavigationMenuItem key={index}>
               <NavigationMenuLink
+                onClick={() => handleNavClick(item.label)}
                 className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center justify-center rounded-[20px] hover:bg-blue hover:text-white  ${
-                  item.active ? "bg-blue" : "opacity-70"
+                  active ? "bg-blue" : "opacity-70"
                 }`}
               >
                 <div
@@ -91,6 +111,6 @@ export const GroupSubsection = (): JSX.Element => {
           <ArrowRightIcon className="relative w-6 h-6 md:w-[31.89px] md:h-[31.89px] md:mt-[-3.95px] md:mb-[-3.95px]" />
         </Button>
       </div>
-    </div>
+    </section>
   );
 };

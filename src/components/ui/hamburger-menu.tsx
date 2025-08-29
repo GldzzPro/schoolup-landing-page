@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 interface HamburgerMenuProps {
   navigationItems: Array<{
     label: string;
-    active: boolean;
+    // active: boolean;
   }>;
 }
 
@@ -56,7 +56,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       </Button>
 
       {isOpen && (
-        <div className=" fixed inset-0 z-50  p-12 bg-blue-100/40   outline outline-1 outline-offset-[-1px] outline-white/90 backdrop-blur-xl inline-flex flex-col justify-between items-center">
+        <div className=" fixed inset-0 z-50  p-12 bg-[#DEEAFF66]   outline outline-1 outline-offset-[-1px] outline-white/90 backdrop-blur-xl inline-flex flex-col justify-between items-center">
           <div className="w-44 inline-flex justify-start items-center gap-2.5">
             <div className="w-8 h-10 relative">
               <img src="/Logo.svg" alt="logo" />
