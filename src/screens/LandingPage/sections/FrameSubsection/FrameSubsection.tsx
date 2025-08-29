@@ -22,8 +22,8 @@ const statistics = [
 
 export const FrameSubsection = (): JSX.Element => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const mobileBackground = 'url("/images/hero_first.png")';
-  const desktopBackground = 'url("/path/hero_second.jpg")';
+  const mobileBackground = 'url("./images/hero_first.png")';
+  const desktopBackground = 'url("./path/hero_second.jpg")';
 
   return (
     <section className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
