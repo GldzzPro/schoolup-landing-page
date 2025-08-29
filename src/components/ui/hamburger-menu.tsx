@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "./button";
+import { useNavigate } from "react-router-dom";
 
 interface HamburgerMenuProps {
   navigationItems: Array<{
@@ -12,7 +13,32 @@ interface HamburgerMenuProps {
 export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   navigationItems,
 }) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  const handleNavClick = (id: string) => {
+    const sectionId = `#${id}`;
+    setIsOpen(false);
+    navigate(sectionId);
+
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <div className="lg:hidden">
@@ -30,14 +56,12 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       </Button>
 
       {isOpen && (
-        <div className=" fixed inset-0 z-50  p-12 bg-blue-100/40 rounded-[20px]  outline outline-1 outline-offset-[-1px] outline-white/90 backdrop-blur-xl inline-flex flex-col justify-between items-center">
+        <div className=" fixed inset-0 z-50  p-12 bg-blue-100/40   outline outline-1 outline-offset-[-1px] outline-white/90 backdrop-blur-xl inline-flex flex-col justify-between items-center">
           <div className="w-44 inline-flex justify-start items-center gap-2.5">
             <div className="w-8 h-10 relative">
-              <div className="w-8 h-9 left-0 top-0 absolute opacity-40 bg-blue-500" />
-              <div className="w-4 h-1 left-[8.06px] top-[36.30px] absolute bg-blue-500" />
-              <div className="w-8 h-8 left-0 top-0 absolute bg-blue-500" />
+              <img src="/Logo.svg" alt="logo" />
             </div>
-            <div className="text-center justify-start">
+            <div className="text-center justify-start text-nowrap">
               <span className="text-zinc-800 text-xl font-normal font-['Krona_One'] leading-snug">
                 School-
               </span>
@@ -47,54 +71,17 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start gap-6">
-            <div
-              data-property-1="Selected"
-              className="self-stretch p-2.5 bg-blue-500 rounded-[20px] inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
-                Acceuil
+            {navigationItems.map((navItem, index) => (
+              <div
+                onClick={() => handleNavClick(navItem.label)}
+                key={navItem.label}
+                className={`self-stretch p-2.5 bg-[${ !navItem.active ? "bg-transparent":"#3879f0"}] rounded-[20px] inline-flex justify-center items-center gap-2.5 `}
+              >
+                <div className={`text-center justify-start text-${ !navItem.active ? "[#323232]":"indigo-100"}  text-sm font-medium font-['Quicksand'] leading-tight`}>
+                  {navItem.label}
+                </div>
               </div>
-            </div>
-            <div
-              data-property-1="Enabled"
-              className="self-stretch opacity-70 inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-zinc-800 text-sm font-medium font-['Quicksand'] leading-tight">
-                À Propos
-              </div>
-            </div>
-            <div
-              data-property-1="Enabled"
-              className="self-stretch opacity-70 inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-zinc-800 text-sm font-medium font-['Quicksand'] leading-tight">
-                Pourquoi nous ?
-              </div>
-            </div>
-            <div
-              data-property-1="Enabled"
-              className="self-stretch opacity-70 inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-zinc-800 text-sm font-medium font-['Quicksand'] leading-tight">
-                Fonctionnalités
-              </div>
-            </div>
-            <div
-              data-property-1="Enabled"
-              className="self-stretch opacity-70 inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-zinc-800 text-sm font-medium font-['Quicksand'] leading-tight">
-                Tarification
-              </div>
-            </div>
-            <div
-              data-property-1="Enabled"
-              className="self-stretch opacity-70 inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-zinc-800 text-sm font-medium font-['Quicksand'] leading-tight">
-                Contact
-              </div>
-            </div>
+            ))}
           </div>
           <div className="self-stretch flex flex-col justify-center items-center gap-4">
             <div
@@ -119,15 +106,17 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </div>
             <div
               data-property-1="Selected"
-              className="self-stretch h-8 px-2.5 py-[5px] bg-blue-500 rounded-[20px] inline-flex justify-center items-center gap-2.5"
+              className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5"
             >
               <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
                 Démo Gratuit
               </div>
               <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
-                <div className="w-2.5 h-3.5 left-[15.58px] top-[6.85px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-indigo-100" />
-                <div className="w-4 h-2 left-[8.24px] top-[12.43px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-indigo-100" />
-                <div className="w-8 h-8 left-[31.89px] top-[31.89px] absolute origin-top-left -rotate-180 opacity-0" />
+                <img
+                  className="relative w-[31.89px] h-[31.89px] mt-[3px] mb-[-3.95px]"
+                  alt="Vuesax linear arrow"
+                  src="/vuesax-linear-arrow-right.svg"
+                />
               </div>
             </div>
           </div>
