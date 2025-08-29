@@ -100,7 +100,7 @@ export const Frame2Subsection = (): JSX.Element => {
 
     try {
       // Determine API URL based on environment
-      const apiUrl = 'https://schoolup-landing-page.app/api/send-email'; // Production URL for zarzis-eponge
+      const apiUrl = 'https://schoolup-landing-page.onrender.com/api/send-email'; // Production URL for zarzis-eponge
       console.log({ apiUrl });
       
       const body = JSON.stringify({
