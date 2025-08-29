@@ -86,14 +86,13 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
     <section className="flex flex-col w-full items-start gap-[15px] relative px-4 md:px-0">
       <div className="relative w-full mt-[-1.00px] font-mysticgrove-whisperingwillow font-[number:var(--mysticgrove-whisperingwillow-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-whisperingwillow-font-size)] tracking-[-1px] md:tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-whisperingwillow-line-height)] [font-style:var(--mysticgrove-whisperingwillow-font-style)]">
         <span className="text-[#323232] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
-          Fonctionnalités principales de{" "}
+          Fonctionnalités principales de
         </span>
 
         <span className="text-[#3879f0] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
           School-UP
         </span>
       </div>
-
       <div className="relative w-full [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-5 md:leading-6">
         School-UP réunit dans une seule application l&apos;ensemble des outils
         nécessaires à la gestion et au suivi de la vie scolaire.
@@ -104,8 +103,8 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
         intuitive pour simplifier le quotidien de toute la communauté éducative.
       </div>
 
-      <div className="inline-flex flex-col items-start relative flex-[0_0_auto]">
-        <div className="flex flex-col w-full items-start relative flex-[0_0_auto]">
+      <div className="w-full">
+        <div className="flex flex-col ">
           <div className="grid grid-cols-2 md:flex md:items-end gap-2 md:gap-[15px] px-4 md:px-[50px] py-4 md:py-[25px] relative self-stretch w-full flex-[0_0_auto] bg-blue rounded-[25px_25px_0px_0px] md:rounded-[50px_50px_0px_0px]">
             {mainTabs.map((tab) => (
               <Button
@@ -133,7 +132,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
 
           <Card className="flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full bg-light-blue rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0">
             <CardContent className="p-0 w-full">
-              <div className="flex items-start gap-2 md:gap-5 relative self-stretch w-full flex-[0_0_auto] overflow-hidden overflow-x-scroll pb-2">
+              <div className="flex items-start gap-2 md:gap-5 relative self-stretch w-full flex-[0_0_auto] overflow-hidden overflow-x-scroll scrollbar-hide  pb-2">
                 {subTabs.map((tab) => (
                   <Button
                     key={tab.id}
@@ -180,7 +179,6 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                     </div>
                   ))}
                 </div>
-
                 <div className="relative w-full md:w-[734px] h-[200px] md:h-[524px] rounded-[20px] bg-cover bg-[50%_50%] bg-gray-200" />
               </div>
             </CardContent>
