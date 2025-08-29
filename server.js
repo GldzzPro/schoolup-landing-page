@@ -75,9 +75,9 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
     // English template
     en: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+            <img src="https://www.schoolup.info/Logo.svg" alt="Schoolup Logo" style="max-width:150px;">
           </div>
-          <h2 style="color:#8B5A3C; text-align:center;">Thank You for Contacting Zarzis Eponge!</h2>
+          <h2 style="color:#8B5A3C; text-align:center;">Thank You for Contacting Schoolup!</h2>
           <p>Dear ${name},</p>
           <p>We've received your wholesale inquiry about "${subject}". Here are the details you provided:</p>
           <div style="background:#f9f9f9; padding:15px; border-left:4px solid #8B5A3C; margin:15px 0;">
@@ -88,19 +88,19 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
           </div>
           <p>Our Mediterranean sponge specialists will review your inquiry and respond within 24 hours with detailed information about our wholesale offerings.</p>
           <p>Best regards,</p>
-          <p><strong>Zarzis Eponge Team</strong></p>
+          <p><strong>Schoolup Team</strong></p>
           <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
-            © ${new Date().getFullYear()} Zarzis Eponge. All rights reserved.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+            © ${new Date().getFullYear()} Schoolup. All rights reserved.<br>
+            ${process.env.EMAIL_USER} | www.schoolup.info
           </footer>
         </div>`,
     
     // French template
     fr: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+            <img src="https://www.schoolup.info/Logo.svg" alt="Schoolup Logo" style="max-width:150px;">
           </div>
-          <h2 style="color:#8B5A3C; text-align:center;">Merci d'avoir contacté Zarzis Eponge !</h2>
+          <h2 style="color:#8B5A3C; text-align:center;">Merci d'avoir contacté Schoolup !</h2>
           <p>Cher/Chère ${name},</p>
           <p>Nous avons bien reçu votre demande de gros concernant "${subject}". Voici les détails que vous avez fournis :</p>
           <div style="background:#f9f9f9; padding:15px; border-left:4px solid #8B5A3C; margin:15px 0;">
@@ -111,17 +111,17 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
           </div>
           <p>Nos spécialistes des éponges méditerranéennes examineront votre demande et vous répondront dans les 24 heures avec des informations détaillées sur nos offres de gros.</p>
           <p>Cordialement,</p>
-          <p><strong>L'équipe Zarzis Eponge</strong></p>
+          <p><strong>L'équipe Schoolup</strong></p>
           <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
-            © ${new Date().getFullYear()} Zarzis Eponge. Tous droits réservés.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+            © ${new Date().getFullYear()} Schoolup. Tous droits réservés.<br>
+            ${process.env.EMAIL_USER} | www.schoolup.info
           </footer>
         </div>`,
     
     // Arabic template (right-to-left)
     ar: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto; direction:rtl; text-align:right;">
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+            <img src="https://www.schoolup.info/Logo.svg" alt="Schoolup Logo" style="max-width:150px;">
           </div>
           <h2 style="color:#8B5A3C; text-align:center;">شكراً لتواصلك مع زرزيس إسفنج!</h2>
           <p>عزيزي/عزيزتي ${name}،</p>
@@ -137,7 +137,7 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
           <p><strong>فريق زرزيس إسفنج</strong></p>
           <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
             © ${new Date().getFullYear()} زرزيس إسفنج. جميع الحقوق محفوظة.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+            ${process.env.EMAIL_USER} | www.schoolup.info
           </footer>
         </div>`
   };
@@ -148,8 +148,8 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
 // Get email subject based on language
 const getEmailSubject = (language) => {
   const subjects = {
-    en: 'Thank you for contacting Zarzis Eponge - Mediterranean Sponges',
-    fr: 'Merci d\'avoir contacté Zarzis Eponge - Éponges Méditerranéennes',
+    en: 'Thank you for contacting Schoolup - Mediterranean Sponges',
+    fr: 'Merci d\'avoir contacté Schoolup - Éponges Méditerranéennes',
     ar: 'شكراً لتواصلك مع زرزيس إسفنج - إسفنج البحر المتوسط'
   };
   
@@ -181,9 +181,9 @@ app.post('/api/send-email', async (req, res) => {
     await transporter.sendMail({
       from: `"${name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      subject: `Zarzis Eponge Contact Form: ${subject}`,
+      subject: `Schoolup Contact Form: ${subject}`,
       html: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
-               <h2 style="color:#8B5A3C;">New Wholesale Inquiry - Zarzis Eponge</h2>
+               <h2 style="color:#8B5A3C;">New Wholesale Inquiry - Schoolup</h2>
                <p><strong>Name:</strong> ${name}</p>
                <p><strong>Email:</strong> ${email}</p>
                <p><strong>Company:</strong> ${company || 'Not specified'}</p>
@@ -227,7 +227,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 // Health check
-app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'Zarzis Eponge API' }));
+app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'Schoolup API' }));
 
 // 404 + generic error
 app.use((_req, res) => res.status(404).json({ success: false, message: 'Not found' }));
@@ -238,5 +238,5 @@ app.use((err, _req, res, _next) => {
 
 // ─── START ───────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`Zarzis Eponge API Server running on port ${PORT}`);
+  console.log(`Schoolup API Server running on port ${PORT}`);
 });
