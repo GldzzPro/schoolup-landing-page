@@ -1,20 +1,19 @@
+
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
+import { useActiveSection } from "../../hooks/useActiveSection";
+import { navigationItems, navigateToSection } from "../../config/navigation";
 
-interface HamburgerMenuProps {
-  navigationItems: Array<{
-    label: string;
-    // active: boolean;
-  }>;
-}
+interface HamburgerMenuProps {}
 
-export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
-  navigationItems,
-}) => {
+export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const activeSection = useActiveSection();
+
+
 
   useEffect(() => {
     if (isOpen) {
@@ -27,17 +26,9 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
     };
   }, [isOpen]);
 
-  const handleNavClick = (id: string) => {
-    const sectionId = `#${id}`;
+  const handleNavClick = (sectionId: string) => {
     setIsOpen(false);
-    navigate(sectionId);
-
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    navigateToSection(navigate, sectionId);
   };
 
   return (
@@ -71,17 +62,20 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start gap-6">
-            {navigationItems.map((navItem, index) => (
-              <div
-                onClick={() => handleNavClick(navItem.label)}
-                key={navItem.label}
-                className={`self-stretch p-2.5 bg-[${ !navItem.active ? "bg-transparent":"#3879f0"}] rounded-[20px] inline-flex justify-center items-center gap-2.5 `}
-              >
-                <div className={`text-center justify-start text-${ !navItem.active ? "[#323232]":"indigo-100"}  text-sm font-medium font-['Quicksand'] leading-tight`}>
-                  {navItem.label}
+            {navigationItems.map((navItem, index) => {
+              const isActive = activeSection === navItem.id;
+              return (
+                <div
+                  onClick={() => handleNavClick(navItem.id)}
+                  key={navItem.id}
+                  className={`self-stretch p-2.5 ${isActive ? "bg-[#3879f0]" : "bg-transparent"} rounded-[20px] inline-flex justify-center items-center gap-2.5 cursor-pointer`}
+                >
+                  <div className={`text-center justify-start ${isActive ? "text-indigo-100" : "text-[#323232]"} text-sm font-medium font-['Quicksand'] leading-tight`}>
+                    {navItem.label}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="self-stretch flex flex-col justify-center items-center gap-4">
             <div

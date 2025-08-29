@@ -8,7 +8,7 @@ export const FrameSubsection = (): JSX.Element => {
   const desktopBackground = 'url("./path/hero_second.jpg")';
 
   return (
-    <section id='À Propos' className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
+    <section id='ÀPropos' className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
       <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
         <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 px-4 md:px-0 py-8 md:py-0">
           <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">

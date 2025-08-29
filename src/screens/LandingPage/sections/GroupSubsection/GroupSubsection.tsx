@@ -8,31 +8,16 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useActiveSection } from "../../../../hooks/useActiveSection";
+import { navigationItems, navigateToSection } from "../../../../config/navigation";
 
 export const GroupSubsection = (): JSX.Element => {
   const navigate = useNavigate();
-  const [active, setActive] = useState("Accueil");
+  const activeSection = useActiveSection();
 
-  const handleNavClick = (label: string) => {
-    const sectionId = `#${label}`;
-    navigate(sectionId);
-    setTimeout(() => {
-      const el = document.getElementById(label);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+  const handleNavClick = (sectionId: string) => {
+    navigateToSection(navigate, sectionId);
   };
-
-  const navigationItems = [
-    { label: "Accueil" },
-    { label: "À Propos" },
-    { label: "Pourquoi nous ?" },
-    { label: "Fonctionnalités" },
-    { label: "Tarification" },
-    { label: "Contact" },
-  ];
 
   return (
     <section
@@ -66,21 +51,21 @@ export const GroupSubsection = (): JSX.Element => {
         </div>
       </div>
 
-      <HamburgerMenu navigationItems={navigationItems} />
+      <HamburgerMenu />
 
       <NavigationMenu className="hidden lg:block">
         <NavigationMenuList className="gap-2 lg:gap-5 px-3 lg:px-5 py-2.5 bg-[#dee9ff66] rounded-[50px] shadow-drop-shadow-100 flex items-center justify-center">
           {navigationItems.map((item, index) => (
             <NavigationMenuItem key={index}>
               <NavigationMenuLink
-                onClick={() => handleNavClick(item.label)}
-                className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center justify-center rounded-[20px] hover:bg-blue hover:text-white  ${
-                  active ? "bg-blue" : "opacity-70"
+                onClick={() => handleNavClick(item.id)}
+                className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
+                  activeSection === item.id ? "bg-blue" : "opacity-70"
                 }`}
               >
                 <div
-                  className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap  hover:text-white ${
-                    item.active ? "text-light-blue" : "text-black"
+                  className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap hover:text-white ${
+                    activeSection === item.id ? "text-light-blue" : "text-black"
                   }`}
                 >
                   {item.label}
