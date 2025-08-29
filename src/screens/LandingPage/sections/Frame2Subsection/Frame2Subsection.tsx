@@ -1,9 +1,18 @@
 import { SendIcon } from "lucide-react";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
+
+// Safe hook to use search params with fallback
+const useSearchParamsSafe = () => {
+  // Simple fallback that reads from window.location.search
+  const [searchParams] = useState(() => new URLSearchParams(window.location.search));
+  return [searchParams];
+};
 
 const quickLinks = [
   "Accueil",
@@ -40,9 +49,130 @@ const contactInfo = [
   },
 ];
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
 export const Frame2Subsection = (): JSX.Element => {
+  const [searchParams] = useSearchParamsSafe();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    setValue
+  } = useForm<FormData>({
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    }
+  });
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  // Set subject based on URL parameter
+  useEffect(() => {
+    const subjectParam = searchParams.get('subject');
+    if (subjectParam) {
+      setValue('message', `Sujet: ${subjectParam}\n\n`);
+    }
+  }, [searchParams, setValue]);
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+
+    try {
+      // Determine API URL based on environment
+      const apiUrl = 'https://schoolup-landing-page.app/api/send-email'; // Production URL for zarzis-eponge
+      console.log({ apiUrl });
+      
+      const body = JSON.stringify({
+        name: data.name,
+        email: data.email,
+        subject: 'Nouveau message depuis School-UP',
+        message: `Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone}\n\nMessage:\n${data.message}`,
+        company: '',
+        country: '',
+        language: 'fr', // French for School-UP
+      });
+      console.log({ body });
+      
+      // Send data to our API endpoint
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body,
+      });
+      console.log({ response });
+
+      const responseData = await response.json();
+      console.log({ data: responseData });
+
+      if (responseData.success) {
+        // Reset form
+        reset();
+
+        // Show success message
+        toast.success('Merci pour votre message ! Nous vous contacterons dans les 24 heures.');
+      } else {
+        throw new Error(responseData.message || 'Échec de l\'envoi de l\'email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+
+      // Show error message
+      toast.error('Échec de l\'envoi du message. Veuillez réessayer ou nous contacter directement.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <section className="flex flex-col w-full items-start relative">
+    <>
+      <Toaster 
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: '#4ade80',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            duration: 4000,
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
+      <section className="flex flex-col w-full items-start relative">
       <div className="flex flex-col items-start gap-8 md:gap-[50px] p-6 md:p-[50px] relative self-stretch w-full flex-[0_0_auto] bg-black">
         <div className="flex flex-col items-start gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
           <h2 className="relative self-stretch mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-white text-xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[24px] md:leading-[37.4px]">
@@ -67,7 +197,7 @@ export const Frame2Subsection = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
             <div className="flex flex-col items-start relative">
               <div className="flex flex-col items-start gap-3 px-4 py-0 relative self-stretch w-full flex-[0_0_auto] bg-white rounded-[15px] md:rounded-[20px] border border-solid border-[#828282]">
@@ -86,7 +216,14 @@ export const Frame2Subsection = (): JSX.Element => {
                 <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
                   <div className="flex w-[228px] items-center gap-1 relative">
                     <Input
-                      className="flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                      {...register('name', {
+                        required: 'Le nom complet est requis',
+                        minLength: {
+                          value: 2,
+                          message: 'Le nom doit contenir au moins 2 caractères'
+                        }
+                      })}
+                      className={`flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${errors.name ? 'text-red-500' : ''}`}
                       placeholder="Nom complet"
                     />
                   </div>
@@ -115,7 +252,14 @@ export const Frame2Subsection = (): JSX.Element => {
                 <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
                   <div className="flex w-[228px] items-center gap-1 relative">
                     <Input
-                      className="flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                      {...register('email', {
+                        required: 'L\'email est requis',
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: 'Adresse email invalide'
+                        }
+                      })}
+                      className={`flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${errors.email ? 'text-red-500' : ''}`}
                       placeholder="E-mail"
                       type="email"
                     />
@@ -145,7 +289,14 @@ export const Frame2Subsection = (): JSX.Element => {
                 <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
                   <div className="flex w-[228px] items-center gap-1 relative">
                     <Input
-                      className="flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                      {...register('phone', {
+                        required: 'Le numéro de téléphone est requis',
+                        pattern: {
+                          value: /^[+]?[0-9\s\-\(\)]{8,}$/,
+                          message: 'Numéro de téléphone invalide'
+                        }
+                      })}
+                      className={`flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${errors.phone ? 'text-red-500' : ''}`}
                       placeholder="Numéro de téléphone"
                       type="tel"
                     />
@@ -176,7 +327,14 @@ export const Frame2Subsection = (): JSX.Element => {
               <div className="flex items-start justify-between relative flex-1 self-stretch w-full grow">
                 <div className="flex w-[228px] items-start gap-1 relative">
                   <Textarea
-                    className="flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 resize-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                    {...register('message', {
+                      required: 'Le message est requis',
+                      minLength: {
+                        value: 10,
+                        message: 'Le message doit contenir au moins 10 caractères'
+                      }
+                    })}
+                    className={`flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ${errors.message ? 'text-red-500' : ''}`}
                     placeholder="Message"
                   />
                 </div>
@@ -192,14 +350,28 @@ export const Frame2Subsection = (): JSX.Element => {
             </div>
           </div>
 
-          <Button className="inline-flex items-end gap-2 md:gap-2.5 px-4 md:px-5 py-2.5 relative flex-[0_0_auto] bg-blue rounded-[22px] h-auto hover:bg-blue/90 w-full md:w-auto">
+          {/* Error Messages */}
+          {(errors.name || errors.email || errors.phone || errors.message) && (
+            <div className="w-full text-center">
+              {errors.name && <p className="text-red-500 text-sm mb-1">{errors.name.message}</p>}
+              {errors.email && <p className="text-red-500 text-sm mb-1">{errors.email.message}</p>}
+              {errors.phone && <p className="text-red-500 text-sm mb-1">{errors.phone.message}</p>}
+              {errors.message && <p className="text-red-500 text-sm mb-1">{errors.message.message}</p>}
+            </div>
+          )}
+
+          <Button 
+            type="submit"
+            disabled={isSubmitting}
+            className="inline-flex items-end gap-2 md:gap-2.5 px-4 md:px-5 py-2.5 relative flex-[0_0_auto] bg-blue rounded-[22px] h-auto hover:bg-blue/90 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <SendIcon className="relative w-5 h-5 md:w-6 md:h-6" />
 
             <span className="relative w-fit mt-[-1.00px] font-quicksand-easyread-semibold font-[number:var(--quicksand-easyread-semibold-font-weight)] text-light-blue text-[length:var(--quicksand-easyread-semibold-font-size)] tracking-[var(--quicksand-easyread-semibold-letter-spacing)] leading-[var(--quicksand-easyread-semibold-line-height)] whitespace-nowrap [font-style:var(--quicksand-easyread-semibold-font-style)]">
-              Envoyer le message
+              {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
             </span>
           </Button>
-        </div>
+        </form>
       </div>
 
       <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue">
@@ -306,5 +478,6 @@ export const Frame2Subsection = (): JSX.Element => {
         </p>
       </div>
     </section>
+    </>
   );
 };
