@@ -76,7 +76,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
               role="button"
               aria-label={tab.label}
             >
-              <div className="self-stretch text-nowrap text-ellipsis  justify-start text-[24px] font-normal font-['Krona_One'] leading-relaxed  [letter-spacing:-1.536px]">
+              <div className="self-stretch overflow-hidden text-nowrap text-ellipsis  justify-start text-[24px] font-normal font-['Krona_One'] leading-relaxed  [letter-spacing:-1.536px]">
                 {tab.label}
               </div>
             </div>

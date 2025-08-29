@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { schoolUpData } from "../../../../lib/schoolUp-data";
 
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
@@ -103,29 +104,28 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-start gap-[15px] relative px-4 md:px-0">
-      <div className="relative w-full mt-[-1.00px] font-mysticgrove-whisperingwillow font-[number:var(--mysticgrove-whisperingwillow-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-whisperingwillow-font-size)] tracking-[-1px] md:tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-whisperingwillow-line-height)] [font-style:var(--mysticgrove-whisperingwillow-font-style)]">
-        <span className="text-[#323232] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
-          Fonctionnalités principales de
-        </span>
-
-        <span className="text-[#3879f0] tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] font-mysticgrove-whisperingwillow [font-style:var(--mysticgrove-whisperingwillow-font-style)] font-[number:var(--mysticgrove-whisperingwillow-font-weight)] leading-[var(--mysticgrove-whisperingwillow-line-height)] text-[length:var(--mysticgrove-whisperingwillow-font-size)]">
-          School-UP
-        </span>
+    <section className="flex flex-col flex-start w-full items-start gap-[15px] ">
+      <div className="w-full mt-[-1.00px] text-[#323232] font-['Krona_One'] text-[24px] font-normal leading-[110%] tracking-[-1.536px]">
+        <span>Fonctionnalités principales de </span>
+        <span className="pl-1 text-[#3879f0]">School-UP</span>
       </div>
-      <div className="relative w-full [font-family:'Quicksand',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-5 md:leading-6">
-        School-UP réunit dans une seule application l&apos;ensemble des outils
-        nécessaires à la gestion et au suivi de la vie scolaire.
+      <div className="relative w-full text-[#323232] font-['Quicksand'] text-[16px] font-medium leading-[150%]">
+        Chez School-UP, nous plaçons nos utilisateurs au centre.
         Administrateurs, enseignants, parents et élèves disposent chacun de leur
-        espace dédié, avec des fonctionnalités adaptées à leurs besoins :
-        organisation des cours, suivi des notes et absences, communication en
-        temps réel, facturation et rapports. Une solution complète, moderne et
-        intuitive pour simplifier le quotidien de toute la communauté éducative.
+        propre espace, conçu pour répondre à leurs besoins spécifiques. Notre
+        solution est entièrement responsive et fonctionne aussi bien sur
+        ordinateur que sur mobile, afin que chacun puisse accéder à son école,
+        partout et à tout moment.
       </div>
 
       <div className="w-full">
         <div className="flex flex-col ">
-          <div className={`grid grid-cols-2 md:flex md:items-end gap-2 md:gap-[15px] px-4 md:px-[50px] py-4 md:py-[25px] relative self-stretch w-full flex-[0_0_auto] ${mainTabs.find(tab => tab.id === activeMainTab)?.primaryBgClass || 'bg-[#3879F0]'} rounded-[25px_25px_0px_0px] md:rounded-[50px_50px_0px_0px]`}>
+          <div
+            className={`grid grid-cols-2 md:flex md:items-end gap-2 md:gap-[15px] px-4 md:px-[50px] py-4 md:py-[25px] relative self-stretch w-full flex-[0_0_auto] ${
+              mainTabs.find((tab) => tab.id === activeMainTab)
+                ?.primaryBgClass || "bg-[#3879F0]"
+            } rounded-[25px_25px_0px_0px] md:rounded-[50px_50px_0px_0px]`}
+          >
             {mainTabs.map((tab) => (
               <Button
                 key={tab.id}
@@ -150,7 +150,12 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
             ))}
           </div>
 
-          <Card className={`flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full ${mainTabs.find(tab => tab.id === activeMainTab)?.lightBgClass || 'bg-[#DEEAFF]'} rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0`}>
+          <Card
+            className={`flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full ${
+              mainTabs.find((tab) => tab.id === activeMainTab)?.lightBgClass ||
+              "bg-[#DEEAFF]"
+            } rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0`}
+          >
             <CardContent className="p-0 w-full">
               <div className="flex items-start gap-2 md:gap-5 relative self-stretch w-full flex-[0_0_auto] overflow-hidden overflow-x-scroll scrollbar-hide  pb-2">
                 {subTabs.map((tab) => (
@@ -159,7 +164,15 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                     onClick={() => setActiveSubTab(tab.id)}
                     className={`inline-flex items-center justify-center gap-1 md:gap-2.5 px-3 md:px-5 py-2 md:py-2.5 relative flex-[0_0_auto] rounded-[25px] md:rounded-[50px] h-auto whitespace-nowrap ${
                       activeSubTab === tab.id
-                        ? `${mainTabs.find(mainTab => mainTab.id === activeMainTab)?.primaryBgClass || 'bg-[#3879F0]'} ${mainTabs.find(mainTab => mainTab.id === activeMainTab)?.lightTextClass || 'text-[#DEEAFF]'}`
+                        ? `${
+                            mainTabs.find(
+                              (mainTab) => mainTab.id === activeMainTab
+                            )?.primaryBgClass || "bg-[#3879F0]"
+                          } ${
+                            mainTabs.find(
+                              (mainTab) => mainTab.id === activeMainTab
+                            )?.lightTextClass || "text-[#DEEAFF]"
+                          }`
                         : "bg-transparent text-[#323232] hover:bg-white/20"
                     }`}
                     variant="ghost"
