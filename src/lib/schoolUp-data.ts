@@ -58,7 +58,7 @@ export const schoolUpData = {
                 "School-UP supporte plusieurs langues pour s’adapter à chaque utilisateur.",
             },
           ],
-          image: "/admin/dashboard-preview.png",
+          images: ["/admin/admin-1.png"],
         },
         schedule: {
           features: [
@@ -93,7 +93,7 @@ export const schoolUpData = {
                 "Les mises à jour sont visibles instantanément\nNotifications automatiques envoyées à tous les utilisateurs concernés",
             },
           ],
-          image: "/admin/schedule-preview.png",
+          images: ["/admin/admin-2.png"],
         },
         fees: {
           features: [
@@ -113,7 +113,7 @@ export const schoolUpData = {
                 "Frais préconfigurés\nFrais individuels\nGraphiques des frais individuels (payés, non payés, en attente...)\nListe des principaux frais (scolarité, transport, etc.) avec pourcentages\nÉvolution mensuelle des frais facturés et payés",
             },
           ],
-          image: "/admin/fees-preview.png",
+          image: ["/admin/admin-3.png"],
         },
         invoice: {
           features: [
@@ -133,7 +133,7 @@ export const schoolUpData = {
                 "Liste des factures :\nDétails par utilisateur (nom, date d'émission, montant, payé, statut).\nStatuts colorés : Payé, Non payé, Partiellement payé.\nActions : Vue, édition, suppression.\nTotaux en bas du tableau : Somme des montants.\nSélecteur de mois (à droite) : Permet de switcher dynamiquement entre les mois de l'année 2024.\nExemple : actuellement sélectionné → Mars 2024\nAffiche les données correspondantes à chaque mois",
             },
           ],
-          image: "/admin/invoice-preview.png",
+          images: ["/admin/admin-4.png"],
         },
         evaluation: {
           features: [
@@ -153,7 +153,7 @@ export const schoolUpData = {
                 "Classes affichées : Répétition de la même classe pour plusieurs modules (1ère année, Classe A).\nIndicateurs par classe\nMoyenne générale\nMoyenne max\nMoyenne min\nNombre d'élèves\nÉtat de saisie des notes et combien en attente",
             },
           ],
-          image: "/admin/evaluation-preview.png",
+          images: ["/admin/admin-5.png"],
         },
         grades: {
           features: [
@@ -173,7 +173,7 @@ export const schoolUpData = {
                 'Ajoutez une nouvelle épreuve grâce au bouton "+" situé à côté des dates, en fonction du système d\'évaluation sélectionné, de la période, de la classe, du dossier de notation et de la matière.',
             },
           ],
-          image: "/admin/grades-preview.png",
+          images: ["/admin/admin-6.png"],
         },
         forms: {
           features: [
@@ -208,7 +208,7 @@ export const schoolUpData = {
                 "Formulaires accessibles sur web et mobile, avec sauvegarde sécurisée des données et mise à jour instantanée.",
             },
           ],
-          image: "/admin/forms-preview.png",
+          images: ["/admin/admin-7.png"],
         },
         reports: {
           features: [
@@ -243,7 +243,7 @@ export const schoolUpData = {
                 "Formulaires accessibles sur web et mobile, avec sauvegarde sécurisée des données et mise à jour instantanée.",
             },
           ],
-          image: "/admin/forms-preview.png",
+          images: ["/admin/admin-8.png"],
         },
       },
     },
@@ -467,7 +467,7 @@ export const schoolUpData = {
                 "Pour les parents avec plusieurs enfants dans l'école : possibilité de switcher entre les enfants avec mise à jour automatique de toutes les données (présences, notes, appréciations, agenda, événements, informations financières).",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame.png","/parent/Frame-1.png"],
         },
         fees: {
           features: [
@@ -485,7 +485,7 @@ export const schoolUpData = {
               description: " Consulter toutes les factures et suivre le paiement de chaque frais. Vérifier les montants payés et impayés. Voir le détail des paiements (méthode et date).",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame-2.png","/parent/Frame-3.png","/parent/Frame-4.png"],
         },
         schedule: {
           features: [
@@ -498,7 +498,7 @@ export const schoolUpData = {
               description: "Filtre par type de mesure (Encouragement, Observation, Punition). Recherche par mot-clé ou date. Tri possible pour mieux organiser l’affichage.",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame-5.png"],
         },
         Presence: {
           features: [
@@ -515,7 +515,7 @@ export const schoolUpData = {
               description: "Possibilité de filtrer par matière ou statut de présence.\n Recherche par mot-clé ou date.\n Tri pour organiser l’affichage des éléments facilement.",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame-6.png","/parent/Frame-7.png"],
         },
         Examens: {
           features: [
@@ -532,7 +532,7 @@ export const schoolUpData = {
               description: "Consulter le calendrier complet des examens.\n Vérifier les notes publiées et les examens passés.\n Suivre les examens à venir et leur éligibilité à l’évaluation.\n Filtrer, trier et rechercher des examens pour un suivi personnalisé.",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame-8.png"],
         },
         Resultat: {
           features: [
@@ -549,7 +549,7 @@ export const schoolUpData = {
               description: "Consulter tous les documents de notes et résultats de l’enfant.\n Filtrer et rechercher facilement un bulletin ou relevé précis.\nTélécharger ou exporter les documents pour archivage ou impression.\nSuivre l’historique des bulletins soumis et validés.",
             },
           ],
-          image: ["/parent/dashboard-preview.png","/parent/dashboard-preview.png"],
+          images: ["/parent/Frame-9.png","/parent/Frame-10.png"],
         },
       },
     },
