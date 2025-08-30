@@ -3,13 +3,13 @@ import { useMemo } from "react";
 
 /**
  * Hook to get the active section from the URL hash (/#section-name)
- * @returns {string | null} active section name or null if no hash
+ * @returns {string} active section name or 'home' if no hash
  */
 export function useActiveSection() {
-  const location = useLocation();
+  const location = useLocation();     
 
   const activeSection = useMemo(() => {
-    if (!location.hash) return null;
+    if (!location.hash) return "home";
     // remove the leading "#"
     return location.hash.replace("#", "");
   }, [location.hash]);

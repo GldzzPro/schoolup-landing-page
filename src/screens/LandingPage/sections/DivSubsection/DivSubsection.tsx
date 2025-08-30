@@ -1,41 +1,45 @@
 import { Card, CardContent } from "../../../../components/ui/card";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import { navigationItems } from "../../../../config/navigation";
 
 export const DivSubsection = (): JSX.Element => {
-  const { t } = useTranslation('spaces');
+  const { t } = useTranslation("spaces");
   const spaces = [
     {
       icon: "/user-square-1.svg",
-      title: t('adminSpace.title'),
+      title: t("adminSpace.title"),
       titleColor: "text-blue",
       backgroundColor: "bg-[#dee9ff80]",
-      description: t('adminSpace.description'),
+      description: t("adminSpace.description"),
     },
     {
       icon: "/briefcase-1.svg",
-      title: t('teacherSpace.title'),
+      title: t("teacherSpace.title"),
       titleColor: "text-purple",
       backgroundColor: "bg-[#f6eafeb2]",
-      description: t('teacherSpace.description'),
+      description: t("teacherSpace.description"),
     },
     {
       icon: "/people.svg",
-      title: t('parentSpace.title'),
+      title: t("parentSpace.title"),
       titleColor: "text-orange",
       backgroundColor: "bg-[#ffe4ce80]",
-      description: t('parentSpace.description'),
+      description: t("parentSpace.description"),
     },
     {
       icon: "/teacher.svg",
-      title: t('studentSpace.title'),
+      title: t("studentSpace.title"),
       titleColor: "text-red",
       backgroundColor: "bg-[#fde5e3b2]",
-      description: t('studentSpace.description'),
+      description: t("studentSpace.description"),
     },
   ];
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-4 md:gap-5 relative">
+    <section
+      id={navigationItems[3].id}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-4 md:gap-5 relative"
+    >
       {spaces.map((space, index) => (
         <Card
           key={index}
