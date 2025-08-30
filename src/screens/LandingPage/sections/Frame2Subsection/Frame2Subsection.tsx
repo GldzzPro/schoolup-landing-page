@@ -446,10 +446,7 @@ export const Frame2Subsection = (): JSX.Element => {
 
               <div className="flex w-full md:w-[428px] items-center justify-center gap-2.5 relative flex-[0_0_auto]">
                 <p className="relative flex-1 mt-[-1.00px] font-quicksand-delicatescript font-[number:var(--quicksand-delicatescript-font-weight)] text-pearl-white text-xs md:text-[length:var(--quicksand-delicatescript-font-size)] tracking-[var(--quicksand-delicatescript-letter-spacing)] leading-[18px] md:leading-[var(--quicksand-delicatescript-line-height)] [font-style:var(--quicksand-delicatescript-font-style)]">
-                  Suivez School-UP sur nos réseaux sociaux pour des mises à jour
-                  quotidiennes, des conseils et des inspirations liés à
-                  l&apos;éducation et à la gestion scolaire. Partageons ensemble
-                  !
+                  {t("footer.description")}
                 </p>
               </div>
             </div>
@@ -468,7 +465,7 @@ export const Frame2Subsection = (): JSX.Element => {
           <div className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] relative flex-1 grow w-full">
             <div className="flex gap-2.5 flex-1 grow flex-col items-start relative w-full md:w-auto">
               <h3 className="relative w-fit mt-[-1.00px] font-mysticgrove-whisperingwillow font-[number:var(--mysticgrove-whisperingwillow-font-weight)] text-pearl-white text-lg md:text-[length:var(--mysticgrove-whisperingwillow-font-size)] text-center md:text-left tracking-[-1px] md:tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-whisperingwillow-line-height)] whitespace-nowrap [font-style:var(--mysticgrove-whisperingwillow-font-style)]">
-                Liens rapides
+                {t("footer.quickLinks.title")}
               </h3>
 
               <nav className="grid grid-cols-2 md:flex md:flex-col gap-2 md:gap-[5px] flex-[0_0_auto] items-start relative w-full">
@@ -487,7 +484,7 @@ export const Frame2Subsection = (): JSX.Element => {
 
             <div className="flex gap-2.5 flex-1 grow flex-col items-start relative w-full md:w-auto">
               <h3 className="relative w-fit mt-[-1.00px] font-mysticgrove-whisperingwillow font-[number:var(--mysticgrove-whisperingwillow-font-weight)] text-white text-lg md:text-[length:var(--mysticgrove-whisperingwillow-font-size)] text-center md:text-left tracking-[-1px] md:tracking-[var(--mysticgrove-whisperingwillow-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-whisperingwillow-line-height)] whitespace-nowrap [font-style:var(--mysticgrove-whisperingwillow-font-style)]">
-                Contact
+                {t("footer.contact.title")}
               </h3>
 
               <div className="inline-flex gap-[5px] flex-[0_0_auto] flex-col items-start relative">
@@ -518,7 +515,7 @@ export const Frame2Subsection = (): JSX.Element => {
         </footer>
         <div className="flex h-auto md:h-[50px] items-center justify-center gap-2.5 px-4 md:px-2.5 py-4 md:py-[13px] relative self-stretch w-full bg-light-blue">
           <p className="relative w-fit mt-[-1.00px] font-quicksand-easyread font-[number:var(--quicksand-easyread-font-weight)] text-blue text-xs md:text-[length:var(--quicksand-easyread-font-size)] text-center tracking-[var(--quicksand-easyread-letter-spacing)] leading-[18px] md:leading-[var(--quicksand-easyread-line-height)] [font-style:var(--quicksand-easyread-font-style)]">
-            Copyright Notice: © 2025 Omegup. All rights reserved.
+            {t("footer.copyright")}
           </p>
         </div>
       </section>
