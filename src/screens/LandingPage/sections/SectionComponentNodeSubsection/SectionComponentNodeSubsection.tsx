@@ -76,7 +76,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                   onClick={() => handleMainTabChange(tab.id)}
                   className={`flex flex-col md:flex-row items-center justify-center gap-15 md:gap-2.5 px-2 md:px-5 py-2 md:py-2.5 relative flex-1 grow rounded-[20px] md:rounded-[50px] h-auto text-xs md:text-sm ${
                     activeMainTab === tab.id
-                      ? `${tab.lightBgClass} ${tab.primaryTextClass}`
+                      ? `${tab.secondaryBgClass} ${tab.primaryTextClass}`
                       : "bg-transparent text-white hover:bg-[#FFF]"
                   }`}
                   variant="ghost"
@@ -84,7 +84,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                   <div
                     className={`h-[16px] w-auto  bg-transparent ${
                       activeMainTab === tab.id
-                        ? `${tab.lightBgClass} ${tab.primaryTextClass} `
+                        ? `${tab.secondaryBgClass} ${tab.primaryTextClass} `
                         : ""
                     }`}
                   >
