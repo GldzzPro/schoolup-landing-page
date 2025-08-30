@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { schoolUpData } from "../../../../lib/schoolUp-data";
@@ -7,101 +7,39 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
   const [activeSubTab, setActiveSubTab] = useState("dashboard");
 
-  const mainTabs = [
-    {
-      id: "admin",
-      label: "Espace Admin",
-      icon: "/user-square.svg",
-      active: true,
-      primaryBgClass: "bg-[#3879F0]",
-      lightBgClass: "bg-[#DEEAFF]",
-      primaryTextClass: "text-[#3879F0]",
-      lightTextClass: "text-[#DEEAFF]",
-      whiteTextClass: "text-[#FFF]",
-    },
-    {
-      id: "teacher",
-      label: "Espace Enseignant",
-      icon: "/briefcase.svg",
-      active: false,
-      primaryBgClass: "bg-[#A068AE]",
-      lightBgClass: "bg-[#F6EAFE]",
-      primaryTextClass: "text-[#A068AE]",
-      lightTextClass: "text-[#F6EAFE]",
-      whiteTextClass: "text-[#FFF]",
-    },
-    {
-      id: "parent",
-      label: "Espace Parent",
-      icon: "/people-1.svg",
-      active: false,
-      primaryBgClass: "bg-[#FF9F51]",
-      lightBgClass: "bg-[#FFE4CE]",
-      primaryTextClass: "text-[#FF9F51]",
-      lightTextClass: "text-[#FFE4CE]",
-      whiteTextClass: "text-[#FFF]",
-    },
-    {
-      id: "student",
-      label: "Espace Élève",
-      icon: "/teacher-1.svg",
-      active: false,
-      primaryBgClass: "bg-[#F37F73]",
-      lightBgClass: "bg-[#FDE5E3]",
-      primaryTextClass: "text-[#F37F73]",
-      lightTextClass: "text-[#FDE5E3]",
-      whiteTextClass: "text-[#FFF]",
-    },
-  ];
-
-  const subTabs = [
-    { id: "dashboard", label: "Tableau de bord", active: true },
-    { id: "schedule", label: "Emploi du temps", active: false },
-    { id: "fees", label: "Rapport des frais", active: false },
-    { id: "invoice", label: "Overview facture", active: false },
-    { id: "evaluation", label: "Système d'évaluation", active: false },
-    { id: "grades", label: "Saisie de Notes", active: false },
-    { id: "forms", label: "Création des formulaires", active: false },
-    { id: "reports", label: "Bulletin de Notes", active: false },
-  ];
-
-  const features = [
-    {
-      title: "Aperçu global de l'établissement :",
-      description:
-        "Nombre de classes, d'enseignants, d'élèves et de parents\nTimeline scolaire visuelle avec les dates clés",
-    },
-    {
-      title: "Gestion financière :",
-      description:
-        "Suivi des factures : montant total facturé, payé, restant à payer, prévisions",
-    },
-    {
-      title: "Événements et agenda :",
-      description:
-        "Affichage des réunions de parents, journées portes ouvertes, remises de bulletins",
-    },
-    {
-      title: "Présences en temps réel :",
-      description:
-        "Nombre d'absences justifiées, non justifiées, expulsions, retards, appels faits ou non",
-    },
-    {
-      title: "Liste des tâches administratives :",
-      description:
-        "Suivi des inscriptions et admissions\nPlanification des horaires et emplois du temps\nSuivi des absences et retards",
-    },
-    {
-      title: "Bloc notes et rappels internes :",
-      description:
-        "Informations sur les conseils, comités, et événements à venir\nAnniversaires des élèves et enseignants",
-    },
-    {
-      title: "Multilingue :",
-      description:
-        "School-UP supporte plusieurs langues pour s'adapter à chaque utilisateur.",
-    },
-  ];
+  // Get dynamic data from schoolUpData
+  const mainTabs = schoolUpData.mainTabs;
+  
+  // Get current active main tab data
+  const currentMainTab = useMemo(() => {
+    return mainTabs.find(tab => tab.id === activeMainTab) || mainTabs[0];
+  }, [activeMainTab, mainTabs]);
+  
+  // Get dynamic subTabs based on current main tab
+  const subTabs = useMemo(() => {
+    return currentMainTab?.subTabs || [];
+  }, [currentMainTab]);
+  
+  // Get dynamic features based on current main tab and sub tab
+  const features = useMemo(() => {
+    const featureData = currentMainTab?.featuresBySubTab?.[activeSubTab as keyof typeof currentMainTab.featuresBySubTab];
+    return featureData?.features || [];
+  }, [currentMainTab, activeSubTab]);
+  
+  // Get images for current selection
+  const images = useMemo(() => {
+    const featureData = currentMainTab?.featuresBySubTab?.[activeSubTab as keyof typeof currentMainTab.featuresBySubTab];
+    return featureData?.images || featureData?.image || [];
+  }, [currentMainTab, activeSubTab]);
+  
+  // Reset activeSubTab when mainTab changes
+  const handleMainTabChange = (tabId: string) => {
+    setActiveMainTab(tabId);
+    const newMainTab = mainTabs.find(tab => tab.id === tabId);
+    if (newMainTab?.subTabs && newMainTab.subTabs.length > 0) {
+      setActiveSubTab(newMainTab.subTabs[0].id);
+    }
+  };
 
   return (
     <section className="flex flex-col flex-start w-full items-start gap-[15px] ">
@@ -129,7 +67,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
             {mainTabs.map((tab) => (
               <Button
                 key={tab.id}
-                onClick={() => setActiveMainTab(tab.id)}
+                onClick={() => handleMainTabChange(tab.id)}
                 className={`flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2.5 px-2 md:px-5 py-2 md:py-2.5 relative flex-1 grow rounded-[20px] md:rounded-[50px] h-auto text-xs md:text-sm ${
                   activeMainTab === tab.id
                     ? `${tab.lightBgClass} ${tab.primaryTextClass}`
@@ -186,7 +124,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
 
               <div className="flex flex-col md:flex-row items-start gap-4 md:gap-5 relative self-stretch w-full flex-[0_0_auto] mb-[-7.00px]">
                 <div className="flex flex-col items-start md:items-center gap-3 md:gap-[15px] relative flex-1 grow">
-                  {features.map((feature, index) => (
+                  {features.map((feature: { title: string; description: string }, index: number) => (
                     <div
                       key={index}
                       className="relative self-stretch mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-normal text-black text-sm md:text-base tracking-[0] leading-4 md:leading-4"
@@ -199,7 +137,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                       <span className="font-medium text-xs md:text-sm leading-[18px] md:leading-[21px]">
                         {feature.description
                           .split("\n")
-                          .map((line, lineIndex) => (
+                          .map((line: string, lineIndex: number) => (
                             <React.Fragment key={lineIndex}>
                               {line}
                               {lineIndex <
@@ -212,7 +150,15 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                     </div>
                   ))}
                 </div>
-                <div className="relative w-full md:w-[734px] h-[200px] md:h-[524px] rounded-[20px] bg-cover bg-[50%_50%] bg-gray-200" />
+                <div className="relative w-full md:w-[734px] h-[200px] md:h-[524px] rounded-[20px] bg-cover bg-[50%_50%] bg-gray-200">
+                  {images.length > 0 && (
+                    <img
+                      src={images[0]}
+                      alt={`${currentMainTab?.label} - ${activeSubTab}`}
+                      className="w-full h-full object-cover rounded-[20px]"
+                    />
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
