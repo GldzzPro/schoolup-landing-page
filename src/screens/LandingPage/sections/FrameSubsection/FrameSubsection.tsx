@@ -1,4 +1,3 @@
-import { useMediaQuery } from "react-responsive";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const FrameSubsection = (): JSX.Element => {
