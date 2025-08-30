@@ -297,7 +297,7 @@ export const schoolUpData = {
                 "Intégration des événements scolaires : réunions de parents, journées portes ouvertes, remises de bulletins, etc.",
             },
           ],
-          image: "/teacher/dashboard-preview.png",
+          images: ["/teacher/1.png"],
         },
         schedule: {
           features: [
@@ -342,7 +342,7 @@ export const schoolUpData = {
                 "Possibilité de joindre des documents (PDF, Word, etc.), des images, ou des supports multimédia pour enrichir le devoir.",
             },
           ],
-          image: "/teacher/dashboard-preview.png",
+          images: ["/teacher/2.png"],
         },
         grades: {
           features: [
@@ -377,7 +377,7 @@ export const schoolUpData = {
                 "Possibilité de trier les remarques par type (encouragement, observation, punition), par date ou par élève.",
             },
           ],
-          image: "/teacher/evaluation-preview.png",
+          images: ["/teacher/3.png"],
         },
         evaluation: {
           features: [
@@ -397,7 +397,7 @@ export const schoolUpData = {
                 "Planification des examens (date, heure, salle). Mode d'évaluation (TalentGauge, système d'évaluation interne...). Catégorie et type de l'examen (DS, contrôle...).",
             },
           ],
-          image: "/teacher/evaluation-preview.png",
+          images: ["/teacher/4.png", "/teacher/5.png"],
         },
         reports: {
           features: [
@@ -417,7 +417,7 @@ export const schoolUpData = {
                 "Option de publier les appréciations saisies. Possibilité de voir la progression avant publication pour s'assurer que toutes les appréciations ont été saisies.",
             },
           ],
-          image: "/teacher/evaluation-preview.png",
+          images: ["/teacher/6.png", "/teacher/7.png", "/teacher/8.png"],
         },
       },
     },
@@ -474,15 +474,17 @@ export const schoolUpData = {
             {
               title: "Suivi des frais et paiements",
               description:
-                "Liste des frais facturés : frais d’inscription, frais de scolarité, frais de transport, frais de club, autres frais complémentaires Pour chaque facture : Description du frais. Occurrence (mensuelle, annuelle, etc.). Montant total facturé. Montant payé et montant impayé. Date d’échéance et date de paiement. Méthode de paiement (espèces, chèque, virement bancaire…). Statut du paiement (payée, partiellement payée, en attente de validation, non payée, validée)."
+                "Liste des frais facturés : frais d’inscription, frais de scolarité, frais de transport, frais de club, autres frais complémentaires Pour chaque facture : Description du frais. Occurrence (mensuelle, annuelle, etc.). Montant total facturé. Montant payé et montant impayé. Date d’échéance et date de paiement. Méthode de paiement (espèces, chèque, virement bancaire…). Statut du paiement (payée, partiellement payée, en attente de validation, non payée, validée).",
             },
             {
               title: " Abonnement / Paiements récurrents",
-              description: "Possibilité de s’abonner à certains frais pour gérer les paiements mensuels automatiquement.",
+              description:
+                "Possibilité de s’abonner à certains frais pour gérer les paiements mensuels automatiquement.",
             },
             {
               title: "Résumé des actions possibles",
-              description: " Consulter toutes les factures et suivre le paiement de chaque frais. Vérifier les montants payés et impayés. Voir le détail des paiements (méthode et date).",
+              description:
+                " Consulter toutes les factures et suivre le paiement de chaque frais. Vérifier les montants payés et impayés. Voir le détail des paiements (méthode et date).",
             },
           ],
           images: ["/parent/Frame-2.png","/parent/Frame-3.png","/parent/Frame-4.png"],
@@ -491,11 +493,13 @@ export const schoolUpData = {
           features: [
             {
               title: "Consultation des mesures disciplinaires :",
-              description: "Liste des mesures disciplinaires de l’élève : Encouragements Observations Punitions (ex. : exclusion de cours) Pour chaque mesure : Date de l’événement. Commentaire ou note de l’enseignant. Nom de l’enseignant ayant pris la mesure."
+              description:
+                "Liste des mesures disciplinaires de l’élève : Encouragements Observations Punitions (ex. : exclusion de cours) Pour chaque mesure : Date de l’événement. Commentaire ou note de l’enseignant. Nom de l’enseignant ayant pris la mesure.",
             },
             {
               title: "Filtrage et tri :",
-              description: "Filtre par type de mesure (Encouragement, Observation, Punition). Recherche par mot-clé ou date. Tri possible pour mieux organiser l’affichage.",
+              description:
+                "Filtre par type de mesure (Encouragement, Observation, Punition). Recherche par mot-clé ou date. Tri possible pour mieux organiser l’affichage.",
             },
           ],
           images: ["/parent/Frame-5.png"],
@@ -504,15 +508,18 @@ export const schoolUpData = {
           features: [
             {
               title: "Consultation des présences et absences :",
-              description: "Liste des présences et absences de l’enfant avec :\n Matière et cours concerné. \n Statut :\n Absence justifiée \n Absence non justifiée \n Retard \n Expulsion \n Date et horaire du cours."
+              description:
+                "Liste des présences et absences de l’enfant avec :\n Matière et cours concerné. \n Statut :\n Absence justifiée \n Absence non justifiée \n Retard \n Expulsion \n Date et horaire du cours.",
             },
             {
               title: "Résumé général",
-              description: "Total cours \n Absences justifiées \n Absences non justifiées \n Retards \n Expulsions",
+              description:
+                "Total cours \n Absences justifiées \n Absences non justifiées \n Retards \n Expulsions",
             },
             {
               title: "Filtrage et tri",
-              description: "Possibilité de filtrer par matière ou statut de présence.\n Recherche par mot-clé ou date.\n Tri pour organiser l’affichage des éléments facilement.",
+              description:
+                "Possibilité de filtrer par matière ou statut de présence.\n Recherche par mot-clé ou date.\n Tri pour organiser l’affichage des éléments facilement.",
             },
           ],
           images: ["/parent/Frame-6.png","/parent/Frame-7.png"],
@@ -521,15 +528,18 @@ export const schoolUpData = {
           features: [
             {
               title: " Consultation des examens",
-              description: "Affichage du calendrier des examens de l’enfant.\n Détails de chaque examen :\n Matière et sous-matière\n Date et horaire\nType d’examen (DS, Contrôle…) \n Coefficient\n Note obtenue\n Statut (Passé, À venir, Évaluable)\nSystème d’évaluation utilisé (ex. : EduCheck → TalentGauge)"
+              description:
+                "Affichage du calendrier des examens de l’enfant.\n Détails de chaque examen :\n Matière et sous-matière\n Date et horaire\nType d’examen (DS, Contrôle…) \n Coefficient\n Note obtenue\n Statut (Passé, À venir, Évaluable)\nSystème d’évaluation utilisé (ex. : EduCheck → TalentGauge)",
             },
             {
               title: "Suivi des performances",
-              description: "Visualiser la moyenne de l’enfant pour chaque matière ou examen.\n Comparer les examens passés et les notes publiées.",
+              description:
+                "Visualiser la moyenne de l’enfant pour chaque matière ou examen.\n Comparer les examens passés et les notes publiées.",
             },
             {
               title: " Résumé des actions possibles",
-              description: "Consulter le calendrier complet des examens.\n Vérifier les notes publiées et les examens passés.\n Suivre les examens à venir et leur éligibilité à l’évaluation.\n Filtrer, trier et rechercher des examens pour un suivi personnalisé.",
+              description:
+                "Consulter le calendrier complet des examens.\n Vérifier les notes publiées et les examens passés.\n Suivre les examens à venir et leur éligibilité à l’évaluation.\n Filtrer, trier et rechercher des examens pour un suivi personnalisé.",
             },
           ],
           images: ["/parent/Frame-8.png"],
@@ -538,15 +548,18 @@ export const schoolUpData = {
           features: [
             {
               title: "Consultation des documents scolaires",
-              description: "Accès aux différents types de documents :\n Bulletin de notes\n Relevé de notes\n Bulletin final\n Certificat\n Affichage par période scolaire ou trimestre.\n Indication du niveau de l’enfant et du système d’évaluation utilisé (ex. : EduCheck → TalentGauge)."
+              description:
+                "Accès aux différents types de documents :\n Bulletin de notes\n Relevé de notes\n Bulletin final\n Certificat\n Affichage par période scolaire ou trimestre.\n Indication du niveau de l’enfant et du système d’évaluation utilisé (ex. : EduCheck → TalentGauge).",
             },
             {
               title: " Export et partage",
-              description: "Possibilité d’exporter les bulletins ou relevés au format PDF.\n Visualisation de la date de soumission des documents",
+              description:
+                "Possibilité d’exporter les bulletins ou relevés au format PDF.\n Visualisation de la date de soumission des documents",
             },
             {
               title: "Résumé des actions possibles",
-              description: "Consulter tous les documents de notes et résultats de l’enfant.\n Filtrer et rechercher facilement un bulletin ou relevé précis.\nTélécharger ou exporter les documents pour archivage ou impression.\nSuivre l’historique des bulletins soumis et validés.",
+              description:
+                "Consulter tous les documents de notes et résultats de l’enfant.\n Filtrer et rechercher facilement un bulletin ou relevé précis.\nTélécharger ou exporter les documents pour archivage ou impression.\nSuivre l’historique des bulletins soumis et validés.",
             },
           ],
           images: ["/parent/Frame-9.png","/parent/Frame-10.png"],
@@ -582,7 +595,7 @@ export const schoolUpData = {
                 "Consulter son emploi du temps et suivre les prochaines séances.\nVérifier les présences et absences.\nAccéder à ses devoirs et documents scolaires.\nSuivre ses résultats et performances académiques.\nConsulter les mesures disciplinaires.\nSuivre les événements et réunions à venir.\nConsulter ses frais et paiements.\nRecevoir et gérer notifications et messages.",
             },
           ],
-          image: ["/student/dashboard-preview.png","/student/dashboard-preview.png"],
+          images: ["/student/Frame.png", "/student/Frame1.png"],
         },
         messagerie: {
           features: [
@@ -602,7 +615,11 @@ export const schoolUpData = {
                 "Recevoir des notifications en temps réel pour chaque nouveau message, fichier ou demande.\nFiltrer ou rechercher des messages et fichiers par élève, date ou type.",
             },
           ],
-          image: ["/student/dashboard-preview.png","/student/dashboard-preview.png"],
+          images: [
+            "/student/Frame2.png",
+            "/student/Frame3.png",
+            "/student/Frame4.png",
+          ],
         },
         grades: {
           features: [
@@ -622,7 +639,7 @@ export const schoolUpData = {
                 "Passage rapide entre les jours de la semaine (Lu, Ma, Me, Je, Ve, Sa, Di).\nVisualisation compacte des cours par créneau horaire.\nPossibilité d’intégrer alertes ou notifications pour les prochaines séances.",
             },
           ],
-          image: ["/student/dashboard-preview.png","/student/dashboard-preview.png"],
+          images: ["/student/Frame5.png"],
         },
         homework: {
           features: [
@@ -642,7 +659,11 @@ export const schoolUpData = {
                 "Vue par semaine avec jours (Lu, Ma, Me, Je, Ve, Sa, Di).\nAccès rapide aux devoirs du jour ou des jours suivants.\nIndication des devoirs récents ou en retard..",
             },
           ],
-          image: ["/student/dashboard-preview.png","/student/dashboard-preview.png"],
+          images: [
+            "/student/Frame6.png",
+            "/student/Frame7.png",
+            "/student/Frame8.png",
+          ],
         },
       },
     },
