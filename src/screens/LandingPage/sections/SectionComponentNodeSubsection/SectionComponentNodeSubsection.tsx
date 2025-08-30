@@ -2,10 +2,12 @@ import React, { useState, useMemo } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { schoolUpData } from "../../../../lib/schoolUp-data";
+import { useTranslation } from "react-i18next";
 
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
   const [activeSubTab, setActiveSubTab] = useState("dashboard");
+  const { t } = useTranslation('features');
 
   // Get dynamic data from schoolUpData
   const mainTabs = schoolUpData.mainTabs;
@@ -44,16 +46,11 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   return (
     <section className="flex flex-col flex-start w-full items-start gap-[15px] ">
       <div className="w-full mt-[-1.00px] text-[#323232] font-['Krona_One'] text-[24px] font-normal leading-[110%] tracking-[-1.536px]">
-        <span>Fonctionnalités principales de </span>
-        <span className="pl-1 text-[#3879f0]">School-UP</span>
+        <span>{t('title')} </span>
+        <span className="pl-1 text-[#3879f0]">{t('schoolName')}</span>
       </div>
       <div className="relative w-full text-[#323232] font-['Quicksand'] text-[16px] font-medium leading-[150%]">
-        Chez School-UP, nous plaçons nos utilisateurs au centre.
-        Administrateurs, enseignants, parents et élèves disposent chacun de leur
-        propre espace, conçu pour répondre à leurs besoins spécifiques. Notre
-        solution est entièrement responsive et fonctionne aussi bien sur
-        ordinateur que sur mobile, afin que chacun puisse accéder à son école,
-        partout et à tout moment.
+        {t('subtitle')}
       </div>
 
       <div className="w-full">

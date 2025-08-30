@@ -1,0 +1,18 @@
+{
+  "adminSpace": {
+    "title": "Admin Space",
+    "description": "Manage schedules, track students and teachers, control billing and access detailed reports."
+  },
+  "teacherSpace": {
+    "title": "Teacher Space",
+    "description": "Access your classes, enter grades, share resources and communicate easily with your students and their parents."
+  },
+  "parentSpace": {
+    "title": "Parent Space",
+    "description": "Access grades, absences and schedules, view invoices, communicate with teachers."
+  },
+  "studentSpace": {
+    "title": "Student Space",
+    "description": "View your courses, schedule, results and stay connected to your school through a simple and intuitive interface."
+  }
+}
