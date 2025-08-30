@@ -1,39 +1,39 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const FrameWrapperSubsection = (): JSX.Element => {
+  const { t } = useTranslation('about');
   const [activeTab, setActiveTab] = useState("mission");
 
   const tabsData = [
     {
       value: "mission",
-      label: "01 – Notre mission",
-      content:
-        "Notre mission est de simplifier la vie scolaire grâce à une solution numérique complète et intuitive. Nous voulons permettre aux administrateurs de gérer efficacement leurs établissements, aux enseignants de se concentrer sur la pédagogie, aux parents de rester informés, et aux élèves de s'épanouir dans un environnement organisé et stimulant.",
+      label: t('tabs.mission.label'),
+      content: t('tabs.mission.content'),
       cardBgClass: "bg-[#E0E7FF]",
       activeBgClass: "bg-[#3879F0]",
       activeTextClass: "text-[#DEEAFF]",
     },
     {
       value: "vision",
-      label: "02 – Notre vision",
-      content:
-        "Nous aspirons à bâtir une école connectée où la technologie soutient la pédagogie. Notre vision est celle d'un écosystème scolaire moderne, où les outils numériques ne sont pas une contrainte, mais une opportunité pour gagner du temps, renforcer la transparence et encourager la réussite des élèves. Nous voulons faire de School-UP le partenaire incontournable de la transformation digitale des établissements scolaires.",
+      label: t('tabs.vision.label'),
+      content: t('tabs.vision.content'),
       cardBgClass: "bg-[#F6EAFE]",
       activeBgClass: "bg-[#A068AE]",
       activeTextClass: "text-[#F6EAFE]",
     },
     {
       value: "valeurs",
-      label: "03 – Nos valeurs",
-      content: "Nos valeurs sont l'innovation, la simplicité et l'excellence.",
+      label: t('tabs.valeurs.label'),
+      content: t('tabs.valeurs.content'),
       cardBgClass: "bg-[#FDF4DE]",
       activeBgClass: "bg-[#F7C758]",
       activeTextClass: "text-[#FDF4DE]",
     },
     {
       value: "engagement",
-      label: "04 – Notre engagement",
-      content: "Notre engagement est de fournir un service de qualité supérieure.",
+      label: t('tabs.engagement.label'),
+      content: t('tabs.engagement.content'),
       cardBgClass: "bg-[#FFE4CE]",
       activeBgClass: "bg-[#FF9F51]",
       activeTextClass: "text-white",
@@ -49,16 +49,14 @@ export const FrameWrapperSubsection = (): JSX.Element => {
     >
       <div className="flex flex-col items-start gap-4 w-full">
         <h2 className="font-quicksand text-[16px] font-semibold text-[#323232] leading-[150%]">
-          Notre identité, notre vision
+          {t('sectionTitle')}
         </h2>
         <h3 className="font-['Krona_One'] text-[24px] font-normal leading-[110%] tracking-[-1.536px]">
-          <span className="text-[#323232]">Ce qui définit School-</span>
-          <span className="text-[#3879F0]">UP</span>
+          <span className="text-[#323232]">{t('mainTitle.part1')}</span>
+          <span className="text-[#3879F0]">{t('mainTitle.part2')}</span>
         </h3>
         <p className="font-quicksand text-[16px] font-medium text-[#323232] leading-[150%]">
-          Notre mission est de transformer la gestion scolaire en une expérience
-          simple, collaborative et moderne, où chaque acteur de l&apos;éducation
-          trouve sa place.
+          {t('description')}
         </p>
       </div>
 

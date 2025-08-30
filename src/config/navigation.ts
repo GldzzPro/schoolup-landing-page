@@ -4,12 +4,12 @@ export interface NavigationItem {
 }
 
 export const navigationItems: NavigationItem[] = [
-  { labelKey: "home", id: "Accueil" },
-  { labelKey: "about", id: "ÀPropos" },
-  { labelKey: "features", id: "Pourquoinous?" },
-  { labelKey: "functionality", id: "Fonctionnalités" },
-  { labelKey: "pricing", id: "Tarification" },
-  { labelKey: "contact", id: "Contact" },
+  { labelKey: "home", id: "home" },
+  { labelKey: "about", id: "about" },
+  { labelKey: "features", id: "features" },
+  { labelKey: "functionality", id: "functionality" },
+  { labelKey: "pricing", id: "pricing" },
+  { labelKey: "contact", id: "contact" },
 ];
 
 /**

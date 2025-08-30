@@ -1,13 +1,14 @@
 import React, { useState, useMemo } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { schoolUpData } from "../../../../lib/schoolUp-data";
+import { useSchoolUpData } from "../../../../lib/schoolUp-data";
 import { useTranslation } from "react-i18next";
 
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
   const [activeSubTab, setActiveSubTab] = useState("dashboard");
   const { t } = useTranslation('features');
+  const schoolUpData = useSchoolUpData();
 
   // Get dynamic data from schoolUpData
   const mainTabs = schoolUpData.mainTabs;
@@ -31,7 +32,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   // Get images for current selection
   const images = useMemo(() => {
     const featureData = currentMainTab?.featuresBySubTab?.[activeSubTab as keyof typeof currentMainTab.featuresBySubTab];
-    return featureData?.images || featureData?.image || [];
+    return featureData?.images || [];
   }, [currentMainTab, activeSubTab]);
   
   // Reset activeSubTab when mainTab changes
@@ -67,7 +68,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                 onClick={() => handleMainTabChange(tab.id)}
                 className={`flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2.5 px-2 md:px-5 py-2 md:py-2.5 relative flex-1 grow rounded-[20px] md:rounded-[50px] h-auto text-xs md:text-sm ${
                   activeMainTab === tab.id
-                    ? `${tab.lightBgClass} ${tab.primaryTextClass}`
+                    ? `${tab.secondaryBgClass} ${tab.primaryTextClass}`
                     : "bg-transparent text-white hover:bg-white/10"
                 }`}
                 variant="ghost"
@@ -87,7 +88,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
 
           <Card
             className={`flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full ${
-              mainTabs.find((tab) => tab.id === activeMainTab)?.lightBgClass ||
+              mainTabs.find((tab) => tab.id === activeMainTab)?.secondaryBgClass ||
               "bg-[#DEEAFF]"
             } rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0`}
           >

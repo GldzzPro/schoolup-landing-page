@@ -1,21 +1,59 @@
 {
   "title": "Contactez-nous",
-  "subtitle": "Prêt à transformer votre établissement ? Contactez notre équipe pour une démonstration personnalisée.",
-  "form": {
-    "name": "Nom",
-    "email": "Email",
-    "phone": "Téléphone",
-    "school": "Établissement",
-    "message": "Message",
-    "submit": "Envoyer",
-    "sending": "Envoi en cours...",
-    "success": "Message envoyé avec succès !",
-    "error": "Erreur lors de l'envoi du message"
+  "subtitle": {
+    "part1": "Chez School-",
+    "part2": "UP",
+    "part3": ", nous croyons en une communication ouverte. Que vous ayez une question, besoin d'un devis, ou souhaitiez discuter d'un projet, nous sommes là pour vous aider. Contactez-nous et découvrez la puissance de notre expertise en gestion scolaire."
   },
-  "info": {
-    "address": "Adresse",
-    "phone": "Téléphone",
-    "email": "Email",
-    "hours": "Horaires d'ouverture"
+  "form": {
+    "labels": {
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "message": "Message"
+    },
+    "placeholders": {
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "message": "Votre message..."
+    },
+    "validation": {
+      "nameRequired": "Le nom complet est requis",
+      "nameMinLength": "Le nom doit contenir au moins 2 caractères",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Adresse email invalide",
+      "phoneRequired": "Le numéro de téléphone est requis",
+      "phoneInvalid": "Numéro de téléphone invalide",
+      "messageRequired": "Le message est requis",
+      "messageMinLength": "Le message doit contenir au moins 10 caractères"
+    },
+    "submit": {
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    },
+    "messages": {
+      "success": "Message envoyé avec succès!",
+      "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "Liens rapides",
+      "home": "Accueil",
+      "about": "À propos",
+      "whyUs": "Pourquoi nous ?",
+      "features": "Fonctionnalités",
+      "pricing": "Tarification",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "address": "10, Cyber Park Zarzis, Medenine",
+      "email": "contact@omegup.tn",
+      "phone": "+216 28 827 941"
+    },
+    "followUs": "Suivez-nous",
+    "copyright": "© 2024 School-UP. Tous droits réservés."
   }
 }
