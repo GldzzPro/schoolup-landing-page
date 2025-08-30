@@ -1,15 +1,15 @@
 export interface NavigationItem {
-  label: string;
+  labelKey: string;
   id: string;
 }
 
 export const navigationItems: NavigationItem[] = [
-  { label: "Accueil", id: "home" },
-  { label: "À Propos", id: "about" },
-  { label: "Pourquoi nous ?", id: "why" },
-  { label: "Fonctionnalités", id: "features" },
-  { label: "Tarification", id: "" },
-  { label: "Contact", id: "contact" },
+  { labelKey: "home", id: "home" },
+  { labelKey: "about", id: "about" },
+  { labelKey: "features", id: "why" },
+  { labelKey: "functionality", id: "features" },
+  { labelKey: "pricing", id: "" }, 
+  { labelKey: "contact", id: "contact" },
 ];
 
 /**
@@ -28,3 +28,6 @@ export const navigateToSection = (navigate: (to: string) => void, sectionId: str
     }
   }, 100);
 };
+
+
+ 

@@ -1,7 +1,9 @@
 import { Card, CardContent } from "../../../../components/ui/card";
 import { navigationItems } from "../../../../config/navigation";
+import { useTranslation } from 'react-i18next';
 
 export const FrameSubsection = (): JSX.Element => {
+  const { t } = useTranslation('hero');
   const heroBackground = "/hero_first.png";
 
   return (
@@ -13,42 +15,36 @@ export const FrameSubsection = (): JSX.Element => {
         <CardContent className="flex flex-col w-full items-center gap-5 md:gap-5 p-0 pt-0">
           <h1 className="w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
-              Une seule{" "}
+              {t('mainTitle.part1')}
             </span>
             <span className="text-[#3879f0] tracking-[-0.74px]">
-              application
+              {t('mainTitle.part2')}
             </span>
             <span className="text-[#323232] tracking-[-0.74px]">
-              {" "}
-              pour toute la vie scolaire.
+              {t('mainTitle.part3')}
             </span>
           </h1>
 
           <h2 className=" w-full font-mysticgrove-enchantedcharm font-[number:var(--mysticgrove-enchantedcharm-font-weight)] text-black text-lg md:text-[length:var(--mysticgrove-enchantedcharm-font-size)] text-center tracking-[-1px] md:tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] leading-[22px] md:leading-[var(--mysticgrove-enchantedcharm-line-height)] [font-style:var(--mysticgrove-enchantedcharm-font-style)]">
             <span className="text-[#323232] tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] font-mysticgrove-enchantedcharm [font-style:var(--mysticgrove-enchantedcharm-font-style)] font-[number:var(--mysticgrove-enchantedcharm-font-weight)] leading-[var(--mysticgrove-enchantedcharm-line-height)] text-[length:var(--mysticgrove-enchantedcharm-font-size)]">
-              Un espace unique pour chaque{" "}
+              {t('subtitle.part1')}
             </span>
             <span className="text-[#3879f0] tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] font-mysticgrove-enchantedcharm [font-style:var(--mysticgrove-enchantedcharm-font-style)] font-[number:var(--mysticgrove-enchantedcharm-font-weight)] leading-[var(--mysticgrove-enchantedcharm-line-height)] text-[length:var(--mysticgrove-enchantedcharm-font-size)]">
-              utilisateur
+              {t('subtitle.part2')}
             </span>
             <span className="text-[#323232] tracking-[var(--mysticgrove-enchantedcharm-letter-spacing)] font-mysticgrove-enchantedcharm [font-style:var(--mysticgrove-enchantedcharm-font-style)] font-[number:var(--mysticgrove-enchantedcharm-font-weight)] leading-[var(--mysticgrove-enchantedcharm-line-height)] text-[length:var(--mysticgrove-enchantedcharm-font-size)]">
-              , adapté à ses besoins.
+              {t('subtitle.part3')}
             </span>
           </h2>
 
           <p className=" w-full [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base text-center tracking-[0] leading-5 md:leading-6 px-4 md:px-0">
-            &quot;School-UP est une application tout-en-un qui réunit
-            administrateurs, enseignants, parents et élèves dans un même espace
-            numérique. Grâce à ses fonctionnalités modernes — gestion des cours,
-            emploi du temps, suivi des notes, messagerie et facturation — la
-            plateforme simplifie la vie scolaire au quotidien et renforce la
-            collaboration entre tous les acteurs de l&apos;éducation.&quot;
+            &quot;{t('description')}&quot;
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
             <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
               <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
-                Démo Gratuit
+                {t('demoButton')}
               </div>
               <img
                 className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
@@ -59,7 +55,7 @@ export const FrameSubsection = (): JSX.Element => {
             <button className="px-2.5 py-[5px] hover:bg-indigo-100 rounded-[20px] inline-flex justify-center items-center gap-[5px]">
               <img className="relative w-6 h-6" alt="Grid" src="/grid-6.svg" />
               <div className="justify-start text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
-                Découvrir les fonctionnalités
+                {t('featuresButton')}
               </div>
             </button>
           </div>
@@ -71,7 +67,7 @@ export const FrameSubsection = (): JSX.Element => {
       </Card>
       <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden sm:h-[94px]">
         <div className="self-stretch text-center justify-start text-indigo-100 text-[20px] md:text-[34px] font-normal font-['Krona_One'] leading-[110%] tracking-[-1.28px] md:tracking-[-2.176px]">
-          Là où l’éducation rencontre l’innovation.
+          {t('tagline')}
         </div>
       </div>
     </section>

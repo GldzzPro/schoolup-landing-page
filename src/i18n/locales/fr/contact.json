@@ -1,0 +1,21 @@
+{
+  "title": "Contactez-nous",
+  "subtitle": "Prêt à transformer votre établissement ? Contactez notre équipe pour une démonstration personnalisée.",
+  "form": {
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "school": "Établissement",
+    "message": "Message",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Erreur lors de l'envoi du message"
+  },
+  "info": {
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires d'ouverture"
+  }
+}

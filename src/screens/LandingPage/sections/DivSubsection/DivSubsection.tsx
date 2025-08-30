@@ -1,38 +1,36 @@
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 export const DivSubsection = (): JSX.Element => {
+  const { t } = useTranslation('spaces');
   const spaces = [
     {
       icon: "/user-square-1.svg",
-      title: "Espace Admin",
+      title: t('adminSpace.title'),
       titleColor: "text-blue",
       backgroundColor: "bg-[#dee9ff80]",
-      description:
-        "Gérez les emplois, suivez les élèves et enseignants, contrôlez la facturation et accédez à des rapports détaillés.",
+      description: t('adminSpace.description'),
     },
     {
       icon: "/briefcase-1.svg",
-      title: "Espace Enseignant",
+      title: t('teacherSpace.title'),
       titleColor: "text-purple",
       backgroundColor: "bg-[#f6eafeb2]",
-      description:
-        "Accédez à vos classes, saisissez les notes, partagez des ressources et communiquez facilement avec vos élèves et leurs parents.",
+      description: t('teacherSpace.description'),
     },
     {
       icon: "/people.svg",
-      title: "Espace Parent",
+      title: t('parentSpace.title'),
       titleColor: "text-orange",
       backgroundColor: "bg-[#ffe4ce80]",
-      description:
-        "Accédez aux notes, absences et emplois du temps, consultez les factures, échangez avec les enseignants.",
+      description: t('parentSpace.description'),
     },
     {
       icon: "/teacher.svg",
-      title: "Espace Élève",
+      title: t('studentSpace.title'),
       titleColor: "text-red",
       backgroundColor: "bg-[#fde5e3b2]",
-      description:
-        "Consultez vos cours, emploi du temps, résultats et restez connecté à votre école grâce à une interface simple et intuitive.",
+      description: t('studentSpace.description'),
     },
   ];
 

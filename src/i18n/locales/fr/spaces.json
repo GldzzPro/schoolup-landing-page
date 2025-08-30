@@ -1,0 +1,18 @@
+{
+  "adminSpace": {
+    "title": "Espace Admin",
+    "description": "Gérez les emplois, suivez les élèves et enseignants, contrôlez la facturation et accédez à des rapports détaillés."
+  },
+  "teacherSpace": {
+    "title": "Espace Enseignant",
+    "description": "Accédez à vos classes, saisissez les notes, partagez des ressources et communiquez facilement avec vos élèves et leurs parents."
+  },
+  "parentSpace": {
+    "title": "Espace Parent",
+    "description": "Accédez aux notes, absences et emplois du temps, consultez les factures, échangez avec les enseignants."
+  },
+  "studentSpace": {
+    "title": "Espace Élève",
+    "description": "Consultez vos cours, emploi du temps, résultats et restez connecté à votre école grâce à une interface simple et intuitive."
+  }
+}

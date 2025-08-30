@@ -1,0 +1,21 @@
+{
+  "title": "",
+  "subtitle": "",
+  "form": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "school": "",
+    "message": "",
+    "submit": "",
+    "sending": "",
+    "success": "",
+    "error": ""
+  },
+  "info": {
+    "address": "",
+    "phone": "",
+    "email": "",
+    "hours": ""
+  }
+}

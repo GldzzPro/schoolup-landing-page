@@ -10,11 +10,17 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useActiveSection } from "../../../../hooks/useActiveSection";
 import { navigationItems, navigateToSection } from "../../../../config/navigation";
+import { useTranslation } from "react-i18next";
 
 export const GroupSubsection = (): JSX.Element => {
   const navigate = useNavigate();
   const activeSection = useActiveSection();
+  const { t, i18n } = useTranslation('navigation');
 
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(newLanguage);
+  };
   const handleNavClick = (sectionId: string) => {
     navigateToSection(navigate, sectionId);
   };
@@ -64,7 +70,7 @@ export const GroupSubsection = (): JSX.Element => {
                     activeSection === item.id ? "text-light-blue" : "text-black"
                   }`}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </div>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -73,21 +79,21 @@ export const GroupSubsection = (): JSX.Element => {
       </NavigationMenu>
 
       <div className="inline-flex items-center gap-3 md:gap-[18px] hidden lg:flex">
-        <div className="inline-flex items-center gap-[5px] relative flex-[0_0_auto] hidden md:flex">
+        <div onClick={toggleLanguage} className="inline-flex items-center gap-[5px] relative flex-[0_0_auto] hidden md:flex">
           <img
             className="relative w-6 h-6"
             alt="Language circle"
             src="/language-circle.svg"
           />
           <div className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
-            FR
+            {i18n.language.toUpperCase()}
           </div>
           <ChevronDownIcon className="relative w-[21px] h-[21px]" />
         </div>
 
         <Button className="inline-flex h-[34px] items-center justify-center gap-1.5 md:gap-2.5 px-2 md:px-2.5 py-[5px] bg-blue rounded-[20px] h-auto hover:bg-[#3879F0] hover:opacity-70">
           <div className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-light-blue text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
-            Démo Gratuit
+            {t('demo')}
           </div>
           <ArrowRightIcon className="relative w-6 h-6 md:w-[31.89px] md:h-[31.89px] md:mt-[-3.95px] md:mb-[-3.95px]" />
         </Button>

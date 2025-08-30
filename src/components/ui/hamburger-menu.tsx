@@ -1,10 +1,12 @@
-
 import { Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Menu, X, ChevronDown, ArrowRight, ChevronDownIcon } from "lucide-react";
+import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection, navigationItems } from "../../config/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import { Button } from "./button";
+import { useTranslation } from "react-i18next";
 
 interface HamburgerMenuProps {}
 
@@ -12,9 +14,12 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const activeSection = useActiveSection();
+ const {  i18n } = useTranslation('navigation');
 
-
-
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(newLanguage);
+  };
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -68,9 +73,15 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
                 <div
                   onClick={() => handleNavClick(navItem.id)}
                   key={navItem.id}
-                  className={`self-stretch p-2.5 ${isActive ? "bg-[#3879f0]" : "bg-transparent"} rounded-[20px] inline-flex justify-center items-center gap-2.5 cursor-pointer`}
+                  className={`self-stretch p-2.5 ${
+                    isActive ? "bg-[#3879f0]" : "bg-transparent"
+                  } rounded-[20px] inline-flex justify-center items-center gap-2.5 cursor-pointer`}
                 >
-                  <div className={`text-center justify-start ${isActive ? "text-indigo-100" : "text-[#323232]"} text-sm font-medium font-['Quicksand'] leading-tight`}>
+                  <div
+                    className={`text-center justify-start ${
+                      isActive ? "text-indigo-100" : "text-[#323232]"
+                    } text-sm font-medium font-['Quicksand'] leading-tight`}
+                  >
                     {navItem.label}
                   </div>
                 </div>
@@ -78,26 +89,20 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
             })}
           </div>
           <div className="self-stretch flex flex-col justify-center items-center gap-4">
-            <div
-              data-property-1="Default"
-              className="self-stretch inline-flex justify-center items-center gap-[5px]"
-            >
-              <div data-property-1="linear" className="w-6 h-6 relative">
-                <div className="w-2.5 h-0 left-[7.01px] top-[8.96px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-0 h-[1.68px] left-[12px] top-[7.28px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-2 h-2 left-[7px] top-[8.94px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-1 h-[2.47px] left-[12.45px] top-[14.25px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-5 h-5 left-[2px] top-[2px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-6 h-6 left-[24px] top-[24px] absolute origin-top-left -rotate-180 opacity-0" />
+              <div
+                onClick={toggleLanguage}
+                className="inline-flex items-center gap-[5px] relative flex-[0_0_auto]  md:flex"
+              >
+                <img
+                  className="relative w-6 h-6"
+                  alt="Language circle"
+                  src="/language-circle.svg"
+                />
+                <div className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
+                  {i18n.language.toUpperCase()}
+                </div>
+                <ChevronDownIcon className="relative w-[21px] h-[21px]" />
               </div>
-              <div className="text-center justify-start text-zinc-500 text-sm font-medium font-['Quicksand'] leading-tight">
-                FR
-              </div>
-              <div className="w-5 h-5 relative">
-                <div className="w-3.5 h-1.5 left-[3.57px] top-[7.83px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-zinc-500" />
-                <div className="w-5 h-5 left-[21px] top-[21px] absolute origin-top-left -rotate-180 opacity-0 border border-zinc-500" />
-              </div>
-            </div>
             <div
               data-property-1="Selected"
               className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5"
