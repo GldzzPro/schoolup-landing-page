@@ -22,14 +22,12 @@ export const GroupSubsection = (): JSX.Element => {
     i18n.changeLanguage(newLanguage);
   };
   const handleNavClick = (sectionId: string) => {
+    console.log("Navigating to section:", sectionId);
     navigateToSection(navigate, sectionId);
   };
 
   return (
-    <section
-      id="Accueil"
-      className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5"
-    >
+    <section id={navigationItems[0].id} className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5">
       <div className="flex items-center gap-2.5">
         <div className=" w-full h-auto">
           <div className=" w-full h-auto bg-[url(/vector-1.svg)] bg-[100%_100%]">
@@ -39,7 +37,6 @@ export const GroupSubsection = (): JSX.Element => {
               src="/vector-4.svg"
             />
           </div>
-
           <img
             className="absolute w-4 h-1 top-9 left-2"
             alt="Vector"
@@ -65,12 +62,12 @@ export const GroupSubsection = (): JSX.Element => {
             <NavigationMenuItem key={index}>
               <NavigationMenuLink
                 onClick={() => handleNavClick(item.id)}
-                className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
+                className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
                   activeSection === item.id ? "bg-blue" : "opacity-70"
                 }`}
               >
                 <div
-                  className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap hover:text-white ${
+                  className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap  ${
                     activeSection === item.id ? "text-light-blue" : "text-black"
                   }`}
                 >

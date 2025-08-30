@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ArrowRight, ChevronDownIcon } from "lucide-react";
-import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
+import { navigateToSection, navigationItems } from "../../config/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
-import { navigationItems, navigateToSection } from "../../config/navigation";
+import { Button } from "./button";
 import { useTranslation } from "react-i18next";
 
 interface HamburgerMenuProps {}

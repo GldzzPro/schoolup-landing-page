@@ -7,6 +7,7 @@ import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
+import { navigationItems } from "../../../../config/navigation";
 
 // Safe hook to use search params with fallback
 const useSearchParamsSafe = () => {
@@ -176,7 +177,7 @@ export const Frame2Subsection = (): JSX.Element => {
           },
         }}
       />
-      <section id="Contact" className="flex flex-col w-full items-start relative">
+      <section id={navigationItems[5].id} className="flex flex-col w-full items-start relative">
       <div className="flex flex-col items-start gap-8 md:gap-[50px] p-6 md:p-[50px] relative self-stretch w-full flex-[0_0_auto] bg-black">
         <div className="flex flex-col items-start gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
           <h2 className="relative self-stretch mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-white text-xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[24px] md:leading-[37.4px]">

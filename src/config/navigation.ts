@@ -6,9 +6,9 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { labelKey: "home", id: "home" },
   { labelKey: "about", id: "about" },
-  { labelKey: "features", id: "features" },
-  { labelKey: "functionality", id: "functionality" },
-  { labelKey: "pricing", id: "pricing" },
+  { labelKey: "features", id: "why" },
+  { labelKey: "functionality", id: "features" },
+  { labelKey: "pricing", id: "" }, 
   { labelKey: "contact", id: "contact" },
 ];
 
@@ -28,3 +28,6 @@ export const navigateToSection = (navigate: (to: string) => void, sectionId: str
     }
   }, 100);
 };
+
+
+ 
