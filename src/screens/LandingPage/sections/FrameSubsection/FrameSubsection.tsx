@@ -1,16 +1,16 @@
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-
 export const FrameSubsection = (): JSX.Element => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const mobileBackground = 'url("./images/hero_first.png")';
-  const desktopBackground = 'url("./path/hero_second.jpg")';
+  const heroBackground = "/hero_first.png";
 
   return (
-    <section id='ÀPropos' className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100">
-      <Card className="w-full flex flex-col sm:px-[20px] sm:pt-[25px]  h-[989px] md:px-[105px]  gap-[50px] md:pt-[50px] box-border   bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px]  border-0">
-        <CardContent className="flex flex-col w-full max-w-[1133px] items-center gap-5 md:gap-5 px-4 md:px-0 py-8 md:py-0">
+    <section
+      id="ÀPropos"
+      className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100 md:max-h-[1076px] max-h-[763px]"
+    >
+      <Card className="w-full flex flex-col  px-[20px] pt-[25px] h-[989px] md:px-[105px] gap-[25px] md:gap-[50px] md:pt-[50px] box-border bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px] border-0 overflow-hidden">
+        <CardContent className="flex flex-col w-full items-center gap-5 md:gap-5">
           <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
               Une seule{" "}
@@ -45,8 +45,6 @@ export const FrameSubsection = (): JSX.Element => {
             collaboration entre tous les acteurs de l&apos;éducation.&quot;
           </p>
 
-         
-
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
             <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
               <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
@@ -66,7 +64,10 @@ export const FrameSubsection = (): JSX.Element => {
             </button>
           </div>
         </CardContent>
-        <div className="hidden md:block  md:h-[63,9%] sm:h-[28,8%] rounded-[50px] border-[5px] rounded-b-none  border-b-0 border-solid border-[#494949] bg-cover bg-[50%_50%]" style={{ backgroundImage: isMobile ? mobileBackground : desktopBackground }} />
+        <img
+          src={heroBackground}
+          className="block rounded-[50px] border-[5px] rounded-b-none  border-b-0 border-solid border-[#494949] bg-cover bg-[50%_50%] h-auto w-full object-contain"
+        />
       </Card>
       <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden sm:h-[94px]">
         <div className="self-stretch text-center justify-start text-indigo-100 text-[30px] font-normal font-['Krona_One'] leading-9 sm:leading-snug sm:text-xl">
