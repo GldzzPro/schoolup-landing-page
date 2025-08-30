@@ -1,5 +1,6 @@
-import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
+import { ChevronDownIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { HamburgerMenu } from "../../../../components/ui/hamburger-menu";
 import {
   NavigationMenu,
@@ -7,13 +8,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
-import { useNavigate } from "react-router-dom";
-import { useActiveSection } from "../../../../hooks/useActiveSection";
 import {
-  navigationItems,
   navigateToSection,
+  navigationItems,
 } from "../../../../config/navigation";
-import { useTranslation } from "react-i18next";
+import { useActiveSection } from "../../../../hooks/useActiveSection";
 
 export const GroupSubsection = (): JSX.Element => {
   const navigate = useNavigate();

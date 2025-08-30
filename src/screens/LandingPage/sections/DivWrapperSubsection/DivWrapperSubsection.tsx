@@ -6,7 +6,7 @@ export const DivWrapperSubsection = (): JSX.Element => {
   const { t } = useTranslation('advantages');
   
   return (
-    <section id={navigationItems[3].id} className="flex flex-col w-full items-start gap-[15px] relative px-4 md:px-0">
+    <section id={navigationItems[2].id} className="flex flex-col w-full items-start gap-[15px] relative px-4 md:px-0">
       <h2 className="w-full font-quicksand-easyread-semibold font-[number:var(--quicksand-easyread-semibold-font-weight)] text-black text-lg md:text-[length:var(--quicksand-easyread-semibold-font-size)] tracking-[var(--quicksand-easyread-semibold-letter-spacing)] leading-[22px] md:leading-[var(--quicksand-easyread-semibold-line-height)] [font-style:var(--quicksand-easyread-semibold-font-style)]">
         {t('title')}
       </h2>

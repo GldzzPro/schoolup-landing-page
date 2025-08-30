@@ -45,7 +45,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
 
   return (
     <section
-      id={navigationItems[2].id}
+      id={navigationItems[1].id}
       className="flex flex-col w-full items-start gap-6 px-4 md:px-0"
     >
       <div className="flex flex-col items-start gap-4 w-full">

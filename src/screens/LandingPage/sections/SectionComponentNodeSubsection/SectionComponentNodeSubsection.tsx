@@ -3,6 +3,7 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { useSchoolUpData } from "../../../../lib/schoolUp-data";
 import { useTranslation } from "react-i18next";
+import { navigationItems } from "../../../../config/navigation";
 
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
@@ -51,7 +52,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   };
 
   return (
-    <section className="flex flex-col flex-start w-full items-start gap-[15px] ">
+    <section   id={navigationItems[4].id} className="flex flex-col flex-start w-full items-start gap-[15px] ">
       <div className="w-full mt-[-1.00px] text-[#323232] font-['Krona_One'] text-[24px] font-normal leading-[110%] tracking-[-1.536px]">
         <span>{t('title')} </span>
         <span className="pl-1 text-[#3879f0]">{t('schoolName')}</span>
