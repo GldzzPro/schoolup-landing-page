@@ -150,14 +150,16 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                     </div>
                   ))}
                 </div>
-                <div className="relative w-full md:w-[734px] h-[200px] md:h-[524px] rounded-[20px] bg-cover bg-[50%_50%] bg-gray-200">
-                  {images.length > 0 && (
-                    <img
-                      src={images[0]}
-                      alt={`${currentMainTab?.label} - ${activeSubTab}`}
-                      className="w-full h-full object-cover rounded-[20px]"
-                    />
-                  )}
+                <div className={`flex flex-1 justify-end gap-5 overflow-scroll h-auto ${activeMainTab === 'admin' ? 'w-auto md:w-[734px]' : 'w-auto md:w-[276px]'} h-[249px] md:h-auto`}>
+                  {images.map((image: string, index: number) => (
+                    <div key={index} className="flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src={image}
+                        alt={`${currentMainTab?.label} - ${activeSubTab} - ${index + 1}`}
+                        className="object-contain max-w-full max-h-full h-min-[524px]"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </CardContent>
