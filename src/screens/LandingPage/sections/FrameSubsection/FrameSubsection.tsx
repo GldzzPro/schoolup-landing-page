@@ -10,8 +10,8 @@ export const FrameSubsection = (): JSX.Element => {
       className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100 md:max-h-[1076px] max-h-[763px]"
     >
       <Card className="w-full flex flex-col  px-[20px] pt-[25px] h-[989px] md:px-[105px] gap-[25px] md:gap-[50px] md:pt-[50px] box-border bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px] border-0 overflow-hidden">
-        <CardContent className="flex flex-col w-full items-center gap-5 md:gap-5">
-          <h1 className=" w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
+        <CardContent className="flex flex-col w-full items-center gap-5 md:gap-5 p-0 pt-0">
+          <h1 className="w-full mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-black text-2xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[28px] md:leading-[37.4px]">
             <span className="text-[#323232] tracking-[-0.74px]">
               Une seule{" "}
             </span>
@@ -70,7 +70,7 @@ export const FrameSubsection = (): JSX.Element => {
         />
       </Card>
       <div className="self-stretch px-12 py-6 bg-[#3879f0] box-border h-[87px] rounded-bl-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden sm:h-[94px]">
-        <div className="self-stretch text-center justify-start text-indigo-100 text-[30px] font-normal font-['Krona_One'] leading-9 sm:leading-snug sm:text-xl">
+        <div className="self-stretch text-center justify-start text-indigo-100 text-[20px] md:text-[34px] font-normal font-['Krona_One'] leading-[110%] tracking-[-1.28px] md:tracking-[-2.176px]">
           Là où l’éducation rencontre l’innovation.
         </div>
       </div>
