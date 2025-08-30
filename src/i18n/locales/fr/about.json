@@ -1,8 +1,26 @@
 {
-  "title": "À propos de SchoolUp",
-  "description": "SchoolUp révolutionne la gestion scolaire en offrant une plateforme intégrée qui simplifie tous les aspects de l'administration éducative.",
-  "mission": "Notre mission",
-  "missionText": "Transformer l'éducation grâce à la technologie pour créer des environnements d'apprentissage plus efficaces et connectés.",
-  "vision": "Notre vision",
-  "visionText": "Devenir la référence mondiale en matière de solutions numériques pour l'éducation."
+  "sectionTitle": "Notre identité, notre vision",
+  "mainTitle": {
+    "part1": "Ce qui définit School-",
+    "part2": "UP"
+  },
+  "description": "Notre mission est de transformer la gestion scolaire en une expérience simple, collaborative et moderne, où chaque acteur de l'éducation trouve sa place.",
+  "tabs": {
+    "mission": {
+      "label": "01 – Notre mission",
+      "content": "Notre mission est de simplifier la vie scolaire grâce à une solution numérique complète et intuitive. Nous voulons permettre aux administrateurs de gérer efficacement leurs établissements, aux enseignants de se concentrer sur la pédagogie, aux parents de rester informés, et aux élèves de s'épanouir dans un environnement organisé et stimulant."
+    },
+    "vision": {
+      "label": "02 – Notre vision",
+      "content": "Nous aspirons à bâtir une école connectée où la technologie soutient la pédagogie. Notre vision est celle d'un écosystème scolaire moderne, où les outils numériques ne sont pas une contrainte, mais une opportunité pour gagner du temps, renforcer la transparence et encourager la réussite des élèves. Nous voulons faire de School-UP le partenaire incontournable de la transformation digitale des établissements scolaires."
+    },
+    "valeurs": {
+      "label": "03 – Nos valeurs",
+      "content": "Nos valeurs sont l'innovation, la simplicité et l'excellence."
+    },
+    "engagement": {
+      "label": "04 – Notre engagement",
+      "content": "Notre engagement est de fournir un service de qualité supérieure."
+    }
+  }
 }

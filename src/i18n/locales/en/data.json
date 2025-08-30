@@ -1,0 +1,473 @@
+{
+  "mainTabs": {
+    "admin": {
+      "label": "Admin Space",
+      "subTabs": {
+        "dashboard": "Dashboard",
+        "schedule": "Schedule",
+        "fees": "Fees Report",
+        "invoice": "Invoice Overview",
+        "evaluation": "Evaluation System",
+        "grades": "Grade Entry",
+        "forms": "Form Creation",
+        "reports": "Report Cards"
+      },
+      "features": {
+        "dashboard": {
+          "globalOverview": {
+            "title": "Global school overview:",
+            "description": "Number of classes, teachers, students and parents. Visual school timeline with key dates."
+          },
+          "financialManagement": {
+            "title": "Financial management:",
+            "description": "Invoice tracking: total amount billed, paid, remaining to pay, forecasts."
+          },
+          "eventsAgenda": {
+            "title": "Events and agenda:",
+            "description": "Display of parent meetings, open days, report card distributions."
+          },
+          "realTimeAttendance": {
+            "title": "Real-time attendance:",
+            "description": "Number of justified absences, unjustified, expulsions, tardiness, calls made or not."
+          },
+          "adminTasks": {
+            "title": "Administrative task list:",
+            "description": "Tracking registrations and admissions, schedule and timetable planning, tracking absences and tardiness."
+          },
+          "notesReminders": {
+            "title": "Internal notes and reminders:",
+            "description": "Information on councils, committees, and upcoming events. Student and teacher birthdays."
+          },
+          "multilingual": {
+            "title": "Multilingual:",
+            "description": "School-UP supports multiple languages to adapt to each user."
+          }
+        },
+        "schedule": {
+          "scheduleCreation": {
+            "title": "Schedule creation and management:",
+            "description": "Adding courses, subjects, teachers and rooms\nManagement by level, class and subject\nDaily, weekly, global visualization"
+          },
+          "centralizedPlanning": {
+            "title": "Centralized planning:",
+            "description": "Coordination between teachers, room availability and educational needs\nAvoiding schedule conflicts"
+          },
+          "realTimeTracking": {
+            "title": "Real-time session tracking:",
+            "description": "Teacher presence/absence\nCalls not made"
+          },
+          "realTimeAttendance": {
+            "title": "Real-time attendance:",
+            "description": "Number of justified absences, unjustified, expulsions, tardiness, calls made or not"
+          },
+          "modularOrganization": {
+            "title": "Modular organization:",
+            "description": "Adaptation to schedule changes\nDynamic adjustments (absences, replacements)"
+          },
+          "directConnection": {
+            "title": "Direct connection with other spaces",
+            "description": "Updates are visible instantly\nAutomatic notifications sent to all concerned users"
+          }
+        },
+        "fees": {
+          "submenuNavigation": {
+            "title": "Submenu navigation:",
+            "description": "Interactive tabs\nFees Report\nStandard Fees\nDue Dates\nIndividual Fees"
+          },
+          "globalStatistics": {
+            "title": "Global statistics:",
+            "description": "Total Amount Billed\nTotal Amount Paid\nRemaining to Pay\nPending (scheduled to be billed)\nTo be billed"
+          },
+          "fees": {
+            "title": "Fees:",
+            "description": "Preconfigured fees\nIndividual fees\nIndividual fees charts (paid, unpaid, pending...)\nList of main fees (tuition, transport, etc.) with percentages\nMonthly evolution of billed and paid fees"
+          }
+        },
+        "invoice": {
+          "submenuNavigation": {
+            "title": "Submenu navigation:",
+            "description": "Overview: Synthetic view of global amounts and payment distribution.\nInvoice list: Detailed line-by-line display with filters and search.\nPayment: Tracking of payments recorded by period."
+          },
+          "globalStatistics": {
+            "title": "Global statistics:",
+            "description": "Total Amount Billed\nTotal Amount Paid\nRemaining to Pay\nPending\nTo be billed"
+          },
+          "invoices": {
+            "title": "Invoices:",
+            "description": "Invoice list:\nDetails by user (name, issue date, amount, paid, status).\nColor-coded statuses: Paid, Unpaid, Partially paid.\nActions: View, edit, delete.\nTotals at bottom of table: Sum of amounts.\nMonth selector (on right): Allows dynamic switching between months of 2024.\nExample: currently selected → March 2024\nDisplays data corresponding to each month"
+          }
+        },
+        "evaluation": {
+          "globalStatistics": {
+            "title": "Global statistics:",
+            "description": "General Average\nHigh Average\nMinimum Average\nTotal number of students\nEntry progress"
+          },
+          "documentManagement": {
+            "title": "Document management tools:",
+            "description": "Report cards: Easy consultation and generation.\nGrade transcripts: Customizable viewing and download.\nFinal report: Complete summary of results.\nCertificate: Generation and download of student certificates."
+          },
+          "classDetails": {
+            "title": "Class details:",
+            "description": "Classes displayed: Repetition of same class for multiple modules (1st year, Class A).\nIndicators per class\nGeneral average\nMax average\nMin average\nNumber of students\nGrade entry status and how many pending"
+          }
+        },
+        "grades": {
+          "inputTable": {
+            "title": "Input table:",
+            "description": "Main columns:\nStudent first & last names\nClass\nIndividual average\nExam date columns\nGrading by grade types"
+          },
+          "rightStatistics": {
+            "title": "Right-side statistics:",
+            "description": "Level\nGeneral Average\nHigh Average: Student identified\nMinimum Average: Student identified\nEntry progress"
+          },
+          "examAddition": {
+            "title": "Adding an exam:",
+            "description": "Add a new test using the \"+\" button next to dates, based on selected evaluation system, period, class, grading folder and subject."
+          }
+        },
+        "forms": {
+          "customForms": {
+            "title": "Custom form creation:",
+            "description": "Design any type of forms: registrations, surveys, polls, internal questionnaires, evaluations."
+          },
+          "readyTemplates": {
+            "title": "Ready-to-use templates:",
+            "description": "Library of predefined models (registration form, parent survey, student evaluation, etc.) to save time."
+          },
+          "configurableFields": {
+            "title": "Varied and configurable fields:",
+            "description": "Text, dropdown lists, checkboxes, dates, attachments, photos, electronic signatures."
+          },
+          "mediaDocuments": {
+            "title": "Adding documents & media:",
+            "description": "Import and attach files, images or videos directly in the form."
+          },
+          "realTimeAnalysis": {
+            "title": "Real-time analysis and tracking:",
+            "description": "Centralized response collection, statistics display and results export for quick processing."
+          },
+          "accessibility": {
+            "title": "Accessibility & compatibility:",
+            "description": "Forms accessible on web and mobile, with secure data backup and instant updates."
+          }
+        },
+        "reports": {
+          "customForms": {
+            "title": "Custom form creation:",
+            "description": "Design any type of forms: registrations, surveys, polls, internal questionnaires, evaluations."
+          },
+          "readyTemplates": {
+            "title": "Ready-to-use templates:",
+            "description": "Library of predefined models (registration form, parent survey, student evaluation, etc.) to save time."
+          },
+          "configurableFields": {
+            "title": "Varied and configurable fields:",
+            "description": "Text, dropdown lists, checkboxes, dates, attachments, photos, electronic signatures."
+          },
+          "mediaDocuments": {
+            "title": "Adding documents & media:",
+            "description": "Import and attach files, images or videos directly in the form."
+          },
+          "realTimeAnalysis": {
+            "title": "Real-time analysis and tracking:",
+            "description": "Centralized response collection, statistics display and results export for quick processing."
+          },
+          "accessibility": {
+            "title": "Accessibility & compatibility:",
+            "description": "Forms accessible on web and mobile, with secure data backup and instant updates."
+          }
+        }
+      }
+    },
+    "teacher": {
+      "label": "Teacher Space",
+      "subTabs": {
+        "dashboard": "Dashboard",
+        "schedule": "Homework",
+        "grades": "Disciplinary Measures",
+        "evaluation": "Exam Management",
+        "reports": "Appreciation Entry"
+      },
+      "features": {
+        "dashboard": {
+          "scheduleClasses": {
+            "title": "Schedule & class sessions:",
+            "description": "Quick access to upcoming sessions, subjects, classes, schedules and rooms, with alerts in case of teacher absence."
+          },
+          "homeworkManagement": {
+            "title": "Homework management:",
+            "description": "Creation, assignment and tracking of homework with detailed instructions, organized by day, week and month."
+          },
+          "studentTracking": {
+            "title": "Student tracking:",
+            "description": "Consultation of class lists, individual student tracking and access to their performance details."
+          },
+          "attendanceCalls": {
+            "title": "Attendance calls:",
+            "description": "Real-time attendance entry with indicators on justified absences, unjustified, tardiness and expulsions, plus tracking of calls not made."
+          },
+          "attendanceHistory": {
+            "title": "Attendance history:",
+            "description": "View of recent attendance/absences by subject and session, for precise educational tracking."
+          },
+          "agendaEvents": {
+            "title": "Agenda & events:",
+            "description": "Integration of school events: parent meetings, open days, report card distributions, etc."
+          }
+        },
+        "schedule": {
+          "smartFilters": {
+            "title": "Smart search & filters:",
+            "description": "Filter homework by subject, class, date or student, and easily search for a specific exercise."
+          },
+          "homeworkDetails": {
+            "title": "Homework details:",
+            "description": "Access to complete instructions, questions and associated documents for each subject."
+          },
+          "studentClassTracking": {
+            "title": "Tracking by student and class:",
+            "description": "Association of homework to specific students or classes (e.g. 1st year A, 2nd year A), with submission tracking."
+          },
+          "multiSubjects": {
+            "title": "Multi-subjects:",
+            "description": "Homework management for all disciplines (science, French, geography, English, technology...). Dynamic adjustments (absences, replacements)."
+          },
+          "progressIndicators": {
+            "title": "Progress indicators:",
+            "description": "Number of homework for today, this week and this month, for simplified tracking."
+          },
+          "homeworkCreation": {
+            "title": "Homework creation:",
+            "description": "Teachers can add homework in a few clicks with a title, description and precise instructions."
+          },
+          "targetedAssignment": {
+            "title": "Targeted assignment:",
+            "description": "Possible attribution to an entire class, a group of students or a specific student according to educational need."
+          },
+          "resourceAddition": {
+            "title": "Resource addition:",
+            "description": "Possibility to attach documents (PDF, Word, etc.), images, or multimedia supports to enrich the homework."
+          }
+        },
+        "grades": {
+          "encouragements": {
+            "title": "Encouragements:",
+            "description": "Allows congratulating a student for their efforts or results, with personalized messages."
+          },
+          "observations": {
+            "title": "Observations:",
+            "description": "Tracking attitudes or behaviors to improve, noted by the teacher to keep a history."
+          },
+          "punishments": {
+            "title": "Punishments:",
+            "description": "Management of sanctions (e.g. class exclusion), with recording of date, reason and context."
+          },
+          "quickStatistics": {
+            "title": "Quick statistics:",
+            "description": "Instant view of total number of encouragements, observations and punishments per student or class."
+          },
+          "completeHistory": {
+            "title": "Complete history:",
+            "description": "Each remark (positive or negative) is recorded and consultable to track student behavior evolution."
+          },
+          "sortFilters": {
+            "title": "Sort & filters:",
+            "description": "Possibility to sort remarks by type (encouragement, observation, punishment), by date or by student."
+          }
+        },
+        "evaluation": {
+          "examManagement": {
+            "title": "Exam management:",
+            "description": "Exam list: display of scheduled exams with details. Add exam: possibility to add a new exam. Exam details"
+          },
+          "gradeManagement": {
+            "title": "Grade management:",
+            "description": "Grade entry: possibility to enter student grades. Grade overview: view already entered grades. Grade publication: option to publish grades (/20). Filtering and search: sort or search for a student or exam. Entry progress: percentage of grades already entered."
+          },
+          "planningConfiguration": {
+            "title": "Planning and configuration:",
+            "description": "Exam planning (date, time, room). Evaluation mode (TalentGauge, internal evaluation system...). Category and type of exam (test, quiz...)."
+          }
+        },
+        "reports": {
+          "appreciationInput": {
+            "title": "Appreciation entry:",
+            "description": "Possibility to write a comment or appreciation for each student or group of students. Display of concerned academic level (e.g.: 1st year - A, 3rd year, 4th year). Subject selection for which appreciation is entered (e.g.: Languages). Possibility to filter or search for a student or group of levels/classes."
+          },
+          "progressTracking": {
+            "title": "Progress tracking:",
+            "description": "Entry progress indicator (e.g.: 50/25 or 80%). Student average for displayed subject/section (e.g.: Average: 15.40). Tracking of absences, tardiness, expulsions."
+          },
+          "appreciationPublication": {
+            "title": "Appreciation publication:",
+            "description": "Option to publish entered appreciations. Possibility to see progress before publication to ensure all appreciations have been entered."
+          }
+        }
+      }
+    },
+    "parent": {
+      "label": "Parent Space",
+      "subTabs": {
+        "dashboard": "Dashboard",
+        "fees": "Finance",
+        "schedule": "Disciplinary Measures",
+        "Presence": "Attendance",
+        "Examens": "Exams",
+        "Resultat": "Results & Grades - Documents"
+      },
+      "features": {
+        "dashboard": {
+          "generalOverview": {
+            "title": "Home / General overview:",
+            "description": "Quick summary of upcoming elements: homework, next sessions, events."
+          },
+          "schedule": {
+            "title": "Schedule",
+            "description": "List of upcoming sessions with date, time, responsible teacher and status (Present, upcoming, Teacher absent)."
+          },
+          "attendanceTracking": {
+            "title": "Attendance / absence tracking",
+            "description": "Display of last three attendances/absences for each student:\njustified / unjustified absence.\ntardiness.\nexpulsion\nTotal absences, tardiness, expulsions over a period."
+          },
+          "academicPerformance": {
+            "title": "Academic performance",
+            "description": "Tracking of grades, averages, rank, mention, with exam history (subject, grade, duration, teacher, status and date)."
+          },
+          "multiChildManagement": {
+            "title": "Multi-child management",
+            "description": "For parents with multiple children in school: possibility to switch between children with automatic update of all data (attendance, grades, appreciations, agenda, events, financial information)."
+          }
+        },
+        "fees": {
+          "feesPaymentTracking": {
+            "title": "Fees and payment tracking",
+            "description": "List of billed fees: registration fees, tuition fees, transport fees, club fees, other complementary fees For each invoice: Fee description. Occurrence (monthly, annual, etc.). Total amount billed. Amount paid and unpaid amount. Due date and payment date. Payment method (cash, check, bank transfer…). Payment status (paid, partially paid, pending validation, unpaid, validated)."
+          },
+          "subscriptionRecurring": {
+            "title": "Subscription / Recurring payments",
+            "description": "Possibility to subscribe to certain fees to manage monthly payments automatically."
+          },
+          "actionsSummary": {
+            "title": "Summary of possible actions",
+            "description": "Consult all invoices and track payment of each fee. Check paid and unpaid amounts. See payment details (method and date)."
+          }
+        },
+        "schedule": {
+          "disciplinaryConsultation": {
+            "title": "Disciplinary measures consultation:",
+            "description": "List of student's disciplinary measures: Encouragements Observations Punishments (e.g.: class exclusion) For each measure: Event date. Teacher comment or note. Name of teacher who took the measure."
+          },
+          "filteringSort": {
+            "title": "Filtering and sorting:",
+            "description": "Filter by measure type (Encouragement, Observation, Punishment). Search by keyword or date. Possible sorting to better organize display."
+          }
+        },
+        "Presence": {
+          "attendanceConsultation": {
+            "title": "Attendance and absence consultation:",
+            "description": "List of child's attendance and absences with:\nSubject and concerned course.\nStatus:\nJustified absence\nUnjustified absence\nTardiness\nExpulsion\nCourse date and time."
+          },
+          "generalSummary": {
+            "title": "General summary",
+            "description": "Total courses\nJustified absences\nUnjustified absences\nTardiness\nExpulsions"
+          },
+          "filteringSort": {
+            "title": "Filtering and sorting",
+            "description": "Possibility to filter by subject or attendance status.\nSearch by keyword or date.\nSorting to organize element display easily."
+          }
+        },
+        "Examens": {
+          "examConsultation": {
+            "title": "Exam consultation",
+            "description": "Display of child's exam calendar.\nDetails of each exam:\nSubject and sub-subject\nDate and time\nExam type (Test, Quiz…)\nCoefficient\nGrade obtained\nStatus (Passed, Upcoming, Evaluable)\nEvaluation system used (e.g.: EduCheck → TalentGauge)"
+          },
+          "performanceTracking": {
+            "title": "Performance tracking",
+            "description": "View child's average for each subject or exam.\nCompare past exams and published grades."
+          },
+          "actionsSummary": {
+            "title": "Summary of possible actions",
+            "description": "Consult complete exam calendar.\nCheck published grades and past exams.\nTrack upcoming exams and their evaluation eligibility.\nFilter, sort and search exams for personalized tracking."
+          }
+        },
+        "Resultat": {
+          "documentConsultation": {
+            "title": "School document consultation",
+            "description": "Access to different types of documents:\nReport cards\nGrade transcripts\nFinal report\nCertificate\nDisplay by school period or trimester.\nIndication of child's level and evaluation system used (e.g.: EduCheck → TalentGauge)."
+          },
+          "exportShare": {
+            "title": "Export and sharing",
+            "description": "Possibility to export reports or transcripts in PDF format.\nVisualization of document submission date"
+          },
+          "actionsSummary": {
+            "title": "Summary of possible actions",
+            "description": "Consult all grade and result documents of the child.\nFilter and easily search for a specific report or transcript.\nDownload or export documents for archiving or printing.\nTrack history of submitted and validated reports."
+          }
+        }
+      }
+    },
+    "student": {
+      "label": "Student Space",
+      "subTabs": {
+        "dashboard": "Dashboard",
+        "messagerie": "Messaging",
+        "grades": "Schedule",
+        "homework": "Homework"
+      },
+      "features": {
+        "dashboard": {
+          "quickInfo": {
+            "title": "Dashboard / Quick information",
+            "description": "Schools and clubs: ÉclatVif, SparkKids, CréaFun.\nEvents and news: visualization of upcoming school events, calendar, school news.\nSchedule and sessions: next sessions with subjects, schedules, rooms and teachers.\nAttendance: status (present, late, justified/unjustified absence, expulsion).\nHomework: tracking homework by subject and due date.\nSchool documents: reports, transcripts, certificates.\nAcademic performance: general average, class rank, mention, evaluation system used.\nExams: grades obtained, duration, teacher, status (complete / to do), exam calendar.\nDisciplinary measures: encouragements, observations, punishments with comments and date.\nFinance: fee tracking, payments made and unpaid"
+          },
+          "mainActions": {
+            "title": "Summary of main actions for student",
+            "description": "Consult schedule and track next sessions.\nCheck attendance and absences.\nAccess homework and school documents.\nTrack results and academic performance.\nConsult disciplinary measures.\nTrack upcoming events and meetings.\nConsult fees and payments.\nReceive and manage notifications and messages."
+          }
+        },
+        "messagerie": {
+          "messaging": {
+            "title": "Messaging and discussions",
+            "description": "Real-time exchanges with teachers, parents and administration.\nCreate new discussions for specific topics.\nInvite or remove members in a conversation (teachers, parents, administrators).\nActive member management: see who is online and each participant's status."
+          },
+          "multimediaOptions": {
+            "title": "Multimedia options",
+            "description": "Send and receive files: PDF, PPT, Excel, images, videos.\nSend voice messages for more speed and personalization.\nShare images or screenshots related to homework, projects or events.\nConsultable history of shared media with size and date."
+          },
+          "notificationsOrganization": {
+            "title": "Notifications and organization",
+            "description": "Receive real-time notifications for each new message, file or request.\nFilter or search messages and files by student, date or type."
+          }
+        },
+        "grades": {
+          "calendarPlanning": {
+            "title": "Calendar / planning",
+            "description": "Monthly display with navigation between days.\nVisualization of daily schedule and timetable (e.g.: 08:00 - 10:00).\nIndication of attendance or absence for each session (Present / Upcoming).\nDisplay of classrooms (e.g.: Room n° 05)."
+          },
+          "sessionDetails": {
+            "title": "Detailed information per session",
+            "description": "Subject and precise schedule (e.g.: Mathematics, 08:00 - 10:00).\nAttendance status for student.\nPossibility to filter or search by day, subject or room.\nIndication of upcoming and past courses."
+          },
+          "navigationInteraction": {
+            "title": "Navigation and interaction",
+            "description": "Quick transition between weekdays (Mo, Tu, We, Th, Fr, Sa, Su).\nCompact visualization of courses by time slot.\nPossibility to integrate alerts or notifications for next sessions."
+          }
+        },
+        "homework": {
+          "homeworkOrganization": {
+            "title": "Homework organization",
+            "description": "Sort by status: To do / Completed / All.\nFilter and search to find homework by subject, date or name.\nDisplay of key dates on calendar view (e.g.: November 27 - December 3)."
+          },
+          "homeworkDetails": {
+            "title": "Detailed information per homework",
+            "description": "Subject and homework title (e.g.: Mathematics - Linear Equations).\nComplete description with educational objectives and exercises.\nResponsible teacher name.\nDue date and number of homework for the day.\nPossibility to see additional details for each homework."
+          },
+          "navigation": {
+            "title": "Navigation",
+            "description": "Weekly view with days (Mo, Tu, We, Th, Fr, Sa, Su).\nQuick access to today's homework or following days.\nIndication of recent or overdue homework."
+          }
+        }
+      }
+    }
+  }
+}

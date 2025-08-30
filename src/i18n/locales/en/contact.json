@@ -1,21 +1,59 @@
 {
-  "title": "",
-  "subtitle": "",
-  "form": {
-    "name": "",
-    "email": "",
-    "phone": "",
-    "school": "",
-    "message": "",
-    "submit": "",
-    "sending": "",
-    "success": "",
-    "error": ""
+  "title": "Contact Us",
+  "subtitle": {
+    "part1": "At School-",
+    "part2": "UP",
+    "part3": ", we believe in open communication. Whether you have a question, need a quote, or want to discuss a project, we're here to help. Contact us and discover the power of our school management expertise."
   },
-  "info": {
-    "address": "",
-    "phone": "",
-    "email": "",
-    "hours": ""
+  "form": {
+    "labels": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message"
+    },
+    "placeholders": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Your message..."
+    },
+    "validation": {
+      "nameRequired": "Full name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters"
+    },
+    "submit": {
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "messages": {
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "Quick links",
+      "home": "Home",
+      "about": "About",
+      "whyUs": "Why us?",
+      "features": "Features",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact us",
+      "address": "10, Cyber Park Zarzis, Medenine",
+      "email": "contact@omegup.tn",
+      "phone": "+216 28 827 941"
+    },
+    "followUs": "Follow us",
+    "copyright": "© 2024 School-UP. All rights reserved."
   }
 }

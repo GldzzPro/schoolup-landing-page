@@ -10,6 +10,9 @@ import frAbout from './locales/fr/about.json';
 import frFeatures from './locales/fr/features.json';
 import frContact from './locales/fr/contact.json';
 import frSpaces from './locales/fr/spaces.json';
+import frData from './locales/fr/data.json';
+import frDemo from './locales/fr/demo.json';
+import frAdvantages from './locales/fr/advantages.json';
 
 import enCommon from './locales/en/common.json';
 import enNavigation from './locales/en/navigation.json';
@@ -18,6 +21,9 @@ import enAbout from './locales/en/about.json';
 import enFeatures from './locales/en/features.json';
 import enContact from './locales/en/contact.json';
 import enSpaces from './locales/en/spaces.json';
+import enData from './locales/en/data.json';
+import enDemo from './locales/en/demo.json';
+import enAdvantages from './locales/en/advantages.json';
 
 const resources = {
   fr: {
@@ -28,6 +34,9 @@ const resources = {
     features: frFeatures,
     contact: frContact,
     spaces: frSpaces,
+    data: frData,
+    demo: frDemo,
+    advantages: frAdvantages,
   },
   en: {
     common: enCommon,
@@ -37,6 +46,9 @@ const resources = {
     features: enFeatures,
     contact: enContact,
     spaces: enSpaces,
+    data: enData,
+    demo: enDemo,
+    advantages: enAdvantages,
   },
 };
 

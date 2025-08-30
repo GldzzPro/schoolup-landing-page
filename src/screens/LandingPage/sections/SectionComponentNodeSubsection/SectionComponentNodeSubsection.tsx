@@ -1,13 +1,14 @@
 import React, { useState, useMemo } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { schoolUpData } from "../../../../lib/schoolUp-data";
+import { useSchoolUpData } from "../../../../lib/schoolUp-data";
 import { useTranslation } from "react-i18next";
 
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   const [activeMainTab, setActiveMainTab] = useState("admin");
   const [activeSubTab, setActiveSubTab] = useState("dashboard");
   const { t } = useTranslation('features');
+  const schoolUpData = useSchoolUpData();
 
   // Get dynamic data from schoolUpData
   const mainTabs = schoolUpData.mainTabs;
@@ -99,7 +100,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
 
           <Card
             className={`flex flex-col h-auto md:h-[638px] items-start gap-4 md:gap-5 p-4 md:p-[25px] relative self-stretch w-full ${
-              mainTabs.find((tab) => tab.id === activeMainTab)?.lightBgClass ||
+              mainTabs.find((tab) => tab.id === activeMainTab)?.secondaryBgClass ||
               "bg-[#DEEAFF]"
             } rounded-[0px_0px_25px_25px] md:rounded-[0px_0px_50px_50px] border-0`}
           >
