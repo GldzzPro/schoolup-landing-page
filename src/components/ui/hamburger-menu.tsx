@@ -1,10 +1,10 @@
+import { ChevronDownIcon, Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, ArrowRight, ChevronDownIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection, navigationItems } from "../../config/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import { Button } from "./button";
-import { useTranslation } from "react-i18next";
 
 interface HamburgerMenuProps {}
 
@@ -12,7 +12,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const activeSection = useActiveSection();
- const {  i18n } = useTranslation('navigation');
+ const {  i18n , t } = useTranslation('navigation');
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
@@ -80,7 +80,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
                       isActive ? "text-indigo-100" : "text-[#323232]"
                     } text-sm font-medium font-['Quicksand'] leading-tight`}
                   >
-                    {navItem.label}
+                    {t(navItem.labelKey)}
                   </div>
                 </div>
               );
@@ -106,7 +106,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
               className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5"
             >
               <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
-                Démo Gratuit
+                {t('demo')}
               </div>
               <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
                 <img

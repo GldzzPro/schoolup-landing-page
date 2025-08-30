@@ -374,8 +374,8 @@ export const Frame2Subsection = (): JSX.Element => {
           </Button>
         </form>
       </div>
-      {/* <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue">
-        <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto] w-full md:w-auto">
+      <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue">
+        <div className="inline-flex flex-col  items-start gap-2.5 relative flex-[0_0_auto] w-full md:w-auto">
           <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]">
             <div className="flex w-[170.85px] items-center gap-2.5 relative flex-[0_0_auto]">
               <div className="relative w-8 h-10">
@@ -407,8 +407,7 @@ export const Frame2Subsection = (): JSX.Element => {
               </p>
             </div>
           </div>
-
-          <div className="inline-flex items-start gap-2.5 relative flex-[0_0_auto] justify-center md:justify-start w-full md:w-auto">
+          <div className="inline-flex  items-start gap-2.5 relative flex-[0_0_auto] justify-center md:justify-start w-full md:w-auto">
             {socialIcons.map((icon, index) => (
               <img
                 key={`social-${index}`}
@@ -475,7 +474,7 @@ export const Frame2Subsection = (): JSX.Element => {
         <p className="relative w-fit mt-[-1.00px] font-quicksand-easyread font-[number:var(--quicksand-easyread-font-weight)] text-blue text-xs md:text-[length:var(--quicksand-easyread-font-size)] text-center tracking-[var(--quicksand-easyread-letter-spacing)] leading-[18px] md:leading-[var(--quicksand-easyread-line-height)] [font-style:var(--quicksand-easyread-font-style)]">
           Copyright Notice: © 2025 Omegup. All rights reserved.
         </p>
-      </div> */}
+      </div>
     </section>
     </>
   );

@@ -42,7 +42,7 @@ export const FrameSubsection = (): JSX.Element => {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[15px] relative w-full flex-[0_0_auto]">
-            <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
+            <button className="h-8 px-2.5 py-[5px] bg-[#3879F0]  hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
               <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
                 {t('demoButton')}
               </div>
@@ -52,9 +52,9 @@ export const FrameSubsection = (): JSX.Element => {
                 src="/vuesax-linear-arrow-right.svg"
               />
             </button>
-            <button className="px-2.5 py-[5px] hover:bg-indigo-100 rounded-[20px] inline-flex justify-center items-center gap-[5px]">
-              <img className="relative w-6 h-6" alt="Grid" src="/grid-6.svg" />
-              <div className="justify-start text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
+            <button className="px-2.5 py-[5px] hover:bg-indigo-100 hover:text-[#3879F0] rounded-[20px] inline-flex justify-center items-center gap-[5px]">
+              <img className="relative w-6 h-6 " alt="Grid" src="/grid-6.svg" />
+              <div className="justify-start  text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
                 {t('featuresButton')}
               </div>
             </button>

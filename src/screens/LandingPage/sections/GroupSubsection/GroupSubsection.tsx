@@ -9,16 +9,19 @@ import {
 } from "../../../../components/ui/navigation-menu";
 import { useNavigate } from "react-router-dom";
 import { useActiveSection } from "../../../../hooks/useActiveSection";
-import { navigationItems, navigateToSection } from "../../../../config/navigation";
+import {
+  navigationItems,
+  navigateToSection,
+} from "../../../../config/navigation";
 import { useTranslation } from "react-i18next";
 
 export const GroupSubsection = (): JSX.Element => {
   const navigate = useNavigate();
   const activeSection = useActiveSection();
-  const { t, i18n } = useTranslation('navigation');
+  const { t, i18n } = useTranslation("navigation");
 
   const toggleLanguage = () => {
-    const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
+    const newLanguage = i18n.language === "fr" ? "en" : "fr";
     i18n.changeLanguage(newLanguage);
   };
   const handleNavClick = (sectionId: string) => {
@@ -27,7 +30,10 @@ export const GroupSubsection = (): JSX.Element => {
   };
 
   return (
-    <section id={navigationItems[0].id} className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5">
+    <section
+      id={navigationItems[0].id}
+      className="w-full h-auto md:h-[61px] relative flex items-center justify-between px-0 py-2.5"
+    >
       <div className="flex items-center gap-2.5">
         <div className=" w-full h-auto">
           <div className=" w-full h-auto bg-[url(/vector-1.svg)] bg-[100%_100%]">
@@ -80,7 +86,10 @@ export const GroupSubsection = (): JSX.Element => {
       </NavigationMenu>
 
       <div className="inline-flex items-center gap-3 md:gap-[18px] hidden lg:flex">
-        <div onClick={toggleLanguage} className="inline-flex items-center gap-[5px] relative flex-[0_0_auto] hidden md:flex">
+        <div
+          onClick={toggleLanguage}
+          className="inline-flex items-center gap-[5px] relative flex-[0_0_auto] hidden md:flex"
+        >
           <img
             className="relative w-6 h-6"
             alt="Language circle"
@@ -91,13 +100,16 @@ export const GroupSubsection = (): JSX.Element => {
           </div>
           <ChevronDownIcon className="relative w-[21px] h-[21px]" />
         </div>
-
-        <Button className="inline-flex h-[34px] items-center justify-center gap-1.5 md:gap-2.5 px-2 md:px-2.5 py-[5px] bg-blue rounded-[20px] h-auto hover:bg-[#3879F0] hover:opacity-70">
-          <div className="relative w-fit [font-family:'Quicksand',Helvetica] font-medium text-light-blue text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap">
-            {t('demo')}
+        <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
+          <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+            {t("demo")}
           </div>
-          <ArrowRightIcon className="relative w-6 h-6 md:w-[31.89px] md:h-[31.89px] md:mt-[-3.95px] md:mb-[-3.95px]" />
-        </Button>
+          <img
+            className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
+            alt="Vuesax linear arrow"
+            src="/vuesax-linear-arrow-right.svg"
+          />
+        </button>
       </div>
     </section>
   );
