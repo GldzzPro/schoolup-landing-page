@@ -22,6 +22,7 @@ export const GroupSubsection = (): JSX.Element => {
     i18n.changeLanguage(newLanguage);
   };
   const handleNavClick = (sectionId: string) => {
+    console.log("Navigating to section:", sectionId);
     navigateToSection(navigate, sectionId);
   };
 

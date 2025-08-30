@@ -1,7 +1,5 @@
-import { Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ArrowRight, ChevronDownIcon } from "lucide-react";
-import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection, navigationItems } from "../../config/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
