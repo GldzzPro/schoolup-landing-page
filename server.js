@@ -73,71 +73,77 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
   
   const templates = {
     // English template
-    en: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
-          <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+    en: `<div style="font-family:'Quicksand',Arial,sans-serif; max-width:600px; margin:0 auto; background:#ffffff;">
+          <div style="text-align:center; margin-bottom:30px; padding:20px; background:linear-gradient(135deg, #3879F0 0%, #A068AE 100%);">
+            <img src="https://www.schoolup.info/Logo.svg" alt="School-UP Logo" style="max-width:180px; filter:brightness(0) invert(1);">
           </div>
-          <h2 style="color:#8B5A3C; text-align:center;">Thank You for Contacting Zarzis Eponge!</h2>
-          <p>Dear ${name},</p>
-          <p>We've received your wholesale inquiry about "${subject}". Here are the details you provided:</p>
-          <div style="background:#f9f9f9; padding:15px; border-left:4px solid #8B5A3C; margin:15px 0;">
-            <p><strong>Company:</strong> ${company || 'Not specified'}</p>
-            <p><strong>Country:</strong> ${country || 'Not specified'}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g,'<br>')}</p>
+          <div style="padding:0 20px;">
+            <h2 style="color:#3879F0; text-align:center; font-family:'Krona One',Arial,sans-serif; margin-bottom:20px;">Thank You for Contacting School-UP!</h2>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">Dear ${name},</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">We've received your inquiry about "${subject}". Here are the details you provided:</p>
+            <div style="background:#DEEAFF; padding:20px; border-left:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Company:</strong> ${company || 'Not specified'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Country:</strong> ${country || 'Not specified'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Message:</strong></p>
+              <p style="margin:8px 0; color:#323232; font-style:italic;">${message.replace(/\n/g,'<br>')}</p>
+            </div>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">Our educational technology specialists will review your inquiry and respond within 24 hours with detailed information about School-UP's comprehensive school management platform.</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6; margin-top:20px;">Best regards,</p>
+            <p style="color:#3879F0; font-size:16px; font-weight:bold;">School-UP Team</p>
           </div>
-          <p>Our Mediterranean sponge specialists will review your inquiry and respond within 24 hours with detailed information about our wholesale offerings.</p>
-          <p>Best regards,</p>
-          <p><strong>Zarzis Eponge Team</strong></p>
-          <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
-            © ${new Date().getFullYear()} Zarzis Eponge. All rights reserved.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+          <footer style="font-size:12px; color:#777; text-align:center; margin-top:40px; border-top:1px solid #DEEAFF; padding:20px; background:#f8f9fa;">
+            © ${new Date().getFullYear()} School-UP. All rights reserved.<br>
+            <span style="color:#3879F0;">${process.env.EMAIL_USER}</span> | <a href="https://www.schoolup.info" style="color:#3879F0; text-decoration:none;">www.schoolup.info</a>
           </footer>
         </div>`,
     
     // French template
-    fr: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
-          <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+    fr: `<div style="font-family:'Quicksand',Arial,sans-serif; max-width:600px; margin:0 auto; background:#ffffff;">
+          <div style="text-align:center; margin-bottom:30px; padding:20px; background:linear-gradient(135deg, #3879F0 0%, #A068AE 100%);">
+            <img src="https://www.schoolup.info/Logo.svg" alt="School-UP Logo" style="max-width:180px; filter:brightness(0) invert(1);">
           </div>
-          <h2 style="color:#8B5A3C; text-align:center;">Merci d'avoir contacté Zarzis Eponge !</h2>
-          <p>Cher/Chère ${name},</p>
-          <p>Nous avons bien reçu votre demande de gros concernant "${subject}". Voici les détails que vous avez fournis :</p>
-          <div style="background:#f9f9f9; padding:15px; border-left:4px solid #8B5A3C; margin:15px 0;">
-            <p><strong>Entreprise:</strong> ${company || 'Non spécifié'}</p>
-            <p><strong>Pays:</strong> ${country || 'Non spécifié'}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g,'<br>')}</p>
+          <div style="padding:0 20px;">
+            <h2 style="color:#3879F0; text-align:center; font-family:'Krona One',Arial,sans-serif; margin-bottom:20px;">Merci d'avoir contacté School-UP !</h2>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">Cher/Chère ${name},</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">Nous avons bien reçu votre demande concernant "${subject}". Voici les détails que vous avez fournis :</p>
+            <div style="background:#DEEAFF; padding:20px; border-left:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Entreprise:</strong> ${company || 'Non spécifié'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Pays:</strong> ${country || 'Non spécifié'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Message:</strong></p>
+              <p style="margin:8px 0; color:#323232; font-style:italic;">${message.replace(/\n/g,'<br>')}</p>
+            </div>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">Nos spécialistes en technologie éducative examineront votre demande et vous répondront dans les 24 heures avec des informations détaillées sur la plateforme complète de gestion scolaire School-UP.</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6; margin-top:20px;">Cordialement,</p>
+            <p style="color:#3879F0; font-size:16px; font-weight:bold;">L'équipe School-UP</p>
           </div>
-          <p>Nos spécialistes des éponges méditerranéennes examineront votre demande et vous répondront dans les 24 heures avec des informations détaillées sur nos offres de gros.</p>
-          <p>Cordialement,</p>
-          <p><strong>L'équipe Zarzis Eponge</strong></p>
-          <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
-            © ${new Date().getFullYear()} Zarzis Eponge. Tous droits réservés.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+          <footer style="font-size:12px; color:#777; text-align:center; margin-top:40px; border-top:1px solid #DEEAFF; padding:20px; background:#f8f9fa;">
+            © ${new Date().getFullYear()} School-UP. Tous droits réservés.<br>
+            <span style="color:#3879F0;">${process.env.EMAIL_USER}</span> | <a href="https://www.schoolup.info" style="color:#3879F0; text-decoration:none;">www.schoolup.info</a>
           </footer>
         </div>`,
     
     // Arabic template (right-to-left)
-    ar: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto; direction:rtl; text-align:right;">
-          <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://images.geant-beaux-arts.fr/out/pictures/generated/1500_1500/413327/Eponge+synth%C3%A9tique.jpg" alt="Zarzis Eponge Logo" style="max-width:150px;">
+    ar: `<div style="font-family:'Quicksand',Arial,sans-serif; max-width:600px; margin:0 auto; direction:rtl; text-align:right; background:#ffffff;">
+          <div style="text-align:center; margin-bottom:30px; padding:20px; background:linear-gradient(135deg, #3879F0 0%, #A068AE 100%);">
+            <img src="https://www.schoolup.info/Logo.svg" alt="School-UP Logo" style="max-width:180px; filter:brightness(0) invert(1);">
           </div>
-          <h2 style="color:#8B5A3C; text-align:center;">شكراً لتواصلك مع زرزيس إسفنج!</h2>
-          <p>عزيزي/عزيزتي ${name}،</p>
-          <p>لقد استلمنا استفسارك حول الجملة بخصوص "${subject}". إليك التفاصيل التي قدمتها:</p>
-          <div style="background:#f9f9f9; padding:15px; border-right:4px solid #8B5A3C; margin:15px 0;">
-            <p><strong>الشركة:</strong> ${company || 'غير محدد'}</p>
-            <p><strong>البلد:</strong> ${country || 'غير محدد'}</p>
-            <p><strong>الرسالة:</strong></p>
-            <p>${message.replace(/\n/g,'<br>')}</p>
+          <div style="padding:0 20px;">
+            <h2 style="color:#3879F0; text-align:center; font-family:'Krona One',Arial,sans-serif; margin-bottom:20px;">شكراً لتواصلك مع School-UP!</h2>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">عزيزي/عزيزتي ${name}،</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">لقد استلمنا استفسارك بخصوص "${subject}". إليك التفاصيل التي قدمتها:</p>
+            <div style="background:#DEEAFF; padding:20px; border-right:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">الشركة:</strong> ${company || 'غير محدد'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">البلد:</strong> ${country || 'غير محدد'}</p>
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">الرسالة:</strong></p>
+              <p style="margin:8px 0; color:#323232; font-style:italic;">${message.replace(/\n/g,'<br>')}</p>
+            </div>
+            <p style="color:#323232; font-size:16px; line-height:1.6;">سيقوم متخصصو التكنولوجيا التعليمية لدينا بمراجعة استفسارك والرد عليك خلال 24 ساعة بمعلومات مفصلة حول منصة School-UP الشاملة لإدارة المدارس.</p>
+            <p style="color:#323232; font-size:16px; line-height:1.6; margin-top:20px;">مع أطيب التحيات،</p>
+            <p style="color:#3879F0; font-size:16px; font-weight:bold;">فريق School-UP</p>
           </div>
-          <p>سيقوم متخصصو الإسفنج المتوسطي لدينا بمراجعة استفسارك والرد عليك خلال 24 ساعة بمعلومات مفصلة حول عروض الجملة لدينا.</p>
-          <p>مع أطيب التحيات،</p>
-          <p><strong>فريق زرزيس إسفنج</strong></p>
-          <footer style="font-size:12px; color:#777; text-align:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
-            © ${new Date().getFullYear()} زرزيس إسفنج. جميع الحقوق محفوظة.<br>
-            ${process.env.EMAIL_USER} | www.zarzis-eponge.com
+          <footer style="font-size:12px; color:#777; text-align:center; margin-top:40px; border-top:1px solid #DEEAFF; padding:20px; background:#f8f9fa;">
+            © ${new Date().getFullYear()} School-UP. جميع الحقوق محفوظة.<br>
+            <span style="color:#3879F0;">${process.env.EMAIL_USER}</span> | <a href="https://www.schoolup.info" style="color:#3879F0; text-decoration:none;">www.schoolup.info</a>
           </footer>
         </div>`
   };
@@ -148,9 +154,9 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
 // Get email subject based on language
 const getEmailSubject = (language) => {
   const subjects = {
-    en: 'Thank you for contacting Zarzis Eponge - Mediterranean Sponges',
-    fr: 'Merci d\'avoir contacté Zarzis Eponge - Éponges Méditerranéennes',
-    ar: 'شكراً لتواصلك مع زرزيس إسفنج - إسفنج البحر المتوسط'
+    en: 'Thank you for contacting School-UP - Educational Management Platform',
+    fr: 'Merci d\'avoir contacté School-UP - Plateforme de Gestion Éducative',
+    ar: 'شكراً لتواصلك مع School-UP - منصة إدارة التعليم'
   };
   
   return subjects[language] || subjects.en;
@@ -181,18 +187,22 @@ app.post('/api/send-email', async (req, res) => {
     await transporter.sendMail({
       from: `"${name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      subject: `Zarzis Eponge Contact Form: ${subject}`,
-      html: `<div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
-               <h2 style="color:#8B5A3C;">New Wholesale Inquiry - Zarzis Eponge</h2>
-               <p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Company:</strong> ${company || 'Not specified'}</p>
-               <p><strong>Country:</strong> ${country || 'Not specified'}</p>
-               <p><strong>Subject:</strong> ${subject}</p>
-               <p><strong>Language:</strong> ${userLanguage}</p>
-               <div style="background:#f9f9f9; padding:15px; border-left:4px solid #8B5A3C;">
-                 <h3>Message:</h3>
-                 ${message.replace(/\n/g,'<br>')}
+      subject: `School-UP Contact Form: ${subject}`,
+      html: `<div style="font-family:'Quicksand',Arial,sans-serif; max-width:600px; margin:0 auto; background:#ffffff;">
+               <div style="text-align:center; margin-bottom:20px; padding:15px; background:linear-gradient(135deg, #3879F0 0%, #A068AE 100%);">
+                 <h2 style="color:#ffffff; font-family:'Krona One',Arial,sans-serif; margin:0;">New Contact Inquiry - School-UP</h2>
+               </div>
+               <div style="padding:0 20px;">
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Name:</strong> ${name}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Email:</strong> ${email}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Company:</strong> ${company || 'Not specified'}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Country:</strong> ${country || 'Not specified'}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Subject:</strong> ${subject}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Language:</strong> ${userLanguage}</p>
+                 <div style="background:#DEEAFF; padding:20px; border-left:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+                   <h3 style="color:#3879F0; margin-top:0;">Message:</h3>
+                   <p style="color:#323232; font-style:italic;">${message.replace(/\n/g,'<br>')}</p>
+                 </div>
                </div>
              </div>`
     });
@@ -227,7 +237,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 // Health check
-app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'Zarzis Eponge API' }));
+app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'Schoolup API' }));
 
 // 404 + generic error
 app.use((_req, res) => res.status(404).json({ success: false, message: 'Not found' }));
@@ -238,5 +248,5 @@ app.use((err, _req, res, _next) => {
 
 // ─── START ───────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`Zarzis Eponge API Server running on port ${PORT}`);
+  console.log(`Schoolup API Server running on port ${PORT}`);
 });
