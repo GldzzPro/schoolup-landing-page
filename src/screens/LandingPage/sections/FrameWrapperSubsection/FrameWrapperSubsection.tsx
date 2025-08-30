@@ -62,7 +62,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
         </p>
       </div>
 
-      <div className={`w-full md:w-[1340px] rounded-[20px] shadow-[0_1px_4px_rgba(12,12,13,0.05)] inline-flex flex-col items-start ${activeTabData?.cardBgClass || 'bg-[#E0E7FF]'}`}>
+      <div className={`w-full  rounded-[20px] shadow-[0_1px_4px_rgba(12,12,13,0.05)] inline-flex flex-col items-start ${activeTabData?.cardBgClass || 'bg-[#E0E7FF]'}`}>
         <div className="self-stretch p-5 flex flex-col md:flex-row  gap-5">
           {tabsData.map((tab) => (
             <div
