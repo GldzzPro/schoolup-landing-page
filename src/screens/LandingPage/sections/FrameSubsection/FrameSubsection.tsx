@@ -1,11 +1,12 @@
 import { Card, CardContent } from "../../../../components/ui/card";
+import { navigationItems } from "../../../../config/navigation";
 
 export const FrameSubsection = (): JSX.Element => {
   const heroBackground = "/hero_first.png";
 
   return (
     <section
-      id="ÀPropos"
+      id={navigationItems[1].id}
       className="flex flex-col w-full items-start relative box-border shadow-drop-shadow-100 md:max-h-[1076px] max-h-[763px]"
     >
       <Card className="w-full flex flex-col  px-[20px] pt-[25px] h-[989px] md:px-[105px] gap-[25px] md:gap-[50px] md:pt-[50px] box-border bg-[#dee9ffb2] rounded-[25px] md:rounded-[50px_50px_0px_0px] border-0 overflow-hidden">

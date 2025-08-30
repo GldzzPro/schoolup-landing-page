@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { navigationItems } from "../../../../config/navigation";
 
 export const FrameWrapperSubsection = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("mission");
@@ -44,7 +45,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
 
   return (
     <section
-      id="Pourquoinous?"
+      id={navigationItems[2].id}
       className="flex flex-col w-full items-start gap-6 px-4 md:px-0"
     >
       <div className="flex flex-col items-start gap-4 w-full">
