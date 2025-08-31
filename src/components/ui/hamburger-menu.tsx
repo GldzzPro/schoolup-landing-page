@@ -68,6 +68,23 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
           <div className="self-stretch flex flex-col justify-start items-start gap-6">
             {navigationItems.map((navItem, index) => {
               const isActive = activeSection === navItem.id;
+              
+              if (navItem.labelKey === "pricing") {
+                return (
+                  <ContactDialog key={navItem.id}>
+                    <div
+                      className={`self-stretch p-2.5 bg-transparent rounded-[20px] inline-flex justify-center items-center gap-2.5 cursor-pointer`}
+                    >
+                      <div
+                        className={`text-center justify-start text-[#323232] text-sm font-medium font-['Quicksand'] leading-tight`}
+                      >
+                        {t(navItem.labelKey)}
+                      </div>
+                    </div>
+                  </ContactDialog>
+                );
+              }
+              
               return (
                 <div
                   onClick={() => handleNavClick(navItem.id)}

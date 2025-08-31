@@ -11,6 +11,7 @@ import {
 import { navigationItems } from "../../../../config/navigation";
 import { useActiveSection } from "../../../../hooks/useActiveSection";
 import { useScrollContext } from "../../../../contexts/ScrollContext";
+import { useState } from "react";
 
 export const GroupSubsection = (): JSX.Element => {
   const activeSection = useActiveSection();
@@ -62,24 +63,43 @@ export const GroupSubsection = (): JSX.Element => {
 
       <NavigationMenu className="hidden lg:block">
         <NavigationMenuList className="gap-2 lg:gap-5 px-3 lg:px-5 py-2.5 bg-[#dee9ff66] rounded-[50px] shadow-drop-shadow-100 flex items-center justify-center">
-          {navigationItems.map((item, index) => (
-            <NavigationMenuItem key={index}>
-              <NavigationMenuLink
-                onClick={() => handleNavClick(item.id)}
-                className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
-                  activeSection === item.id ? "bg-blue" : "opacity-70"
-                }`}
-              >
-                <div
-                  className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap  ${
-                    activeSection === item.id ? "text-light-blue" : "text-black"
+          {navigationItems.map((item, index) => {
+            if (item.labelKey === "pricing") {
+              return (
+                <NavigationMenuItem key={index}>
+                  <ContactDialog>
+                    <NavigationMenuLink
+                      className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer opacity-70`}
+                    >
+                      <div
+                        className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap text-black`}
+                      >
+                        {t(item.labelKey)}
+                      </div>
+                    </NavigationMenuLink>
+                  </ContactDialog>
+                </NavigationMenuItem>
+              );
+            }
+            return (
+              <NavigationMenuItem key={index}>
+                <NavigationMenuLink
+                  onClick={() => handleNavClick(item.id)}
+                  className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
+                    activeSection === item.id ? "bg-blue" : "opacity-70"
                   }`}
                 >
-                  {t(item.labelKey)}
-                </div>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
+                  <div
+                    className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap  ${
+                      activeSection === item.id ? "text-light-blue" : "text-black"
+                    }`}
+                  >
+                    {t(item.labelKey)}
+                  </div>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            );
+          })}
         </NavigationMenuList>
       </NavigationMenu>
 

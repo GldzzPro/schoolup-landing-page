@@ -2,10 +2,16 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { navigationItems } from "../../../../config/navigation";
 import { useTranslation } from 'react-i18next';
 import { ContactDialog } from "../../../../components/ContactDialog";
+import { useScrollContext } from "../../../../contexts/ScrollContext";
 
 export const FrameSubsection = (): JSX.Element => {
   const { t } = useTranslation('hero');
+  const { scrollToSection } = useScrollContext();
   const heroBackground = "/hero_first.png";
+
+  const handleFeaturesClick = () => {
+    scrollToSection('features');
+  };
 
   return (
     <section
@@ -55,7 +61,10 @@ export const FrameSubsection = (): JSX.Element => {
                 />
               </button>
             </ContactDialog>
-            <button className="px-2.5 py-[5px] hover:bg-indigo-100 hover:text-[#3879F0] rounded-[20px] inline-flex justify-center items-center gap-[5px]">
+            <button 
+              onClick={handleFeaturesClick}
+              className="px-2.5 py-[5px] hover:bg-indigo-100 hover:text-[#3879F0] rounded-[20px] inline-flex justify-center items-center gap-[5px]"
+            >
               <img className="relative w-6 h-6 " alt="Grid" src="/grid-6.svg" />
               <div className="justify-start  text-blue-500 text-base font-medium font-['Quicksand'] leading-normal">
                 {t('featuresButton')}
