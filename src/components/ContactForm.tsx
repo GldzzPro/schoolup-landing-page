@@ -37,26 +37,55 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   });
 
   const onSubmit = async (data: FormData) => {
+    // Check for validation errors before submitting
+    if (Object.keys(errors).length > 0) {
+      toast.error(t("form.messages.validationError"));
+      return;
+    }
+    
     setIsSubmitting(true);
+    
+    // Show sending toast
+    const sendingToast = toast.loading(t("form.messages.sending"));
+    
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      
       const response = await fetch("https://schoolup-landing-page.onrender.com/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
+        signal: controller.signal,
       });
+      
+      clearTimeout(timeoutId);
+      toast.dismiss(sendingToast);
 
       if (response.ok) {
         toast.success(t("form.messages.success"));
         reset();
         onClose?.();
+      } else if (response.status >= 500) {
+        toast.error(t("form.messages.serverError"));
+      } else if (response.status >= 400) {
+        toast.error(t("form.messages.validationError"));
       } else {
-        throw new Error("Failed to send email");
+        toast.error(t("form.messages.error"));
       }
-    } catch (error) {
+    } catch (error: any) {
+      toast.dismiss(sendingToast);
       console.error("Error sending email:", error);
-      toast.error(t("form.messages.error"));
+      
+      if (error.name === 'AbortError') {
+        toast.error(t("form.messages.timeout"));
+      } else if (error.message?.includes('fetch') || error.message?.includes('network')) {
+        toast.error(t("form.messages.networkError"));
+      } else {
+        toast.error(t("form.messages.error"));
+      }
     } finally {
       setIsSubmitting(false);
     }
