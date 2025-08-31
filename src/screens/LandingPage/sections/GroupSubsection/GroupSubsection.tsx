@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { ContactDialog } from "../../../../components/ContactDialog";
 import { HamburgerMenu } from "../../../../components/ui/hamburger-menu";
 import {
   NavigationMenu,
@@ -8,24 +8,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
-import {
-  navigateToSection,
-  navigationItems,
-} from "../../../../config/navigation";
+import { navigationItems } from "../../../../config/navigation";
 import { useActiveSection } from "../../../../hooks/useActiveSection";
+import { useScrollContext } from "../../../../contexts/ScrollContext";
 
 export const GroupSubsection = (): JSX.Element => {
-  const navigate = useNavigate();
   const activeSection = useActiveSection();
   const { t, i18n } = useTranslation("navigation");
+  const { scrollToSection } = useScrollContext();
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === "fr" ? "en" : "fr";
     i18n.changeLanguage(newLanguage);
   };
+
   const handleNavClick = (sectionId: string) => {
     console.log("Navigating to section:", sectionId);
-    navigateToSection(navigate, sectionId);
+    scrollToSection(sectionId);
   };
 
   return (
@@ -99,16 +98,18 @@ export const GroupSubsection = (): JSX.Element => {
           </div>
           <ChevronDownIcon className="relative w-[21px] h-[21px]" />
         </div>
-        <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
-          <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
-            {t("demo")}
-          </div>
-          <img
-            className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
-            alt="Vuesax linear arrow"
-            src="/vuesax-linear-arrow-right.svg"
-          />
-        </button>
+        <ContactDialog>
+          <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
+            <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+              {t("demo")}
+            </div>
+            <img
+              className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
+              alt="Vuesax linear arrow"
+              src="/vuesax-linear-arrow-right.svg"
+            />
+          </button>
+        </ContactDialog>
       </div>
     </section>
   );

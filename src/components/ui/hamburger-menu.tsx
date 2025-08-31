@@ -1,18 +1,19 @@
 import { ChevronDownIcon, Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import { navigateToSection, navigationItems } from "../../config/navigation";
+import { ContactDialog } from "../ContactDialog";
+import { navigationItems } from "../../config/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
+import { useScrollContext } from "../../contexts/ScrollContext";
 import { Button } from "./button";
 
 interface HamburgerMenuProps {}
 
 export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const activeSection = useActiveSection();
- const {  i18n , t } = useTranslation('navigation');
+  const { i18n, t } = useTranslation('navigation');
+  const { scrollToSection } = useScrollContext();
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
@@ -31,7 +32,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
 
   const handleNavClick = (sectionId: string) => {
     setIsOpen(false);
-    navigateToSection(navigate, sectionId);
+    scrollToSection(sectionId);
   };
 
   return (
@@ -101,21 +102,23 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
                 </div>
                 <ChevronDownIcon className="relative w-[21px] h-[21px]" />
               </div>
-            <div
-              data-property-1="Selected"
-              className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5"
-            >
-              <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
-                {t('demo')}
-              </div>
-              <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
-                <img
-                  className="relative w-[31.89px] h-[31.89px] mt-[3px] mb-[-3.95px]"
-                  alt="Vuesax linear arrow"
-                  src="/vuesax-linear-arrow-right.svg"
+            <ContactDialog>
+              <div
+                data-property-1="Selected"
+                className="self-stretch h-8 px-2.5 py-[5px] bg-[#3879f0] rounded-[20px] inline-flex justify-center items-center gap-2.5 cursor-pointer"
+              >
+                <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+                  {t('demo')}
+                </div>
+                <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
+                  <img
+                    className="relative w-[31.89px] h-[31.89px] mt-[3px] mb-[-3.95px]"
+                    alt="Vuesax linear arrow"
+                    src="/vuesax-linear-arrow-right.svg"
                 />
               </div>
             </div>
+            </ContactDialog>
           </div>
         </div>
       )}

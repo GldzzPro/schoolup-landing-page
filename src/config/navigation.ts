@@ -14,6 +14,7 @@ export const navigationItems: NavigationItem[] = [
 
 /**
  * Navigate to a section by updating the URL hash and scrolling to the element
+ * @deprecated Use useScrollContext().scrollToSection instead for better reliability
  * @param navigate - React Router navigate function
  * @param sectionId - The section ID to navigate to
  */

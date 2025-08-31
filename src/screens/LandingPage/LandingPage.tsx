@@ -6,42 +6,45 @@ import { FrameSubsection } from "./sections/FrameSubsection/FrameSubsection";
 import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection/FrameWrapperSubsection";
 import { GroupSubsection } from "./sections/GroupSubsection/GroupSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection/SectionComponentNodeSubsection";
+import { ScrollProvider } from "../../contexts/ScrollContext";
 
 export const LandingPage = (): JSX.Element => {
   return (
-    <div className="bg-[#fffffe] w-full min-h-screen">
-      <div className="bg-pure-snow w-full  mx-auto relative space-y-8 md:space-y-12">
-        <div className="px-4 md:px-8 lg:px-12 py-4 md:pt-8 sticky top-0 z-10 bg-[#fffffe]">
-          <div className="flex justify-between items-center">
-            <GroupSubsection />
+    <ScrollProvider>
+      <div className="bg-[#fffffe] w-full min-h-screen">
+        <div className="bg-pure-snow w-full  mx-auto relative space-y-8 md:space-y-12">
+          <div className="px-4 md:px-8 lg:px-12 py-4 md:pt-8 sticky top-0 z-10 bg-[#fffffe]">
+            <div className="flex justify-between items-center">
+              <GroupSubsection />
+            </div>
           </div>
-        </div>
 
-        <div className="px-4 md:px-8 lg:px-12">
-          <FrameSubsection />
-        </div>
-        <div className="px-4 md:px-8 lg:px-12">
-          <FrameWrapperSubsection />
-        </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <FrameSubsection />
+          </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <FrameWrapperSubsection />
+          </div>
 
-        <div className="px-4 md:px-8 lg:px-12">
-          <DivWrapperSubsection />
-        </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <DivWrapperSubsection />
+          </div>
 
-        <div className="px-4 md:px-8 lg:px-12">
-          <DivSubsection />
-        </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <DivSubsection />
+          </div>
 
-        <div className="px-4 md:px-8 lg:px-12">
-          <SectionComponentNodeSubsection />
-        </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <SectionComponentNodeSubsection />
+          </div>
 
-        <div className="px-4 md:px-8 lg:px-12">
-          <Frame1Subsection />
-        </div>
+          <div className="px-4 md:px-8 lg:px-12">
+            <Frame1Subsection />
+          </div>
 
-        <Frame2Subsection />
+          <Frame2Subsection />
+        </div>
       </div>
-    </div>
+    </ScrollProvider>
   );
 };

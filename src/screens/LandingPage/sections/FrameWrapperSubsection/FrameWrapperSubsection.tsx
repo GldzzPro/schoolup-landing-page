@@ -44,8 +44,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
   const activeTabData = tabsData.find((tab) => tab.value === activeTab);
 
   return (
-    <section
-      id={navigationItems[1].id}
+    <div
       className="flex flex-col w-full items-start gap-6 px-4 md:px-0"
     >
       <div className="flex flex-col items-start gap-4 w-full">
@@ -61,7 +60,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
         </p>
       </div>
 
-      <div className={`w-full  rounded-[20px] shadow-[0_1px_4px_rgba(12,12,13,0.05)]  inline-flex flex-col items-start ${activeTabData?.cardBgClass || 'bg-[#E0E7FF]'}`}>
+      <section id={navigationItems[1].id} className={`w-full  rounded-[20px] shadow-[0_1px_4px_rgba(12,12,13,0.05)]  inline-flex flex-col items-start ${activeTabData?.cardBgClass || 'bg-[#E0E7FF]'}`}>
         <div className="self-stretch  p-5 flex flex-col md:flex-row md:flex-wrap md:justify-between  gap-5">
           {tabsData.map((tab) => (
             <div
@@ -86,7 +85,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
             {activeTabData?.content}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
