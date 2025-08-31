@@ -99,7 +99,7 @@ export const Frame2Subsection = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="inline-flex  items-start gap-2.5 relative flex-[0_0_auto] justify-center md:justify-start w-full md:w-auto">
+          <div className="inline-flex  items-start gap-2.5 relative flex-[0_0_auto] md:justify-center justify-start w-full md:w-auto">
             {socialIcons.map((icon, index) => (
               <img
                 key={`social-${index}`}
@@ -117,11 +117,11 @@ export const Frame2Subsection = (): JSX.Element => {
               {t("footer.quickLinks.title")}
             </h3>
 
-            <nav className="grid grid-cols-2 md:flex md:flex-col gap-2 md:gap-[5px] flex-[0_0_auto] items-start relative w-full">
+            <nav className="md:grid md:grid-cols-2 flex flex-col md:flex-col  gap-2 md:gap-[5px] flex-[0_0_auto] items-start  w-full">
               {quickLinks.map((link, index) => (
                 <div
                   key={`link-${index}`}
-                  className="inline-flex items-center justify-start md:justify-center gap-2.5 relative flex-[0_0_auto]"
+                  className="inline-flex items-center  md:justify-start   gap-2.5 relative flex-[0_0_auto]"
                 >
                   <a className="relative w-fit mt-[-1.00px] font-quicksand-delicatescript font-[number:var(--quicksand-delicatescript-font-weight)] text-white text-xs md:text-[length:var(--quicksand-delicatescript-font-size)] text-left md:text-center tracking-[var(--quicksand-delicatescript-letter-spacing)] leading-[18px] md:leading-[var(--quicksand-delicatescript-line-height)] whitespace-nowrap [font-style:var(--quicksand-delicatescript-font-style)] hover:text-light-blue cursor-pointer">
                     {link}
