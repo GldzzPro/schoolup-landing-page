@@ -49,7 +49,7 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
           <DialogTrigger asChild className={triggerClassName}>
             {children}
           </DialogTrigger>
-          <DialogContent className="bg-black border-gray-800 text-white max-w-4xl max-h-[90vh] overflow-hidden p-0 rounded-[10px] [&>button]:hidden">
+          <DialogContent className="bg-black border-gray-800 text-white max-w-4xl max-h-[90vh] overflow-hidden p-0 rounded-[50px] [&>button]:hidden">
             {dialogContent}
           </DialogContent>
         </Dialog>
@@ -65,7 +65,7 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
         </SheetTrigger>
         <SheetContent
           side="bottom"
-          className="bg-black border-gray-800 text-white w-screen p-0 rounded-t-[10px] inset-x-0 bottom-0 [&>button]:hidden max-h-[90vh] h-auto overflow-hidden"
+          className="bg-black border-gray-800 text-white w-screen p-0 rounded-t-[20px] inset-x-0 bottom-0 [&>button]:hidden max-h-[90vh] h-auto overflow-hidden"
         >
           {sheetContent}
         </SheetContent>

@@ -67,7 +67,7 @@ const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 // ─── EMAIL TEMPLATES ─────────────────────────────────────────────────────────
 // Email templates for different languages
-const getEmailTemplate = (language, name, subject, message, company, country) => {
+const getEmailTemplate = (language, name, subject, message, company, country, phone) => {
   // Default to English if language is not supported
   const lang = ['en', 'fr', 'ar'].includes(language) ? language : 'en';
   
@@ -82,6 +82,7 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
             <p style="color:#323232; font-size:16px; line-height:1.6;">Dear ${name},</p>
             <p style="color:#323232; font-size:16px; line-height:1.6;">We've received your inquiry about "${subject}". Here are the details you provided:</p>
             <div style="background:#DEEAFF; padding:20px; border-left:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Phone:</strong> ${phone || 'Not specified'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Company:</strong> ${company || 'Not specified'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Country:</strong> ${country || 'Not specified'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Message:</strong></p>
@@ -107,6 +108,7 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
             <p style="color:#323232; font-size:16px; line-height:1.6;">Cher/Chère ${name},</p>
             <p style="color:#323232; font-size:16px; line-height:1.6;">Nous avons bien reçu votre demande concernant "${subject}". Voici les détails que vous avez fournis :</p>
             <div style="background:#DEEAFF; padding:20px; border-left:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Téléphone:</strong> ${phone || 'Non spécifié'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Entreprise:</strong> ${company || 'Non spécifié'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Pays:</strong> ${country || 'Non spécifié'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">Message:</strong></p>
@@ -132,6 +134,7 @@ const getEmailTemplate = (language, name, subject, message, company, country) =>
             <p style="color:#323232; font-size:16px; line-height:1.6;">عزيزي/عزيزتي ${name}،</p>
             <p style="color:#323232; font-size:16px; line-height:1.6;">لقد استلمنا استفسارك بخصوص "${subject}". إليك التفاصيل التي قدمتها:</p>
             <div style="background:#DEEAFF; padding:20px; border-right:4px solid #3879F0; margin:20px 0; border-radius:8px;">
+              <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">الهاتف:</strong> ${phone || 'غير محدد'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">الشركة:</strong> ${company || 'غير محدد'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">البلد:</strong> ${country || 'غير محدد'}</p>
               <p style="margin:8px 0; color:#323232;"><strong style="color:#3879F0;">الرسالة:</strong></p>
@@ -164,11 +167,13 @@ const getEmailSubject = (language) => {
 
 // ─── ENDPOINTS ────────────────────────────────────────────────────────────────
 app.post('/api/send-email', async (req, res) => {
-  const { name, email, subject, message, company, country, language } = req.body;
+  const { name, email, phone, message, company, country, language } = req.body;
   // Default to English if no language is provided
   const userLanguage = language || 'en';
+  // Use phone as subject or default subject
+  const subject = phone ? `Contact from ${phone}` : 'Contact Form Inquiry';
   
-  if (!name || !email || !subject || !message) {
+  if (!name || !email || !message) {
     return res.status(400).json({ success: false, message: 'All required fields must be provided' });
   }
   
@@ -195,6 +200,7 @@ app.post('/api/send-email', async (req, res) => {
                <div style="padding:0 20px;">
                  <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Name:</strong> ${name}</p>
                  <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Email:</strong> ${email}</p>
+                 <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Phone:</strong> ${phone || 'Not specified'}</p>
                  <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Company:</strong> ${company || 'Not specified'}</p>
                  <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Country:</strong> ${country || 'Not specified'}</p>
                  <p style="color:#323232; font-size:16px;"><strong style="color:#3879F0;">Subject:</strong> ${subject}</p>
@@ -212,7 +218,7 @@ app.post('/api/send-email', async (req, res) => {
       from: `"SchoolUp" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: getEmailSubject(userLanguage),
-      html: getEmailTemplate(userLanguage, name, subject, message, company, country)
+      html: getEmailTemplate(userLanguage, name, subject, message, company, country, phone)
     });
 
     res.json({ success: true, message: 'Email sent successfully' });

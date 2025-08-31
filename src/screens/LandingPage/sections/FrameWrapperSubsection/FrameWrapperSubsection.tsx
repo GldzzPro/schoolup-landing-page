@@ -65,7 +65,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
           {tabsData.map((tab) => (
             <div
               key={tab.value}
-              className={`self-stretch md:self-auto p-5 box-border rounded-[20px] flex items-center gap-2.5 cursor-pointer transition-colors ${
+              className={`self-stretch md:self-auto p-5 box-content rounded-[20px] flex items-center gap-2.5 cursor-pointer transition-colors ${
                 tab.value === activeTab 
                   ? `${tab.activeBgClass} ${tab.activeTextClass}` 
                   : "hover:text-[#3F3F46] hover:bg-transparent text-[#838383]"

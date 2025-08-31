@@ -39,7 +39,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("https://schoolup-landing-page.onrender.com/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
