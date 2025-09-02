@@ -69,7 +69,7 @@ export const GroupSubsection = (): JSX.Element => {
                 <NavigationMenuItem key={index}>
                   <ContactDialog>
                     <NavigationMenuLink
-                      className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer opacity-70`}
+                      className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] cursor-pointer opacity-70`}
                     >
                       <div
                         className={`relative w-fit mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-medium text-xs lg:text-sm text-center tracking-[0] leading-[21px] whitespace-nowrap text-black`}
@@ -85,7 +85,7 @@ export const GroupSubsection = (): JSX.Element => {
               <NavigationMenuItem key={index}>
                 <NavigationMenuLink
                   onClick={() => handleNavClick(item.id)}
-                  className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] hover:bg-blue hover:text-white cursor-pointer ${
+                  className={`gap-1 lg:gap-2.5 p-1.5 lg:p-2.5 flex items-center  justify-center rounded-[20px] cursor-pointer ${
                     activeSection === item.id ? "bg-blue" : "opacity-70"
                   }`}
                 >
@@ -120,7 +120,7 @@ export const GroupSubsection = (): JSX.Element => {
         </div>
         <ContactDialog>
           <button className="h-8 px-2.5 py-[5px] bg-[#3879F0] hover:opacity-75 rounded-[20px] inline-flex justify-center items-center gap-2.5">
-            <div className="text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
+            <div className="whitespace-nowrap text-ellipsis overflow-hidden text-center justify-start text-indigo-100 text-sm font-medium font-['Quicksand'] leading-tight">
               {t("demo")}
             </div>
             <img

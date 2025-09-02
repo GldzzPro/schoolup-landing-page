@@ -98,7 +98,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="flex flex-col items-start gap-8 md:gap-[50px] p-6 md:p-[50px] relative self-stretch w-full flex-[0_0_auto] bg-black">
+    <div className="flex flex-col items-start gap-[50px] p-[50px] relative self-stretch w-full flex-[0_0_auto] bg-black">
       <div className="flex flex-col items-start gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
         <h2 className="relative self-stretch mt-[-1.00px] [font-family:'Krona_One',Helvetica] font-normal text-white text-xl md:text-[34px] text-center tracking-[-1.5px] md:tracking-[-2.18px] leading-[24px] md:leading-[37.4px]">
           {t("title")}
@@ -139,7 +139,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
               </div>
 
               <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
-                <div className="flex w-[228px] items-center gap-1 relative">
+                <div className="flex w-full items-center gap-1 relative">
                   <Input
                     {...register("name", {
                       required: t("form.validation.nameRequired"),
@@ -177,7 +177,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
               </div>
 
               <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
-                <div className="flex w-[228px] items-center gap-1 relative">
+                <div className="flex w-full items-center gap-1 relative">
                   <Input
                     {...register("email", {
                       required: t("form.validation.emailRequired"),
@@ -216,7 +216,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
               </div>
 
               <div className="flex items-center justify-between flex-[0_0_auto] relative self-stretch w-full">
-                <div className="flex w-[228px] items-center gap-1 relative">
+                <div className="flex w-full items-center gap-1 relative">
                   <Input
                     {...register("phone", {
                       required: t("form.validation.phoneRequired"),
@@ -256,7 +256,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
             </div>
 
             <div className="flex items-start justify-between relative flex-1 self-stretch w-full grow">
-              <div className="flex w-[228px] items-start gap-1 relative">
+              <div className="flex w-full h-full items-start gap-1 relative">
                 <Textarea
                   {...register("message", {
                     required: t("form.validation.messageRequired"),
@@ -265,7 +265,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                       message: t("form.validation.messageMinLength"),
                     },
                   })}
-                  className={`flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ${
+                  className={`h-full flex-1 opacity-80 [font-family:'Quicksand',Helvetica] font-medium text-grey text-sm md:text-base tracking-[0] leading-5 md:leading-6 relative mt-[-1.00px] border-none bg-transparent p-0 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ${
                     errors.message ? "text-red-500" : ""
                   }`}
                   placeholder={t("form.placeholders.message")}
@@ -310,9 +310,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-end gap-2 md:gap-2.5 px-4 md:px-5 py-2.5 relative flex-[0_0_auto] bg-blue rounded-[22px]  hover:opacity-75 h-auto hover:bg-blue/90 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 md:gap-2.5 px-4 md:px-5 py-2.5 relative flex-[0_0_auto] bg-blue rounded-[22px]  hover:opacity-75 h-auto hover:bg-blue/90 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {/* <SendIcon className="relative w-5 h-5 md:w-6 md:h-6" /> */}
+          <SendIcon className="relative w-5 h-5 md:w-6 md:h-6" /> 
           <span className="relative w-fit mt-[-1.00px] font-quicksand-easyread-semibold font-[number:var(--quicksand-easyread-semibold-font-weight)] text-light-blue text-[length:var(--quicksand-easyread-semibold-font-size)] tracking-[var(--quicksand-easyread-semibold-letter-spacing)] leading-[var(--quicksand-easyread-semibold-line-height)] whitespace-nowrap [font-style:var(--quicksand-easyread-semibold-font-style)]">
             {isSubmitting ? t("form.submit.sending") : t("form.submit.send")}
           </span>

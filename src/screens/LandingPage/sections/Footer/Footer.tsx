@@ -68,7 +68,7 @@ export const Frame2Subsection = (): JSX.Element => {
       >
         <ContactForm />
       </section>
-      <footer className="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue !m-0">
+      <footer className="flex flex-col flex-wrap md:flex-row items-start gap-8 md:gap-[50px] px-6 md:px-[117px] py-8 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-blue !m-0">
         <div className="inline-flex flex-col  items-start gap-2.5 relative flex-[0_0_auto] w-full md:w-auto">
           <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]">
             <div className="flex w-[170.85px] items-center gap-2.5 relative flex-[0_0_auto]">

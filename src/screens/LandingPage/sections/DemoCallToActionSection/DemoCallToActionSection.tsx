@@ -6,7 +6,7 @@ export const Frame1Subsection = (): JSX.Element => {
   const { t } = useTranslation('demo');
   
   return (
-    <section className="flex flex-col md:flex-row w-full items-start md:items-center gap-4 md:gap-2.5 p-4 md:p-[25px] bg-blue rounded-[25px]  md:mx-0">
+    <div className="flex flex-col md:flex-row w-full items-start md:items-center gap-4 md:gap-2.5 p-4 md:p-[25px] bg-blue rounded-[25px]  md:mx-0">
       <div className="relative flex-1 mt-[-1.00px] [font-family:'Quicksand',Helvetica] font-normal text-white text-sm md:text-base tracking-[0] leading-5 md:leading-4">
         <span className="font-medium leading-6">
           {t('description.part1')}
@@ -25,6 +25,6 @@ export const Frame1Subsection = (): JSX.Element => {
         {t('button')}
         <ArrowRightIcon className="w-5 h-5 md:w-[31.89px] md:h-[31.89px]" />
       </Button>
-    </section>
+    </div>
   );
 };

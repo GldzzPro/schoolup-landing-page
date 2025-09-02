@@ -1,11 +1,11 @@
-import { DivSubsection } from "./sections/DivSubsection/DivSubsection";
-import { DivWrapperSubsection } from "./sections/DivWrapperSubsection/DivWrapperSubsection";
-import { Frame1Subsection } from "./sections/Frame1Subsection/Frame1Subsection";
-import { Frame2Subsection } from "./sections/Frame2Subsection/Frame2Subsection";
-import { FrameSubsection } from "./sections/FrameSubsection/FrameSubsection";
-import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection/FrameWrapperSubsection";
+import { DivSubsection } from "./sections/NavigationSection/NavigationSection";
+import { DivWrapperSubsection } from "./sections/WhyUs/WhyUs";
+import { Frame1Subsection } from "./sections/DemoCallToActionSection/DemoCallToActionSection";
+import { Frame2Subsection } from "./sections/Footer/Footer";
+import { FrameSubsection } from "./sections/HeroSection/HeroSection";
+import { FrameWrapperSubsection } from "./sections/About/About";
 import { GroupSubsection } from "./sections/GroupSubsection/GroupSubsection";
-import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection/SectionComponentNodeSubsection";
+import { SectionComponentNodeSubsection } from "./sections/Features/Features";
 import { ScrollProvider } from "../../contexts/ScrollContext";
 
 export const LandingPage = (): JSX.Element => {

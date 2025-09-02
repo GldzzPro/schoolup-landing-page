@@ -442,7 +442,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/teacher/teacher-1.png"],
+            images: ["/teacher/1.png"],
           },
           schedule: {
             features: [
@@ -511,7 +511,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/teacher/teacher-2.png"],
+            images: ["/teacher/2.png"],
           },
           grades: {
             features: [
@@ -558,7 +558,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/teacher/teacher-3.png"],
+            images: ["/teacher/3.png"],
           },
           evaluation: {
             features: [
@@ -587,7 +587,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/teacher/teacher-4.png"],
+            images: ["/teacher/4.png","/teacher/5.png","/teacher/6.png"],
           },
           reports: {
             features: [
@@ -616,7 +616,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/teacher/teacher-5.png"],
+            images: ["/teacher/7.png","/teacher/8.png"],
           },
         },
       },
@@ -716,7 +716,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-1.png"],
+            images: ["/parent/Frame.png","/parent/Frame-1.png"],
           },
           fees: {
             features: [
@@ -743,7 +743,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-2.png"],
+            images: ["/parent/Frame-2.png","/parent/Frame-3.png","/parent/Frame-4.png"],
           },
           schedule: {
             features: [
@@ -764,7 +764,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-3.png"],
+            images: ["/parent/Frame-5.png"],
           },
           Presence: {
             features: [
@@ -793,7 +793,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-4.png"],
+            images: ["/parent/Frame-6.png"],
           },
           Examens: {
             features: [
@@ -822,7 +822,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-5.png"],
+            images: ["/parent/Frame-7.png","/parent/Frame-8.png"],
           },
           Resultat: {
             features: [
@@ -849,7 +849,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/parent/parent-6.png"],
+            images: ["/parent/Frame-9.png","/parent/Frame-10.png"],
           },
         },
       },
@@ -904,7 +904,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/student/student-1.png"],
+            images: ["/student/Frame.png","/student/Frame-1.png"],
           },
           messagerie: {
             features: [
@@ -933,7 +933,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/student/student-2.png"],
+            images: ["/student/Frame-2.png","/student/Frame-3.png","/student/Frame-4.png"],
           },
           grades: {
             features: [
@@ -962,7 +962,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/student/student-3.png"],
+            images: ["/student/Frame-5.png"],
           },
           homework: {
             features: [
@@ -989,7 +989,7 @@ export const useSchoolUpData = () => {
                 ),
               },
             ],
-            images: ["/student/student-4.png"],
+            images: ["/student/Frame-6.png","/student/Frame-7.png","/student/Frame-8.png"],
           },
         },
       },
