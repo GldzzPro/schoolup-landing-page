@@ -42,6 +42,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
         className="p-2"
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
       >
         {isOpen ? (
           <X className="h-6 w-6 text-black" />
@@ -130,7 +131,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
                 <div className="w-6 h-6 relative origin-top-left rotate-[-25deg]">
                   <img
                     className="relative w-[31.89px] h-[31.89px] mt-[3px] mb-[-3.95px]"
-                    alt="Vuesax linear arrow"
+                    alt="Arrow pointing right"
                     src="/vuesax-linear-arrow-right.svg"
                 />
               </div>

@@ -38,13 +38,13 @@ export const GroupSubsection = (): JSX.Element => {
           <div className=" w-full h-auto bg-[url(/vector-1.svg)] bg-[100%_100%]">
             <img
               className=" w-8 h-8 top-0 left-0"
-              alt="Vector"
+              alt="SchoolUP logo icon"
               src="/vector-4.svg"
             />
           </div>
           <img
             className="absolute w-4 h-1 top-9 left-2"
-            alt="Vector"
+            alt="Logo accent line"
             src="/vector.svg"
           />
         </div>
@@ -125,7 +125,7 @@ export const GroupSubsection = (): JSX.Element => {
             </div>
             <img
               className="relative w-[24px] h-[24px] mt-[-3.95px] mb-[-3.95px]"
-              alt="Vuesax linear arrow"
+              alt="Arrow pointing right"
               src="/vuesax-linear-arrow-right.svg"
             />
           </button>
