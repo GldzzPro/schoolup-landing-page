@@ -173,7 +173,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
             >
               {images.map((image: string, index: number) => (
                 <img
-                  key={index}
+                  key={image}
                   src={image}
                   alt={`${currentMainTab?.label} - ${activeSubTab} - ${
                     index + 1
